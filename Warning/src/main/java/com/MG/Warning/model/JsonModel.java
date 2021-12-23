@@ -3,7 +3,7 @@ package com.MG.Warning.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Entities {
+public class JsonModel {
 
     private List<Persons> persons = new ArrayList<>();
     private List<Firestations> firestations = new ArrayList<>();

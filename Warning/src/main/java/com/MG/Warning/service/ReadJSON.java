@@ -1,27 +1,27 @@
 package com.MG.Warning.service;
 
-import com.MG.Warning.model.Entities;
+import com.MG.Warning.model.JsonModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
+
+import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
 
 
 @Component
 public class ReadJSON {
 
-    public Entities ReadEntities(Entities e) {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
+    public JsonModel readEntities() throws IOException {
 
-            return e = mapper.readValue(new FileReader("src/main/resources/data.json"), Entities.class);
+        String fileName = "data.json";
 
-        } catch (Exception ex) {
-            System.out.println("Failed to read data.json");
-            ex.printStackTrace();
-        }
+        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+        InputStream is = classloader.getResourceAsStream(fileName);
 
-        return null;
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(is, JsonModel.class);
     }
+
 }

@@ -1,9 +1,7 @@
 package com.MG.Warning.dao;
 
 import com.MG.Warning.CustomProperties;
-import com.MG.Warning.model.Entities;
 import com.MG.Warning.model.Persons;
-import com.MG.Warning.service.ReadJSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
