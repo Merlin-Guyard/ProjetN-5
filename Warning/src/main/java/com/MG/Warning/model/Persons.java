@@ -13,6 +13,16 @@ public class Persons {
     public Persons() {
     }
 
+    public Persons(String firstName, String lastName, String address, String city, int zip, String phone, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.zip = zip;
+        this.phone = phone;
+        this.email = email;
+    }
+
     public String getFirstName() {
         return firstName;
     }

@@ -7,14 +7,14 @@ public class MedicalRecords {
     private String firstName;
     private String lastName;
     private String birthdate;
-    private String[] medication;
+    private String[] medications;
     private String[] allergies;
 
     public MedicalRecords() {
     }
 
     public MedicalRecords(String[] medication, String[] allergies) {
-        this.medication = medication;
+        this.medications = medication;
         this.allergies = allergies;
     }
 
@@ -42,12 +42,12 @@ public class MedicalRecords {
         this.birthdate = birthdate;
     }
 
-    public String[] getMedication() {
-        return medication;
+    public String[] getMedications() {
+        return medications;
     }
 
-    public void setMedication(String[] medication) {
-        this.medication = medication;
+    public void setMedications(String[] medications) {
+        this.medications = medications;
     }
 
     public String[] getAllergies() {
@@ -64,7 +64,7 @@ public class MedicalRecords {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthdate='" + birthdate + '\'' +
-                ", medication=" + Arrays.toString(medication) +
+                ", medication=" + Arrays.toString(medications) +
                 ", allergies=" + Arrays.toString(allergies) +
                 '}';
     }
