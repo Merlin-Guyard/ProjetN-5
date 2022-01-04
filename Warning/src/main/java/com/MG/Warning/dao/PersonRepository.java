@@ -1,7 +1,7 @@
 package com.MG.Warning.dao;
 
 
-import com.MG.Warning.model.Persons;
+import com.MG.Warning.model.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -12,13 +12,25 @@ public class PersonRepository {
 
     // CRUD
 
-    private List<Persons> personsList = new ArrayList<>();
+    private List<Person> personsList = new ArrayList<>();
 
-    public void save(Persons persons) {
+    public void save(Person persons) {
         personsList.add(persons);
     }
 
-    public List<Persons> findAll() {
+    public List<Person> findAll() {
         return personsList;
+    }
+
+    public void createPerson(Person person) {
+
+    }
+
+    public void updatePerson(String firstname, String lastname, Person person) {
+
+    }
+
+    public void deletePerson(String firstname, String lastname) {
+
     }
 }

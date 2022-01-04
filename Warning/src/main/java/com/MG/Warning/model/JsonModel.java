@@ -5,31 +5,31 @@ import java.util.List;
 
 public class JsonModel {
 
-    private List<Persons> persons = new ArrayList<>();
-    private List<Firestations> firestations = new ArrayList<>();
-    private List<MedicalRecords> medicalrecords = new ArrayList<>();
+    private List<Person> persons = new ArrayList<>();
+    private List<Firestation> firestations = new ArrayList<>();
+    private List<MedicalRecord> medicalrecords = new ArrayList<>();
 
-    public List<Persons> getPersons() {
+    public List<Person> getPersons() {
         return persons;
     }
 
-    public void setPersons(List<Persons> persons) {
+    public void setPersons(List<Person> persons) {
         this.persons = persons;
     }
 
-    public List<Firestations> getFirestations() {
+    public List<Firestation> getFirestations() {
         return firestations;
     }
 
-    public void setFirestations(List<Firestations> firestations) {
+    public void setFirestations(List<Firestation> firestations) {
         this.firestations = firestations;
     }
 
-    public List<MedicalRecords> getMedicalrecords() {
+    public List<MedicalRecord> getMedicalrecords() {
         return medicalrecords;
     }
 
-    public void setMedicalrecords(List<MedicalRecords> medicalrecords) {
+    public void setMedicalrecords(List<MedicalRecord> medicalrecords) {
         this.medicalrecords = medicalrecords;
     }
 }

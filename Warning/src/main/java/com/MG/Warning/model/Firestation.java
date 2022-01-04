@@ -1,11 +1,11 @@
 package com.MG.Warning.model;
 
-public class Firestations {
+public class Firestation {
 
     private String address;
     private int station;
 
-    public Firestations() {
+    public Firestation() {
     }
 
     public String getAddress() {
