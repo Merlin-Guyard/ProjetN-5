@@ -1,4 +1,4 @@
-package com.MG.Warning.model;
+package com.mg.warning.model;
 
 import java.util.Arrays;
 

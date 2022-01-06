@@ -1,7 +1,7 @@
-package com.MG.Warning.controller;
+package com.mg.warning.controller;
 
-import com.MG.Warning.dao.FirestationRepository;
-import com.MG.Warning.model.Firestation;
+import com.mg.warning.dao.FirestationRepository;
+import com.mg.warning.model.Firestation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

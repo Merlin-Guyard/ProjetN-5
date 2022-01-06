@@ -1,7 +1,7 @@
-package com.MG.Warning.dao;
+package com.mg.warning.dao;
 
 
-import com.MG.Warning.model.Person;
+import com.mg.warning.model.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -10,27 +10,31 @@ import java.util.List;
 @Repository
 public class PersonRepository {
 
-    // CRUD
-
     private List<Person> personsList = new ArrayList<>();
 
-    public void save(Person persons) {
-        personsList.add(persons);
-    }
-
+    //GET
     public List<Person> findAll() {
         return personsList;
     }
 
-    public void createPerson(Person person) {
-
+    //PUT
+    public void update(Person person) {
+        int index = 0;
+        for (Person p : personsList) {
+            if (p.getFirstName().equals(person.getFirstName()) && p.getLastName().equals(person.getLastName())) {
+                personsList.set(index, person);
+                index++;
+            }
+        }
     }
 
-    public void updatePerson(String firstname, String lastname, Person person) {
-
+    //POST
+    public void save(Person persons) {
+        personsList.add(persons);
     }
 
-    public void deletePerson(String firstname, String lastname) {
-
+    //DELETE
+    public void delete(String firstname, String lastname) {
+        personsList.removeIf(p -> p.getFirstName().equals(firstname) && p.getLastName().equals(lastname));
     }
 }

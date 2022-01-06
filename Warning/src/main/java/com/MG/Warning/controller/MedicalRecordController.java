@@ -1,7 +1,7 @@
-package com.MG.Warning.controller;
+package com.mg.warning.controller;
 
-import com.MG.Warning.dao.MedicalRecordRepository;
-import com.MG.Warning.model.MedicalRecord;
+import com.mg.warning.dao.MedicalRecordRepository;
+import com.mg.warning.model.MedicalRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

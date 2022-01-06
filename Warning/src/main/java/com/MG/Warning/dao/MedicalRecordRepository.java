@@ -1,24 +1,40 @@
-package com.MG.Warning.dao;
+package com.mg.warning.dao;
 
 
-import com.MG.Warning.model.MedicalRecord;
+import com.mg.warning.model.MedicalRecord;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
-public class MedicalRecordRepository {
+    @Repository
+    public class MedicalRecordRepository {
 
-    // CRUD
+        private List<MedicalRecord> medicalRecordList = new ArrayList<>();
 
-    private List<MedicalRecord> medicalRecordList = new ArrayList<>();
+        //GET
+        public List<MedicalRecord> findAll() {
+            return medicalRecordList;
+        }
 
-    public void save(MedicalRecord medicalRecord) {
-        medicalRecordList.add(medicalRecord);
+        //PUT
+        public void update(MedicalRecord medicalRecord) {
+            int index = 0;
+            for (MedicalRecord m : medicalRecordList) {
+                if (m.getFirstName().equals(medicalRecord.getFirstName()) && m.getLastName().equals(medicalRecord.getLastName())) {
+                    medicalRecordList.set(index, medicalRecord);
+                    index++;
+                }
+            }
+        }
+
+        //POST
+        public void save(MedicalRecord medicalRecord) {
+            medicalRecordList.add(medicalRecord);
+        }
+
+        //DELETE
+        public void delete(String firstname, String lastname) {
+            medicalRecordList.removeIf(m -> m.getFirstName().equals(firstname) && m.getLastName().equals(lastname));
+        }
     }
-
-    public List<MedicalRecord> findAll() {
-        return medicalRecordList;
-    }
-}

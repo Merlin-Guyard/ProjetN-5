@@ -1,7 +1,7 @@
-package com.MG.Warning.dao;
+package com.mg.warning.dao;
 
 
-import com.MG.Warning.model.Firestation;
+import com.mg.warning.model.Firestation;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,8 +9,6 @@ import java.util.List;
 
 @Repository
 public class FirestationRepository {
-
-    // CRUD
 
     private List<Firestation> firestationList = new ArrayList<>();
 

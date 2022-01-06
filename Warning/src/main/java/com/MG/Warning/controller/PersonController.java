@@ -1,7 +1,7 @@
-package com.MG.Warning.controller;
+package com.mg.warning.controller;
 
-import com.MG.Warning.dao.PersonRepository;
-import com.MG.Warning.model.Person;
+import com.mg.warning.dao.PersonRepository;
+import com.mg.warning.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,16 +21,16 @@ public class PersonController {
 
     @GetMapping(value= "/Post")
     public void postOnePerson(@RequestBody Person person){
-        personRepository.createPerson(person);
+        personRepository.save(person);
     }
 
-    @GetMapping(value= "/Put")
-    public void updateOnePerson(@PathVariable("firstname") String firstname, @PathVariable("lastname") String lastname, @RequestBody Person person){
-        personRepository.updatePerson(firstname,lastname, person);
+    @GetMapping(value= "/Put/{firstname}+{lastname}")
+    public void updateOnePerson(@RequestBody Person person){
+        personRepository.update(person);
     }
 
     @GetMapping(value= "/Delete/{firstname}+{lastname}")
     public void delOnePerson(@PathVariable("firstname") String firstname, @PathVariable("lastname") String lastname){
-        personRepository.deletePerson(firstname, lastname);
+        personRepository.delete(firstname, lastname);
     }
 }
