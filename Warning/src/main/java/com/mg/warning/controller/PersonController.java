@@ -14,22 +14,22 @@ public class PersonController {
     @Autowired
     private PersonRepository personRepository;
 
-    @GetMapping(value= "/GetAll")
+    @GetMapping(value= "")
     public List<Person> getAllPersons(){
         return personRepository.findAll();
     }
 
-    @GetMapping(value= "/Post")
+    @PostMapping(value= "")
     public void postOnePerson(@RequestBody Person person){
         personRepository.save(person);
     }
 
-    @GetMapping(value= "/Put/{firstname}+{lastname}")
+    @PutMapping(value= "")
     public void updateOnePerson(@RequestBody Person person){
         personRepository.update(person);
     }
 
-    @GetMapping(value= "/Delete/{firstname}+{lastname}")
+    @DeleteMapping(value= "")
     public void delOnePerson(@PathVariable("firstname") String firstname, @PathVariable("lastname") String lastname){
         personRepository.delete(firstname, lastname);
     }

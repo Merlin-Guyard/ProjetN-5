@@ -34,7 +34,18 @@ public class FirestationRepository {
         firestationList.add(firestation);
     }
 
+    public List<Firestation> findById(int stationNumber) {
+        List<Firestation> result = new ArrayList<>();
+        for(Firestation firestation: firestationList)  {
+            if(firestation.getStation() == stationNumber) {
+                result.add(firestation);
+            }
+        }
+        return result;
+    }
+
 //    //DELETE
+
 //    public void delete(String firstname, String lastname) {
 //        medicalRecordList.removeIf(m -> m.getFirstName().equals(firstname) && m.getLastName().equals(lastname));
 //    }
