@@ -7,31 +7,42 @@ import java.util.List;
 
 public class FirestationAlertDTO {
 
-    private List<Person> persons = new ArrayList<>();
-    private int nbAdults;
-    private int nbChildren;
+    private String firstname;
+    private String lastname;
+    private String address;
+    private String phone;
 
-    public List<Person> getPersons() {
-        return persons;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setPersons(List<Person> persons) {
-        this.persons = persons;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public int getNbAdults() {
-        return nbAdults;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setNbAdults(int nbAdults) {
-        this.nbAdults = nbAdults;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public int getNbChildren() {
-        return nbChildren;
+    public String getAddress() {
+        return address;
     }
 
-    public void setNbChildren(int nbChildren) {
-        this.nbChildren = nbChildren;
+    public void setAddress(String address) {
+        this.address = address;
     }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+
 }
