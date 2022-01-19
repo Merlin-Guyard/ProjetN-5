@@ -1,6 +1,7 @@
 package com.mg.warning.medicalRecord;
 
 
+import com.mg.warning.firestation.Firestation;
 import com.mg.warning.medicalRecord.MedicalRecord;
 import org.springframework.stereotype.Repository;
 
@@ -36,5 +37,16 @@ public class MedicalRecordRepository {
     //DELETE
     public void delete(String firstname, String lastname) {
         medicalRecordList.removeIf(medicalRecord -> medicalRecord.getFirstName().equals(firstname) && medicalRecord.getLastName().equals(lastname));
+    }
+
+    //GET BY NAME
+    public List<MedicalRecord> findByName(String firstname, String lastname) {
+        List<MedicalRecord> result = new ArrayList<>();
+        for(MedicalRecord medicalRecord: medicalRecordList)  {
+            if(medicalRecord.getFirstName().equals(firstname) && medicalRecord.getLastName().equals(lastname)) {
+                result.add(medicalRecord);
+            }
+        }
+        return result;
     }
 }
