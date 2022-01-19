@@ -67,7 +67,6 @@ public class AlertController {
         }
 
         //Check if minor or adult
-
         LocalDate dateFrom18YearsAgo = LocalDate.now().minusYears(18);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         LocalDate personAge;
@@ -79,6 +78,7 @@ public class AlertController {
                 children++;
             }
         }
+        //ceci est un test
 
 
         dtoWithSum.setNbAdults(adult);
