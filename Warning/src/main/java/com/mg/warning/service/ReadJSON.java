@@ -1,11 +1,9 @@
-package com.MG.Warning.service;
+package com.mg.warning.service;
 
-import com.MG.Warning.model.JsonModel;
+import com.mg.warning.model.JsonModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 

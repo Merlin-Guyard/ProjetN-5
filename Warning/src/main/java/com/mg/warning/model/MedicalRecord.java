@@ -1,8 +1,8 @@
-package com.MG.Warning.model;
+package com.mg.warning.model;
 
 import java.util.Arrays;
 
-public class MedicalRecords {
+public class MedicalRecord {
 
     private String firstName;
     private String lastName;
@@ -10,10 +10,10 @@ public class MedicalRecords {
     private String[] medications;
     private String[] allergies;
 
-    public MedicalRecords() {
+    public MedicalRecord() {
     }
 
-    public MedicalRecords(String[] medication, String[] allergies) {
+    public MedicalRecord(String[] medication, String[] allergies) {
         this.medications = medication;
         this.allergies = allergies;
     }

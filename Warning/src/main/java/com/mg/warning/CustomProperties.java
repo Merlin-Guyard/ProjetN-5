@@ -1,4 +1,4 @@
-package com.MG.Warning;
+package com.mg.warning;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
