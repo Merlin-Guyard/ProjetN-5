@@ -9,7 +9,7 @@ public class FirestationAlertDTOWithSum {
 
     private List<FirestationAlertDTO> firestationAlertDTOS = new ArrayList<>();
     private int nbAdults;
-    private int nbChildren;
+    private int nbChildrens;
 
     public List<FirestationAlertDTO> getFirestationAlertDTOS() {
         return firestationAlertDTOS;
@@ -27,11 +27,11 @@ public class FirestationAlertDTOWithSum {
         this.nbAdults = nbAdults;
     }
 
-    public int getNbChildren() {
-        return nbChildren;
+    public int getNbChildrens() {
+        return nbChildrens;
     }
 
-    public void setNbChildren(int nbChildren) {
-        this.nbChildren = nbChildren;
+    public void setNbChildrens(int nbChildrens) {
+        this.nbChildrens = nbChildrens;
     }
 }

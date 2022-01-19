@@ -8,12 +8,13 @@ import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
-import javafx.scene.text.FontPosture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +42,8 @@ public class AlertController {
         List<FirestationAlertDTO> dtoList  = new ArrayList<>();
         FirestationAlertDTOWithSum dtoWithSum  = new FirestationAlertDTOWithSum();
         List<MedicalRecord> medicalRecords = new ArrayList<>();
+        int adult = 0;
+        int children = 0;
 
         //Get all persons from firestation's address
         for(Firestation firestation: fireStations)  {
@@ -65,10 +68,21 @@ public class AlertController {
 
         //Check if minor or adult
 
+        LocalDate dateFrom18YearsAgo = LocalDate.now().minusYears(18);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        LocalDate personAge;
+        for(MedicalRecord medicalRecord: medicalRecords)  {
+            personAge = LocalDate.parse(medicalRecord.getBirthdate(), formatter);
+            if(personAge.isBefore(dateFrom18YearsAgo)){
+                adult++;
+            }else{
+                children++;
+            }
+        }
 
 
-        dtoWithSum.setNbAdults(0);
-        dtoWithSum.setNbChildren(0);
+        dtoWithSum.setNbAdults(adult);
+        dtoWithSum.setNbChildrens(children);
         return dtoWithSum;
     }
 }
