@@ -1,9 +1,11 @@
-package com.mg.warning.controller;
+package com.mg.warning.medicalRecord;
 
-import com.mg.warning.dao.MedicalRecordRepository;
-import com.mg.warning.model.MedicalRecord;
+import com.mg.warning.medicalRecord.MedicalRecordRepository;
+import com.mg.warning.medicalRecord.MedicalRecord;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 

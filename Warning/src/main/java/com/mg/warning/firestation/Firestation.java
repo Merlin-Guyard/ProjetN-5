@@ -1,4 +1,4 @@
-package com.mg.warning.model;
+package com.mg.warning.firestation;
 
 public class Firestation {
 

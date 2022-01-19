@@ -1,7 +1,7 @@
-package com.mg.warning.service;
+package com.mg.warning.json;
 
-import com.mg.warning.model.JsonModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mg.warning.json.JsonModel;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;

@@ -1,6 +1,6 @@
-package com.mg.warning.controller;
+package com.mg.warning.alert;
 
-import com.mg.warning.model.Person;
+import com.mg.warning.person.Person;
 
 import java.util.ArrayList;
 import java.util.List;

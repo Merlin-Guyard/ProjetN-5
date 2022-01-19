@@ -1,4 +1,8 @@
-package com.mg.warning.model;
+package com.mg.warning.json;
+
+import com.mg.warning.firestation.Firestation;
+import com.mg.warning.medicalRecord.MedicalRecord;
+import com.mg.warning.person.Person;
 
 import java.util.ArrayList;
 import java.util.List;

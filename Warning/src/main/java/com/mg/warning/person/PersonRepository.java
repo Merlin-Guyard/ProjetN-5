@@ -1,12 +1,10 @@
-package com.mg.warning.dao;
+package com.mg.warning.person;
 
 
-import com.mg.warning.model.Firestation;
-import com.mg.warning.model.Person;
+import com.mg.warning.person.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Repository
@@ -35,6 +33,7 @@ public class PersonRepository {
         }
     }
 
+    //PUT V2
     public void update2(Person person) {
         personsList
                 .stream()
@@ -55,6 +54,7 @@ public class PersonRepository {
         personsList.removeIf(p -> p.getFirstName().equals(firstname) && p.getLastName().equals(lastname));
     }
 
+    //GET BY ADDRESS
     public List<Person> findByAddress(String address) {
         List<Person> result = new ArrayList<>();
         for (Person person : personsList) {

@@ -1,8 +1,10 @@
 package com.mg.warning.service;
 
-import com.mg.warning.dao.FirestationRepository;
-import com.mg.warning.dao.MedicalRecordRepository;
-import com.mg.warning.dao.PersonRepository;
+import com.mg.warning.firestation.FirestationRepository;
+import com.mg.warning.json.JsonModel;
+import com.mg.warning.json.ReadJSON;
+import com.mg.warning.medicalRecord.MedicalRecordRepository;
+import com.mg.warning.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -27,7 +29,7 @@ public class Initialize {
 
     @EventListener(ApplicationReadyEvent.class)
     public void saveData() throws IOException {
-        com.mg.warning.model.JsonModel entities = readJSON.readEntities();
+        JsonModel entities = readJSON.readEntities();
         entities.getPersons().forEach(person -> personRepository.save(person));
         entities.getMedicalrecords().forEach(medicalRecord -> medicalRecordRepository.save(medicalRecord));
         entities.getFirestations().forEach(firestation -> firestationRepository.save(firestation));

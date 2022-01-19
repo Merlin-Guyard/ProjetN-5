@@ -1,36 +1,29 @@
-package com.mg.warning.controller;
+package com.mg.warning.alert;
 
-import com.mg.warning.dao.FirestationRepository;
-import com.mg.warning.dao.PersonRepository;
-import com.mg.warning.model.Firestation;
-import com.mg.warning.model.Person;
+import com.mg.warning.firestation.Firestation;
+import com.mg.warning.firestation.FirestationRepository;
+import com.mg.warning.person.Person;
+import com.mg.warning.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/firestation")
-public class FireStationController {
+public class AlertController {
 
     @Autowired
     private FirestationRepository firestationRepository;
 
-   @Autowired
+    @Autowired
     private PersonRepository personRepository;
 
-    @GetMapping(value= "/GetAll")
-    public List<Firestation> getAllFirestation(){
-        return firestationRepository.findAll();
-    }
 
-    @GetMapping(value= "")
+    @GetMapping(value= "/firestation")
     public PersonsWithSumDTO getAllFirestation(@RequestParam("stationNumber") int stationNumber){
-        //Optional<Firestation> optFirestation = firestationRepository.findById(stationNumber);
-        //List<Person> persons = optFirestation.stream().flatMap(firestation -> toPersons(firestation)).collect(Collectors.toList())
         List<Firestation> fireStations = firestationRepository.findById(stationNumber);
         List<Person> persons = new ArrayList<>();
         for(Firestation firestation: fireStations)  {
@@ -43,6 +36,4 @@ public class FireStationController {
         dto.setNbChildren(0);
         return dto;
     }
-
-
 }
