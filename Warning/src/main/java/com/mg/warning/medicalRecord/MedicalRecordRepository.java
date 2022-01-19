@@ -40,6 +40,7 @@ public class MedicalRecordRepository {
     }
 
     //GET BY NAME
+    //TODO -> MedicalRecord findByName(String firstname, String lastname) ou Optional<MedicalRecord> findByName(String firstname, String lastname)
     public List<MedicalRecord> findByName(String firstname, String lastname) {
         List<MedicalRecord> result = new ArrayList<>();
         for(MedicalRecord medicalRecord: medicalRecordList)  {

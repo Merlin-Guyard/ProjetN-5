@@ -6,6 +6,7 @@ public class MedicalRecord {
 
     private String firstName;
     private String lastName;
+    //TODO LocalDate
     private String birthdate;
     private String[] medications;
     private String[] allergies;

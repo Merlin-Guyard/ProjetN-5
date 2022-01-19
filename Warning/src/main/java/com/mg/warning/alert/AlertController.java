@@ -31,6 +31,18 @@ public class AlertController {
     private MedicalRecordRepository medicalRecordRepository;
 
 
+    public void setFirestationRepository(FirestationRepository firestationRepository) {
+        this.firestationRepository = firestationRepository;
+    }
+
+    public void setPersonRepository(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
+
+    public void setMedicalRecordRepository(MedicalRecordRepository medicalRecordRepository) {
+        this.medicalRecordRepository = medicalRecordRepository;
+    }
+
     @GetMapping(value= "/firestation")
     public FirestationAlertDTOWithSum getAllFirestation(@RequestParam("stationNumber") int stationNumber){
 
