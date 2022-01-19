@@ -20,8 +20,8 @@ public class MedicalRecordRepository {
     //PUT
     public void update(MedicalRecord medicalRecord) {
         int index = 0;
-        for (MedicalRecord m : medicalRecordList) {
-            if (m.getFirstName().equals(medicalRecord.getFirstName()) && m.getLastName().equals(medicalRecord.getLastName())) {
+        for (MedicalRecord medicalRecordLoop : medicalRecordList) {
+            if (medicalRecordLoop.getFirstName().equals(medicalRecord.getFirstName()) && medicalRecordLoop.getLastName().equals(medicalRecord.getLastName())) {
                 medicalRecordList.set(index, medicalRecord);
                 index++;
             }
@@ -35,6 +35,6 @@ public class MedicalRecordRepository {
 
     //DELETE
     public void delete(String firstname, String lastname) {
-        medicalRecordList.removeIf(m -> m.getFirstName().equals(firstname) && m.getLastName().equals(lastname));
+        medicalRecordList.removeIf(medicalRecord -> medicalRecord.getFirstName().equals(firstname) && medicalRecord.getLastName().equals(lastname));
     }
 }

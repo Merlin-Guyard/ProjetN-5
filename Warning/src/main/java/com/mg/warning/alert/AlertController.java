@@ -1,5 +1,6 @@
 package com.mg.warning.alert;
 
+import com.mg.warning.alert.firestation.FirestationAlertDTO;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.person.Person;
@@ -23,14 +24,14 @@ public class AlertController {
 
 
     @GetMapping(value= "/firestation")
-    public PersonsWithSumDTO getAllFirestation(@RequestParam("stationNumber") int stationNumber){
+    public FirestationAlertDTO getAllFirestation(@RequestParam("stationNumber") int stationNumber){
         List<Firestation> fireStations = firestationRepository.findById(stationNumber);
         List<Person> persons = new ArrayList<>();
         for(Firestation firestation: fireStations)  {
             persons.addAll(personRepository.findByAddress(firestation.getAddress()));
         }
 
-        PersonsWithSumDTO dto  = new PersonsWithSumDTO();
+        FirestationAlertDTO dto  = new FirestationAlertDTO();
         dto.setPersons(persons);
         dto.setNbAdults(0);
         dto.setNbChildren(0);

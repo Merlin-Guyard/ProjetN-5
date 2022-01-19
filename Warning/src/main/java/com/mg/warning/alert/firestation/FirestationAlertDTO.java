@@ -1,11 +1,11 @@
-package com.mg.warning.alert;
+package com.mg.warning.alert.firestation;
 
 import com.mg.warning.person.Person;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonsWithSumDTO {
+public class FirestationAlertDTO {
 
     private List<Person> persons = new ArrayList<>();
     private int nbAdults;

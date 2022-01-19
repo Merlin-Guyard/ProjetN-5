@@ -21,13 +21,13 @@ public class PersonRepository {
     public void update(Person person) {
         int index = 0;
         List<Person> copy = new ArrayList<>(personsList);
-        for (Person p : copy) {
+        for (Person personLoop : copy) {
             /*if (p.getFirstName().equals(person.getFirstName()) && p.getLastName().equals(person.getLastName())) {
                 personsList.set(index, person);
                 index++;
             }*/
-            if(p.equals(person)) {
-                personsList.remove(p);
+            if(personLoop.equals(person)) {
+                personsList.remove(personLoop);
                 personsList.add(person);
             }
         }
@@ -51,7 +51,7 @@ public class PersonRepository {
 
     //DELETE
     public void delete(String firstname, String lastname) {
-        personsList.removeIf(p -> p.getFirstName().equals(firstname) && p.getLastName().equals(lastname));
+        personsList.removeIf(person -> person.getFirstName().equals(firstname) && person.getLastName().equals(lastname));
     }
 
     //GET BY ADDRESS
