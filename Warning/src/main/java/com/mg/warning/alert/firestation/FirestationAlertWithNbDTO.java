@@ -3,7 +3,7 @@ package com.mg.warning.alert.firestation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FirestationAlertDTOWithSum {
+public class FirestationAlertWithNbDTO {
 
 
 

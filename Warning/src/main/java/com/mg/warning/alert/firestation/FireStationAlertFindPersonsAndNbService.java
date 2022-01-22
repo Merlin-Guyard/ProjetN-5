@@ -39,13 +39,13 @@ public class FireStationAlertFindPersonsAndNbService {
     }
 
 
-    public FirestationAlertDTOWithSum getFirestationAlertDTOWithSum(int stationNumber){
+    public FirestationAlertWithNbDTO getFirestationAlertDTOWithSum(int stationNumber){
 
         List<Firestation> fireStations = firestationRepository.findById(stationNumber);
         List<Person> persons = new ArrayList<>();
         FirestationAlertDTO dto = new FirestationAlertDTO();
         List<FirestationAlertDTO> dtoList  = new ArrayList<>();
-        FirestationAlertDTOWithSum dtoWithSum  = new FirestationAlertDTOWithSum();
+        FirestationAlertWithNbDTO dtoWithSum  = new FirestationAlertWithNbDTO();
         List<MedicalRecord> medicalRecords = new ArrayList<>();
         int adult = 0;
         int children = 0;

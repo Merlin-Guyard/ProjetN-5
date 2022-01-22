@@ -1,7 +1,7 @@
 package com.mg.warning.alert;
 
 import com.mg.warning.alert.firestation.FireStationAlertFindPersonsAndNbService;
-import com.mg.warning.alert.firestation.FirestationAlertDTOWithSum;
+import com.mg.warning.alert.firestation.FirestationAlertWithNbDTO;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
@@ -38,10 +38,9 @@ public class AlertControllerTest {
     public void test() {
 
         AlertController alertController = new AlertController();
-
         when(firestationRepository.findById(3))
                 .thenReturn(new ArrayList<>());
-        FirestationAlertDTOWithSum result = alertController.getAllFirestation(3);
+        FirestationAlertWithNbDTO result = alertController.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(0);
     }
@@ -73,7 +72,7 @@ public class AlertControllerTest {
         when(medicalRecordRepository.findByName("AAA", "BBB"))
                 .thenReturn(medicalRecord);
 
-        FirestationAlertDTOWithSum result = alertController.getAllFirestation(3);
+        FirestationAlertWithNbDTO result = alertController.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(1);
         assertThat(result.getNbChildrens()).isEqualTo(0);
 
@@ -108,7 +107,7 @@ public class AlertControllerTest {
         when(medicalRecordRepository.findByName("AAA", "BBB"))
                 .thenReturn(medicalRecord);
 
-        FirestationAlertDTOWithSum result = alertController.getAllFirestation(3);
+        FirestationAlertWithNbDTO result = alertController.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(1);
 
@@ -162,7 +161,7 @@ public class AlertControllerTest {
         when(medicalRecordRepository.findByName("ZZZ", "YYY"))
                 .thenReturn(medicalRecord2);
 
-        FirestationAlertDTOWithSum result = alertController.getAllFirestation(3);
+        FirestationAlertWithNbDTO result = alertController.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(2);
 
