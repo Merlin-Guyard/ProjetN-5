@@ -1,5 +1,6 @@
 package com.mg.warning.alert;
 
+import com.mg.warning.alert.firestation.FireStationAlertFindPersonsAndNbService;
 import com.mg.warning.alert.firestation.FirestationAlertDTOWithSum;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
@@ -24,7 +25,7 @@ public class AlertControllerTest {
     private PersonRepository personRepository = mock(PersonRepository.class);
     private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
 
-    private AlertController controller = new AlertController();
+    private FireStationAlertFindPersonsAndNbService controller = new FireStationAlertFindPersonsAndNbService();
 
     @BeforeEach
     public void setUp() throws Exception {
@@ -36,9 +37,11 @@ public class AlertControllerTest {
     @Test
     public void test() {
 
+        AlertController alertController = new AlertController();
+
         when(firestationRepository.findById(3))
                 .thenReturn(new ArrayList<>());
-        FirestationAlertDTOWithSum result = controller.getAllFirestation(3);
+        FirestationAlertDTOWithSum result = alertController.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(0);
     }
@@ -47,6 +50,7 @@ public class AlertControllerTest {
     @Test
     public void test2() {
 
+        AlertController alertController = new AlertController();
         List<Firestation> firestations = new ArrayList<>();
         Firestation firestation = new Firestation();
         firestation.setAddress("abc");
@@ -69,7 +73,7 @@ public class AlertControllerTest {
         when(medicalRecordRepository.findByName("AAA", "BBB"))
                 .thenReturn(medicalRecord);
 
-        FirestationAlertDTOWithSum result = controller.getAllFirestation(3);
+        FirestationAlertDTOWithSum result = alertController.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(1);
         assertThat(result.getNbChildrens()).isEqualTo(0);
 
@@ -81,6 +85,7 @@ public class AlertControllerTest {
     @Test
     public void test3() {
 
+        AlertController alertController = new AlertController();
         List<Firestation> firestations = new ArrayList<>();
         Firestation firestation = new Firestation();
         firestation.setAddress("abc");
@@ -103,7 +108,7 @@ public class AlertControllerTest {
         when(medicalRecordRepository.findByName("AAA", "BBB"))
                 .thenReturn(medicalRecord);
 
-        FirestationAlertDTOWithSum result = controller.getAllFirestation(3);
+        FirestationAlertDTOWithSum result = alertController.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(1);
 
@@ -116,6 +121,7 @@ public class AlertControllerTest {
     @Test
     public void test4() {
 
+        AlertController alertController = new AlertController();
         List<Firestation> firestations = new ArrayList<>();
         Firestation firestation = new Firestation();
         firestation.setAddress("abc");
@@ -156,7 +162,7 @@ public class AlertControllerTest {
         when(medicalRecordRepository.findByName("ZZZ", "YYY"))
                 .thenReturn(medicalRecord2);
 
-        FirestationAlertDTOWithSum result = controller.getAllFirestation(3);
+        FirestationAlertDTOWithSum result = alertController.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(2);
 
