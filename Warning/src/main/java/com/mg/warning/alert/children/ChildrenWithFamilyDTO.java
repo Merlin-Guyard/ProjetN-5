@@ -5,33 +5,15 @@ import java.util.List;
 
 public class ChildrenWithFamilyDTO {
 
-    private String firstname;
-    private String lastname;
-    private int age;
+    private List<ChildrenDTO> children = new ArrayList<>();
     private List<FamilyDTO> family = new ArrayList<>();
 
-    public String getFirstname() {
-        return firstname;
+    public List<ChildrenDTO> getChildren() {
+        return children;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setChildren(List<ChildrenDTO> children) {
+        this.children = children;
     }
 
     public List<FamilyDTO> getFamily() {
@@ -41,6 +23,7 @@ public class ChildrenWithFamilyDTO {
     public void setFamily(List<FamilyDTO> family) {
         this.family = family;
     }
+
 
 
 
