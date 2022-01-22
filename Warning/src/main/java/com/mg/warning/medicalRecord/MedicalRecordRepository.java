@@ -40,12 +40,11 @@ public class MedicalRecordRepository {
     }
 
     //GET BY NAME
-    //TODO -> MedicalRecord findByName(String firstname, String lastname) ou Optional<MedicalRecord> findByName(String firstname, String lastname)
-    public List<MedicalRecord> findByName(String firstname, String lastname) {
-        List<MedicalRecord> result = new ArrayList<>();
+    public MedicalRecord findByName(String firstname, String lastname) {
+        MedicalRecord result = new MedicalRecord();
         for(MedicalRecord medicalRecord: medicalRecordList)  {
             if(medicalRecord.getFirstName().equals(firstname) && medicalRecord.getLastName().equals(lastname)) {
-                result.add(medicalRecord);
+                result = medicalRecord;
             }
         }
         return result;

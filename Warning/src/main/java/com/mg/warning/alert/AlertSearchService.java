@@ -1,2 +1,4 @@
-package com.mg.warning.alert;public class AlertSearchService {
+package com.mg.warning.alert;
+
+public class AlertSearchService {
 }

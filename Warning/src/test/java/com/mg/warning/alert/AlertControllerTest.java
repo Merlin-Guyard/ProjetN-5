@@ -7,7 +7,6 @@ import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -39,11 +38,9 @@ public class AlertControllerTest {
 
         when(firestationRepository.findById(3))
                 .thenReturn(new ArrayList<>());
-
         FirestationAlertDTOWithSum result = controller.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(0);
-
     }
 
 
@@ -70,7 +67,7 @@ public class AlertControllerTest {
         medicalRecord.setBirthdate("01/01/1950");
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findByName("AAA", "BBB"))
-                .thenReturn(medicalRecords);
+                .thenReturn(medicalRecord);
 
         FirestationAlertDTOWithSum result = controller.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(1);
@@ -104,7 +101,7 @@ public class AlertControllerTest {
         medicalRecord.setBirthdate("01/01/2015");
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findByName("AAA", "BBB"))
-                .thenReturn(medicalRecords);
+                .thenReturn(medicalRecord);
 
         FirestationAlertDTOWithSum result = controller.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
@@ -150,14 +147,14 @@ public class AlertControllerTest {
         medicalRecord.setBirthdate("01/01/2015");
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findByName("AAA", "BBB"))
-                .thenReturn(medicalRecords);
+                .thenReturn(medicalRecord);
 
         List<MedicalRecord> medicalRecords2 = new ArrayList<>();
         MedicalRecord medicalRecord2 = new MedicalRecord();
         medicalRecord2.setBirthdate("01/01/2016");
         medicalRecords2.add(medicalRecord2);
         when(medicalRecordRepository.findByName("ZZZ", "YYY"))
-                .thenReturn(medicalRecords2);
+                .thenReturn(medicalRecord2);
 
         FirestationAlertDTOWithSum result = controller.getAllFirestation(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
