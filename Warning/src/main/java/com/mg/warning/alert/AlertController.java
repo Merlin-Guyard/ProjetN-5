@@ -26,31 +26,10 @@ import java.util.List;
 public class AlertController {
 
     @Autowired
-    private FirestationRepository firestationRepository;
-
-    @Autowired
-    private PersonRepository personRepository;
-
-    @Autowired
-    private MedicalRecordRepository medicalRecordRepository;
-
-
-    public void setFirestationRepository(FirestationRepository firestationRepository) {
-        this.firestationRepository = firestationRepository;
-    }
-
-    public void setPersonRepository(PersonRepository personRepository) {
-        this.personRepository = personRepository;
-    }
-
-    public void setMedicalRecordRepository(MedicalRecordRepository medicalRecordRepository) {
-        this.medicalRecordRepository = medicalRecordRepository;
-    }
-
+    private FireStationAlertFindPersonsAndNbService fireStationAlertFindPersonsAndNbService;
 
     @GetMapping(value = "/firestation")
     public FirestationAlertWithNbDTO getAllFirestation(@RequestParam("stationNumber") int stationNumber) {
-        FireStationAlertFindPersonsAndNbService fireStationAlertFindPersonsAndNbService = new FireStationAlertFindPersonsAndNbService();
         return fireStationAlertFindPersonsAndNbService.getFirestationAlertDTOWithSum(stationNumber);
     }
 
