@@ -38,7 +38,7 @@ public class FirestationRepository {
     }
 
     //GET BY ID
-    public List<Firestation> findById(int stationNumber) {
+    public List<Firestation> findByStationNumber(int stationNumber) {
         List<Firestation> result = new ArrayList<>();
         for(Firestation firestation: firestationList)  {
             if(firestation.getStation() == stationNumber) {

@@ -1,6 +1,10 @@
 package com.mg.warning.alert.children;
 
-public class FamilyDTO {
+public class ChildrenAlertDTO {
+
+    private String firstname;
+    private String lastname;
+    private int age;
 
     public String getFirstname() {
         return firstname;
@@ -18,7 +22,12 @@ public class FamilyDTO {
         this.lastname = lastname;
     }
 
-    private String firstname;
-    private String lastname;
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
 }

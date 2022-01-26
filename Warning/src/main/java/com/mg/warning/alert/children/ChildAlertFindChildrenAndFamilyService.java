@@ -25,15 +25,15 @@ public class ChildAlertFindChildrenAndFamilyService {
     @Autowired
     private AlertService alertService;
 
-    public ChildrenWithFamilyDTO getChildrenWithFamilyDTO(String address) {
+    public ChildrenWithFamilyAlertDTO getChildrenWithFamilyDTO(String address) {
 
         List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
         List<Person> persons = personRepository.findAll();
-        ChildrenWithFamilyDTO dtoChildrenAndFamily = new ChildrenWithFamilyDTO();
-        ChildrenDTO dtoChildren = new ChildrenDTO();
-        List<ChildrenDTO> dtoChildrenList = new ArrayList<>();
-        FamilyDTO dtoFamily = new FamilyDTO();
-        List<FamilyDTO> dtoFamilyList = new ArrayList<>();
+        ChildrenWithFamilyAlertDTO dtoChildrenAndFamily = new ChildrenWithFamilyAlertDTO();
+        ChildrenAlertDTO dtoChildren = new ChildrenAlertDTO();
+        List<ChildrenAlertDTO> dtoChildrenList = new ArrayList<>();
+        FamilyAlertDTO dtoFamily = new FamilyAlertDTO();
+        List<FamilyAlertDTO> dtoFamilyList = new ArrayList<>();
         int personAge;
 
         //Check by address then age
@@ -50,7 +50,6 @@ public class ChildAlertFindChildrenAndFamilyService {
                         dtoChildren.setLastname(person.getLastName());
                         dtoChildren.setAge(personAge);
                         dtoChildrenList.add(dtoChildren);
-
                 }
             }
         }

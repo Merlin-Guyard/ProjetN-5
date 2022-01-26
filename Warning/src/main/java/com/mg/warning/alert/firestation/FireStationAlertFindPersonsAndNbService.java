@@ -32,10 +32,10 @@ public class FireStationAlertFindPersonsAndNbService {
 
     public FirestationAlertWithNbDTO getFirestationAlertDTOWithSum(int stationNumber){
 
-        List<Firestation> fireStations = firestationRepository.findById(stationNumber);
+        List<Firestation> fireStations = firestationRepository.findByStationNumber(stationNumber);
         List<Person> persons = new ArrayList<>();
-        FirestationAlertDTO dto = new FirestationAlertDTO();
-        List<FirestationAlertDTO> dtoList  = new ArrayList<>();
+        FirestationAlertDTO dtoFirestation = new FirestationAlertDTO();
+        List<FirestationAlertDTO> dtoFirestationList  = new ArrayList<>();
         FirestationAlertWithNbDTO dtoWithSum  = new FirestationAlertWithNbDTO();
         List<MedicalRecord> medicalRecords = new ArrayList<>();
         int adult = 0;
@@ -48,13 +48,13 @@ public class FireStationAlertFindPersonsAndNbService {
 
         //Get only interested data
         for (Person person : persons){
-            dto.setFirstname(person.getFirstName());
-            dto.setLastname(person.getLastName());
-            dto.setAddress(person.getAddress());
-            dto.setPhone(person.getPhone());
-            dtoList.add(dto);
+            dtoFirestation.setFirstname(person.getFirstName());
+            dtoFirestation.setLastname(person.getLastName());
+            dtoFirestation.setAddress(person.getAddress());
+            dtoFirestation.setPhone(person.getPhone());
+            dtoFirestationList.add(dtoFirestation);
         }
-        dtoWithSum.setFirestationAlertDTOS(dtoList);
+        dtoWithSum.setFirestationAlertDTOS(dtoFirestationList);
 
         //Get all medical records from persons
         for(Person person: persons)  {

@@ -1,5 +1,7 @@
-package com.mg.warning.alert.firestation;
+package com.mg.warning.alert;
 
+import com.mg.warning.alert.firestation.FireStationAlertFindPersonsAndNbService;
+import com.mg.warning.alert.firestation.FirestationAlertWithNbDTO;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
@@ -36,7 +38,7 @@ public class FireStationAlertFindPersonsAndNbServiceTest {
 
     @Test
     public void test() {
-        when(firestationRepository.findById(3))
+        when(firestationRepository.findByStationNumber(3))
                 .thenReturn(new ArrayList<>());
         FirestationAlertWithNbDTO result = service.getFirestationAlertDTOWithSum(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
@@ -50,7 +52,7 @@ public class FireStationAlertFindPersonsAndNbServiceTest {
         Firestation firestation = new Firestation();
         firestation.setAddress("abc");
         firestations.add(firestation);
-        when(firestationRepository.findById(3))
+        when(firestationRepository.findByStationNumber(3))
                 .thenReturn(firestations);
 
         List<Person> persons = new ArrayList<>();
@@ -81,7 +83,7 @@ public class FireStationAlertFindPersonsAndNbServiceTest {
         Firestation firestation = new Firestation();
         firestation.setAddress("abc");
         firestations.add(firestation);
-        when(firestationRepository.findById(3))
+        when(firestationRepository.findByStationNumber(3))
                 .thenReturn(firestations);
 
         List<Person> persons = new ArrayList<>();
@@ -115,7 +117,7 @@ public class FireStationAlertFindPersonsAndNbServiceTest {
         Firestation firestation1 = new Firestation();
         firestation1.setAddress("cde");
         firestations.add(firestation1);
-        when(firestationRepository.findById(3))
+        when(firestationRepository.findByStationNumber(3))
                 .thenReturn(firestations);
 
         List<Person> persons = new ArrayList<>();
