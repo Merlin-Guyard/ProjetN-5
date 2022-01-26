@@ -3,6 +3,7 @@ package com.mg.warning.medicalRecord;
 
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.medicalRecord.MedicalRecord;
+import com.mg.warning.person.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -16,6 +17,17 @@ public class MedicalRecordRepository {
     //GET
     public List<MedicalRecord> findAll() {
         return medicalRecordList;
+    }
+
+    //GET BY FIRSTNAME & LASTNAME
+    public List<MedicalRecord> findByFirstAndLastName(String firstname, String lastname) {
+        List<MedicalRecord> result = new ArrayList<>();
+        for (MedicalRecord medicalRecord : medicalRecordList) {
+            if(medicalRecord.getFirstName().equals(firstname) && medicalRecord.getLastName().equals(lastname)) {
+                result.add(medicalRecord);
+            }
+        }
+        return result;
     }
 
     //PUT

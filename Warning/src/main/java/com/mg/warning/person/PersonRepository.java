@@ -17,6 +17,17 @@ public class PersonRepository {
         return personsList;
     }
 
+    //GET BY FIRSTNAME & LASTNAME
+    public List<Person> findByFirstAndLastName(String firstname, String lastname) {
+        List<Person> result = new ArrayList<>();
+        for (Person person : personsList) {
+            if(person.getFirstName().equals(firstname) && person.getLastName().equals(lastname)) {
+                result.add(person);
+            }
+        }
+        return result;
+    }
+
     //PUT
     public void update(Person person) {
         int index = 0;
