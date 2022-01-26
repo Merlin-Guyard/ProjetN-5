@@ -3,6 +3,8 @@ package com.mg.warning.alert;
 
 import com.mg.warning.alert.emailAlert.EmailAlertDTO;
 import com.mg.warning.alert.emailAlert.EmailAlertService;
+import com.mg.warning.alert.fireAlert.FireAlertDTO;
+import com.mg.warning.alert.fireAlert.FireAlertService;
 import com.mg.warning.alert.personInfoAlert.PersonInfoAlertDTO;
 import com.mg.warning.alert.personInfoAlert.PersonInfoAlertService;
 import com.mg.warning.alert.phoneAlert.PhoneAlertDTO;
@@ -29,10 +31,13 @@ public class AlertController {
     private ChildAlertService childAlertService;
 
     @Autowired
-    private PersonInfoAlertService personInfoAlertService;
+    private PhoneAlertService phoneAlertService;
 
     @Autowired
-    private PhoneAlertService phoneService;
+    private FireAlertService fireAlertService;
+
+    @Autowired
+    private PersonInfoAlertService personInfoAlertService;
 
     @Autowired
     private EmailAlertService emailService;
@@ -49,14 +54,14 @@ public class AlertController {
 
     @GetMapping(value = "/phoneAlert")
     public List<PhoneAlertDTO> getAllPhone(@RequestParam("firestation") int stationNumber) {
-        return phoneService.getPhoneDTO(stationNumber);
+        return phoneAlertService.getPhoneDTO(stationNumber);
     }
 
-//    @GetMapping(value = "/fire")
-//    public List<PhoneAlertDTO> getAllFire(@RequestParam("firestation") int stationNumber) {
-//        return phoneService.getPhoneDTO(stationNumber);
-//    }
-//
+    @GetMapping(value = "/fire")
+    public FireAlertDTO getAllFire(@RequestParam("address") String address) {
+        return fireAlertService.getFireDTO(address);
+    }
+
 //    @GetMapping(value = "/flood/stations")
 //    public List<PhoneAlertDTO> getAllFlood(@RequestParam("firestation") int stationNumber) {
 //        return phoneService.getPhoneDTO(stationNumber);

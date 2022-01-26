@@ -15,6 +15,28 @@ public class FirestationRepository {
         return firestationList;
     }
 
+    //GET BY ID
+    public List<Firestation> findByStationNumber(int stationNumber) {
+        List<Firestation> result = new ArrayList<>();
+        for(Firestation firestation: firestationList)  {
+            if(firestation.getStation() == stationNumber) {
+                result.add(firestation);
+            }
+        }
+        return result;
+    }
+
+    //GET BY ADDRESS
+    public List<Firestation> findByAddress(String address) {
+        List<Firestation> result = new ArrayList<>();
+        for(Firestation firestation: firestationList)  {
+            if(firestation.getAddress().equals(address)) {
+                result.add(firestation);
+            }
+        }
+        return result;
+    }
+
     //PUT
     public void update(Firestation firestation) {
         int index = 0;
@@ -37,14 +59,5 @@ public class FirestationRepository {
         firestationList.removeIf(firestation -> firestation.getAddress().equals(address) && firestation.getStation() == station);
     }
 
-    //GET BY ID
-    public List<Firestation> findByStationNumber(int stationNumber) {
-        List<Firestation> result = new ArrayList<>();
-        for(Firestation firestation: firestationList)  {
-            if(firestation.getStation() == stationNumber) {
-                result.add(firestation);
-            }
-        }
-        return result;
-    }
+
 }
