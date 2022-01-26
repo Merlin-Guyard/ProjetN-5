@@ -58,7 +58,10 @@ public class ChildAlertServiceTest {
         when(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName())).thenReturn(17);
 
         ChildrenAlertWithFamilyDTO result = service.getChildrenWithFamilyDTO("Auvers");
-        assertThat(result.getChildren()).isEqualTo("Tom");
+        List<ChildrenAlertDTO> result2 = result.getChildren();
+        ChildrenAlertDTO result3 = result2.get(0);
+
+        assertThat(result3.getFirstname()).isEqualTo("Tom");
 
     }
 }
