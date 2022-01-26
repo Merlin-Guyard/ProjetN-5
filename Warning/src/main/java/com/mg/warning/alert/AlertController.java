@@ -62,10 +62,10 @@ public class AlertController {
         return fireAlertService.getFireDTO(address);
     }
 
-//    @GetMapping(value = "/flood/stations")
-//    public List<PhoneAlertDTO> getAllFlood(@RequestParam("firestation") int stationNumber) {
-//        return phoneService.getPhoneDTO(stationNumber);
-//    }
+    @GetMapping(value = "/flood/stations")
+    public List<PhoneAlertDTO> getAllFlood(@RequestParam("stations") int stationNumber) {
+        return phoneAlertService.getPhoneDTO(stationNumber);
+    }
 
     @GetMapping(value = "/personInfo")
     public List<PersonInfoAlertDTO> getAllPersonInfo(@RequestParam("firstName") String firstname, @RequestParam("lastName") String lastname) {
