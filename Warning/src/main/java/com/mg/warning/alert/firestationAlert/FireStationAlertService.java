@@ -1,4 +1,4 @@
-package com.mg.warning.alert.firestation;
+package com.mg.warning.alert.firestationAlert;
 
 import com.mg.warning.alert.AlertService;
 import com.mg.warning.firestation.Firestation;
@@ -10,8 +10,6 @@ import com.mg.warning.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 

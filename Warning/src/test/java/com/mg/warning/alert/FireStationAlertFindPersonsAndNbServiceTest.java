@@ -1,7 +1,7 @@
 package com.mg.warning.alert;
 
-import com.mg.warning.alert.firestation.FireStationAlertService;
-import com.mg.warning.alert.firestation.FirestationAlertWithNbDTO;
+import com.mg.warning.alert.firestationAlert.FireStationAlertService;
+import com.mg.warning.alert.firestationAlert.FirestationAlertWithNbDTO;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;

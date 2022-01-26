@@ -1,4 +1,4 @@
-package com.mg.warning.alert.children;
+package com.mg.warning.alert.childrenAlert;
 
 
 import com.mg.warning.alert.AlertService;
@@ -25,11 +25,11 @@ public class ChildAlertService {
     @Autowired
     private AlertService alertService;
 
-    public ChildrenWithFamilyAlertDTO getChildrenWithFamilyDTO(String address) {
+    public ChildrenAlertWithFamilyDTO getChildrenWithFamilyDTO(String address) {
 
         List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
         List<Person> persons = personRepository.findAll();
-        ChildrenWithFamilyAlertDTO dtoChildrenAndFamily = new ChildrenWithFamilyAlertDTO();
+        ChildrenAlertWithFamilyDTO dtoChildrenAndFamily = new ChildrenAlertWithFamilyDTO();
         ChildrenAlertDTO dtoChildren = new ChildrenAlertDTO();
         List<ChildrenAlertDTO> dtoChildrenList = new ArrayList<>();
         FamilyAlertDTO dtoFamily = new FamilyAlertDTO();

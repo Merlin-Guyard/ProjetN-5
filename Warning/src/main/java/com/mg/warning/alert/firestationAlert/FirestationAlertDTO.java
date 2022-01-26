@@ -1,9 +1,4 @@
-package com.mg.warning.alert.firestation;
-
-import com.mg.warning.person.Person;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.mg.warning.alert.firestationAlert;
 
 public class FirestationAlertDTO {
 

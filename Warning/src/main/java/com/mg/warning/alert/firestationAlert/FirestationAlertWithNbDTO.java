@@ -1,4 +1,4 @@
-package com.mg.warning.alert.firestation;
+package com.mg.warning.alert.firestationAlert;
 
 import java.util.ArrayList;
 import java.util.List;

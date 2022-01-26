@@ -1,9 +1,9 @@
-package com.mg.warning.alert.children;
+package com.mg.warning.alert.childrenAlert;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChildrenWithFamilyAlertDTO {
+public class ChildrenAlertWithFamilyDTO {
 
     private List<ChildrenAlertDTO> children = new ArrayList<>();
     private List<FamilyAlertDTO> family = new ArrayList<>();
