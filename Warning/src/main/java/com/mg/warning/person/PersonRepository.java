@@ -64,4 +64,15 @@ public class PersonRepository {
         }
         return result;
     }
+
+    //GET BY City
+    public List<Person> findByCity(String city) {
+        List<Person> result = new ArrayList<>();
+        for (Person person : personsList) {
+            if(person.getCity().equals(city)) {
+                result.add(person);
+            }
+        }
+        return result;
+    }
 }

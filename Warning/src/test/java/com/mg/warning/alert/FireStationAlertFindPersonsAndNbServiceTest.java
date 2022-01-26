@@ -1,6 +1,6 @@
 package com.mg.warning.alert;
 
-import com.mg.warning.alert.firestation.FireStationAlertFindPersonsAndNbService;
+import com.mg.warning.alert.firestation.FireStationAlertService;
 import com.mg.warning.alert.firestation.FirestationAlertWithNbDTO;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
@@ -34,7 +34,7 @@ public class FireStationAlertFindPersonsAndNbServiceTest {
     private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
 
     @InjectMocks
-    private FireStationAlertFindPersonsAndNbService service = new FireStationAlertFindPersonsAndNbService();
+    private FireStationAlertService service = new FireStationAlertService();
 
     @Test
     public void test() {

@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @Component
-public class ChildAlertFindChildrenAndFamilyService {
+public class ChildAlertService {
 
     @Autowired
     private PersonRepository personRepository;

@@ -1,11 +1,13 @@
 package com.mg.warning.alert;
 
 
+import com.mg.warning.alert.emailAlert.EmailAlertDTO;
+import com.mg.warning.alert.emailAlert.EmailAlertService;
 import com.mg.warning.alert.phoneAlert.PhoneAlertDTO;
-import com.mg.warning.alert.phoneAlert.PhoneService;
-import com.mg.warning.alert.children.ChildAlertFindChildrenAndFamilyService;
+import com.mg.warning.alert.phoneAlert.PhoneAlertService;
+import com.mg.warning.alert.children.ChildAlertService;
 import com.mg.warning.alert.children.ChildrenWithFamilyAlertDTO;
-import com.mg.warning.alert.firestation.FireStationAlertFindPersonsAndNbService;
+import com.mg.warning.alert.firestation.FireStationAlertService;
 import com.mg.warning.alert.firestation.FirestationAlertWithNbDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,26 +21,34 @@ import java.util.List;
 public class AlertController {
 
     @Autowired
-    private FireStationAlertFindPersonsAndNbService fireStationAlertFindPersonsAndNbService;
+    private FireStationAlertService fireStationAlertService;
 
     @Autowired
-    private ChildAlertFindChildrenAndFamilyService childAlertFindChildrenAndFamilyService;
+    private ChildAlertService childAlertService;
 
     @Autowired
-    private PhoneService phoneService;
+    private PhoneAlertService phoneService;
+
+    @Autowired
+    private EmailAlertService emailService;
 
     @GetMapping(value = "/firestation")
     public FirestationAlertWithNbDTO getAllFirestation(@RequestParam("stationNumber") int stationNumber) {
-        return fireStationAlertFindPersonsAndNbService.getFirestationAlertDTOWithSum(stationNumber);
+        return fireStationAlertService.getFirestationAlertDTOWithSum(stationNumber);
     }
 
     @GetMapping(value = "/childAlert")
     public ChildrenWithFamilyAlertDTO getAllChildrenAndFamily(@RequestParam("address") String address) {
-        return childAlertFindChildrenAndFamilyService.getChildrenWithFamilyDTO(address);
+        return childAlertService.getChildrenWithFamilyDTO(address);
     }
 
     @GetMapping(value = "/phoneAlert")
     public List<PhoneAlertDTO> getAllPhone(@RequestParam("firestation") int stationNumber) {
         return phoneService.getPhoneDTO(stationNumber);
+    }
+
+    @GetMapping(value = "/communityEmail")
+    public List<EmailAlertDTO> getAllEmail(@RequestParam("city") String city) {
+        return emailService.getEmailDTO(city);
     }
 }

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class FireStationAlertFindPersonsAndNbService {
+public class FireStationAlertService {
 
     @Autowired
     private FirestationRepository firestationRepository;

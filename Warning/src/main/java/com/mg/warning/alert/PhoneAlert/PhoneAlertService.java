@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @Component
-public class PhoneService {
+public class PhoneAlertService {
 
     @Autowired
     private FirestationRepository firestationRepository;
