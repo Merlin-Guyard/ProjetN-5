@@ -1,5 +1,6 @@
 package com.mg.warning.alert.firestation;
 
+import com.mg.warning.alert.AlertService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
@@ -26,18 +27,8 @@ public class FireStationAlertFindPersonsAndNbService {
     @Autowired
     private MedicalRecordRepository medicalRecordRepository;
 
-    public void setFirestationRepository(FirestationRepository firestationRepository) {
-        this.firestationRepository = firestationRepository;
-    }
-
-    public void setPersonRepository(PersonRepository personRepository) {
-        this.personRepository = personRepository;
-    }
-
-    public void setMedicalRecordRepository(MedicalRecordRepository medicalRecordRepository) {
-        this.medicalRecordRepository = medicalRecordRepository;
-    }
-
+    @Autowired
+    private AlertService alertService;
 
     public FirestationAlertWithNbDTO getFirestationAlertDTOWithSum(int stationNumber){
 
@@ -70,16 +61,11 @@ public class FireStationAlertFindPersonsAndNbService {
             medicalRecords.add(medicalRecordRepository.findByName(person.getFirstName(), person.getLastName()));
         }
 
-        //Check if minor or adult
-        //TODO make into service with enum
-        LocalDate dateFrom18YearsAgo = LocalDate.now().minusYears(18);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        LocalDate personAge;
+        //Check if minor or major using age
         for(MedicalRecord medicalRecord: medicalRecords)  {
-            personAge = LocalDate.parse(medicalRecord.getBirthdate(), formatter);
-            if(personAge.isBefore(dateFrom18YearsAgo)){
+            if (alertService.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()) >=18){
                 adult++;
-            }else{
+            } else if (alertService.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()) <18){
                 children++;
             }
         }

@@ -1,15 +1,15 @@
-package com.mg.warning.alert;
+package com.mg.warning.alert.firestation;
 
-import com.mg.warning.alert.firestation.FireStationAlertFindPersonsAndNbService;
-import com.mg.warning.alert.firestation.FirestationAlertWithNbDTO;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,29 +18,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class AlertControllerTest {
 
+@SpringBootTest
+public class FireStationAlertFindPersonsAndNbServiceTest {
 
+    @Mock
     private FirestationRepository firestationRepository = mock(FirestationRepository.class);
+
+    @Mock
     private PersonRepository personRepository = mock(PersonRepository.class);
+
+    @Mock
     private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
 
-    private FireStationAlertFindPersonsAndNbService controller = new FireStationAlertFindPersonsAndNbService();
-
-    @BeforeEach
-    public void setUp() throws Exception {
-        controller.setFirestationRepository(firestationRepository);
-        controller.setPersonRepository(personRepository);
-        controller.setMedicalRecordRepository(medicalRecordRepository);
-    }
+    @InjectMocks
+    private FireStationAlertFindPersonsAndNbService service = new FireStationAlertFindPersonsAndNbService();
 
     @Test
     public void test() {
-
-        AlertController alertController = new AlertController();
         when(firestationRepository.findById(3))
                 .thenReturn(new ArrayList<>());
-        FirestationAlertWithNbDTO result = alertController.getAllFirestation(3);
+        FirestationAlertWithNbDTO result = service.getFirestationAlertDTOWithSum(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(0);
     }
@@ -48,8 +46,6 @@ public class AlertControllerTest {
 
     @Test
     public void test2() {
-
-        AlertController alertController = new AlertController();
         List<Firestation> firestations = new ArrayList<>();
         Firestation firestation = new Firestation();
         firestation.setAddress("abc");
@@ -72,19 +68,15 @@ public class AlertControllerTest {
         when(medicalRecordRepository.findByName("AAA", "BBB"))
                 .thenReturn(medicalRecord);
 
-        FirestationAlertWithNbDTO result = alertController.getAllFirestation(3);
+        FirestationAlertWithNbDTO result = service.getFirestationAlertDTOWithSum(3);
         assertThat(result.getNbAdults()).isEqualTo(1);
         assertThat(result.getNbChildrens()).isEqualTo(0);
 
     }
 
 
-
-
     @Test
     public void test3() {
-
-        AlertController alertController = new AlertController();
         List<Firestation> firestations = new ArrayList<>();
         Firestation firestation = new Firestation();
         firestation.setAddress("abc");
@@ -107,20 +99,15 @@ public class AlertControllerTest {
         when(medicalRecordRepository.findByName("AAA", "BBB"))
                 .thenReturn(medicalRecord);
 
-        FirestationAlertWithNbDTO result = alertController.getAllFirestation(3);
+        FirestationAlertWithNbDTO result = service.getFirestationAlertDTOWithSum(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(1);
 
     }
 
 
-
-
-
     @Test
     public void test4() {
-
-        AlertController alertController = new AlertController();
         List<Firestation> firestations = new ArrayList<>();
         Firestation firestation = new Firestation();
         firestation.setAddress("abc");
@@ -161,11 +148,9 @@ public class AlertControllerTest {
         when(medicalRecordRepository.findByName("ZZZ", "YYY"))
                 .thenReturn(medicalRecord2);
 
-        FirestationAlertWithNbDTO result = alertController.getAllFirestation(3);
+        FirestationAlertWithNbDTO result = service.getFirestationAlertDTOWithSum(3);
         assertThat(result.getNbAdults()).isEqualTo(0);
         assertThat(result.getNbChildrens()).isEqualTo(2);
 
     }
-
-
 }
