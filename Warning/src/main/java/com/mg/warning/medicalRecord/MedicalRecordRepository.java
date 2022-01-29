@@ -1,9 +1,5 @@
 package com.mg.warning.medicalRecord;
 
-
-import com.mg.warning.firestation.Firestation;
-import com.mg.warning.medicalRecord.MedicalRecord;
-import com.mg.warning.person.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

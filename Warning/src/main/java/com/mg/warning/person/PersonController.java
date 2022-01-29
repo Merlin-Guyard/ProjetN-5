@@ -1,7 +1,5 @@
 package com.mg.warning.person;
 
-import com.mg.warning.person.PersonRepository;
-import com.mg.warning.person.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

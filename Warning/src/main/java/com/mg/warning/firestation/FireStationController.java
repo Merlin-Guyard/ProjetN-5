@@ -1,7 +1,5 @@
 package com.mg.warning.firestation;
 
-import com.mg.warning.firestation.FirestationRepository;
-import com.mg.warning.firestation.Firestation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

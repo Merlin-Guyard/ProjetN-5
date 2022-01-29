@@ -55,13 +55,15 @@ public class ChildAlertServiceTest {
         when(personRepository.findAll())
                 .thenReturn(persons);
 
-        when(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName())).thenReturn(17);
+        when(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
+                .thenReturn(17);
 
         ChildrenAlertWithFamilyDTO result = service.getChildrenWithFamilyDTO("Auvers");
-        List<ChildrenAlertDTO> result2 = result.getChildren();
-        ChildrenAlertDTO result3 = result2.get(0);
+        List<ChildrenAlertDTO> resultChildrenlist = result.getChildren();
+        ChildrenAlertDTO resultChildren = resultChildrenlist.get(0);
 
-        assertThat(result3.getFirstname()).isEqualTo("Tom");
+        assertThat(resultChildren.getFirstname()).isEqualTo("Tom");
+        assertThat(resultChildren.getAge()).isEqualTo(17);
 
     }
 }

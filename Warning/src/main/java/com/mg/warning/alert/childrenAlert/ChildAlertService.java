@@ -30,9 +30,8 @@ public class ChildAlertService {
         List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
         List<Person> persons = personRepository.findAll();
         ChildrenAlertWithFamilyDTO dtoChildrenAndFamily = new ChildrenAlertWithFamilyDTO();
-        ChildrenAlertDTO dtoChildren = new ChildrenAlertDTO();
         List<ChildrenAlertDTO> dtoChildrenList = new ArrayList<>();
-        FamilyAlertDTO dtoFamily = new FamilyAlertDTO();
+
         List<FamilyAlertDTO> dtoFamilyList = new ArrayList<>();
         int personAge;
 
@@ -42,10 +41,12 @@ public class ChildAlertService {
                     personAge = alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName());
 
                     if (personAge >= 18) {
+                        FamilyAlertDTO dtoFamily = new FamilyAlertDTO();
                         dtoFamily.setFirstname(person.getFirstName());
                         dtoFamily.setLastname(person.getLastName());
                         dtoFamilyList.add(dtoFamily);
                     } else {
+                        ChildrenAlertDTO dtoChildren = new ChildrenAlertDTO();
                         dtoChildren.setFirstname(person.getFirstName());
                         dtoChildren.setLastname(person.getLastName());
                         dtoChildren.setAge(personAge);

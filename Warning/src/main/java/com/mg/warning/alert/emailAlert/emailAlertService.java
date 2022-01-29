@@ -17,7 +17,6 @@ public class EmailAlertService {
 
     public List<EmailAlertDTO> getEmailDTO(String city) {
         List<Person> persons = new ArrayList<>();
-        EmailAlertDTO dtoEmail = new EmailAlertDTO();
         List<EmailAlertDTO> dtoEmailList = new ArrayList<>();
 
         //Get all persons from city
@@ -25,6 +24,7 @@ public class EmailAlertService {
 
         //Get only interested data
         for (Person person : persons){
+            EmailAlertDTO dtoEmail = new EmailAlertDTO();
             dtoEmail.setEmail(person.getEmail());
             dtoEmailList.add(dtoEmail);
         }

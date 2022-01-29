@@ -1,5 +1,6 @@
-package com.mg.warning.alert.phoneAlert;
+package com.mg.warning.alert.PhoneAlert;
 
+import com.mg.warning.alert.phoneAlert.PhoneAlertDTO;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.person.Person;
@@ -23,7 +24,6 @@ public class PhoneAlertService {
     public List<PhoneAlertDTO> getPhoneDTO(int stationNumber) {
         List<Firestation> fireStations = firestationRepository.findByStationNumber(stationNumber);
         List<Person> persons = new ArrayList<>();
-        PhoneAlertDTO dtoPhone = new PhoneAlertDTO();
         List<PhoneAlertDTO> dtoPhoneList = new ArrayList<>();
 
         //Get all persons from firestation's address
@@ -32,6 +32,7 @@ public class PhoneAlertService {
         }
 
         for (Person person : persons){
+            PhoneAlertDTO dtoPhone = new PhoneAlertDTO();
             dtoPhone.setPhone(person.getPhone());
             dtoPhoneList.add(dtoPhone);
         }

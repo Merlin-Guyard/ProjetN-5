@@ -1,7 +1,5 @@
 package com.mg.warning.person;
 
-
-import com.mg.warning.person.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
