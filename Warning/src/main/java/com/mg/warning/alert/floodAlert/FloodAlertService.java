@@ -28,14 +28,17 @@ public class FloodAlertService {
     @Autowired
     private AlertService alertService;
 
-    public List<FloodAlertDTO> getFlood(int stationNumber) {
+    public List<FloodAlertDTO> getFlood(int[] stationNumber) {
 
-        List<Firestation> fireStations = firestationRepository.findByStationNumber(stationNumber);
+        List<Firestation> fireStations = new ArrayList<>();
         List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
         List<Person> persons = new ArrayList<>();
         List<FloodAlertDTO> dtoFloodList = new ArrayList<>();
 
-
+        for (int i : stationNumber) {
+            fireStations.addAll(firestationRepository.findByStationNumber(i));
+        }
+        
         for (Firestation firestation : fireStations) {
             FloodAlertDTO dtoFlood = new FloodAlertDTO();
             List<FloodAlertPersonsDTO> dtoFloodPersonList = new ArrayList<>();

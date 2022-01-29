@@ -68,7 +68,7 @@ public class AlertController {
     }
 
     @GetMapping(value = "/flood/stations")
-    public List<FloodAlertDTO> getAllFlood(@RequestParam("stations") int stationNumber) {
+    public List<FloodAlertDTO> getAllFlood(@RequestParam("stations") int[] stationNumber) {
         return floodAlertService.getFlood(stationNumber);
     }
 
