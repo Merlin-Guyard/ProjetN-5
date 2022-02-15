@@ -1,20 +1,4 @@
-2022-02-15 15:39:14 [main] com.mg.warning.json.ReadJSON.readEntities()
+2022-02-15 16:36:28 [main] com.mg.warning.json.ReadJSON.readEntities()
 INFO: JSON imported successfully
-2022-02-15 15:39:14 [main] com.mg.warning.service.Initialize.saveData()
+2022-02-15 16:36:28 [main] com.mg.warning.service.Initialize.saveData()
 INFO: Entities written successfully
-2022-02-15 15:39:52 [http-nio-8080-exec-1] com.mg.warning.alert.AlertController.getAllFirestation()
-INFO: /firestation?stationNumber=2 firestation alert called
-2022-02-15 15:39:52 [http-nio-8080-exec-1] com.mg.warning.alert.AlertService.getAgeFromMedicalRecords()
-INFO: getAgeFromMedicalRecords for Jonanathan, Marrack executed successfully
-2022-02-15 15:39:52 [http-nio-8080-exec-1] com.mg.warning.alert.AlertService.getAgeFromMedicalRecords()
-INFO: getAgeFromMedicalRecords for Sophia, Zemicks executed successfully
-2022-02-15 15:39:52 [http-nio-8080-exec-1] com.mg.warning.alert.AlertService.getAgeFromMedicalRecords()
-INFO: getAgeFromMedicalRecords for Warren, Zemicks executed successfully
-2022-02-15 15:39:52 [http-nio-8080-exec-1] com.mg.warning.alert.AlertService.getAgeFromMedicalRecords()
-INFO: getAgeFromMedicalRecords for Zach, Zemicks executed successfully
-2022-02-15 15:39:52 [http-nio-8080-exec-1] com.mg.warning.alert.AlertService.getAgeFromMedicalRecords()
-INFO: getAgeFromMedicalRecords for Zach, Zemicks executed successfully
-2022-02-15 15:39:52 [http-nio-8080-exec-1] com.mg.warning.alert.AlertService.getAgeFromMedicalRecords()
-INFO: getAgeFromMedicalRecords for Eric, Cadigan executed successfully
-2022-02-15 15:39:52 [http-nio-8080-exec-1] com.mg.warning.alert.firestationAlert.FireStationAlertService.getFirestationAlertDTOWithSum()
-INFO: getFirestationAlertDTOWithSum executed successfully
