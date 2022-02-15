@@ -9,6 +9,7 @@ import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class FloodAlertService {
     @Autowired
     private AlertService alertService;
 
-    public List<FloodAlertDTO> getFlood(int[] stationNumber) {
+    public List<FloodAlertDTO> getFloodDTO(int[] stationNumber) {
 
         List<Firestation> fireStations = new ArrayList<>();
         List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
@@ -64,7 +65,7 @@ public class FloodAlertService {
             persons.clear();
         }
 
-
+        Logger.info("getFloodDTO executed successfully");
         return dtoFloodList;
     }
 

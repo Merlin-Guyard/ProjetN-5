@@ -1,12 +1,12 @@
 package com.mg.warning.alert.PhoneAlert;
 
-import com.mg.warning.alert.phoneAlert.PhoneAlertDTO;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +37,7 @@ public class PhoneAlertService {
             dtoPhoneList.add(dtoPhone);
         }
 
+        Logger.info("getPersonInfoDTO executed successfully");
         return dtoPhoneList;
     }
 }

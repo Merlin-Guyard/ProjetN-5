@@ -9,6 +9,7 @@ import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +63,7 @@ public class FireAlertService {
         dtoFire.setFireAlertPersonsDTO(dtoFirePersonList);
         dtoFire.setFireAlertStationDTO(dtoFireStationList);
 
+        Logger.info("getFireDTO executed successfully");
         return dtoFire;
     }
 }
