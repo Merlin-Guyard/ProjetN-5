@@ -7,15 +7,14 @@ import com.mg.warning.person.PersonRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
+import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@SpringBootTest
 class EmailAlertServiceTest {
 
     @Mock
@@ -29,21 +28,15 @@ class EmailAlertServiceTest {
         List<Person> persons = new ArrayList<>();
         Person person = new Person();
 
-        person.setFirstName("Bobby");
-        person.setLastName("Dupont");
-        person.setAddress("TestRoad");
         person.setCity("TestCity");
-        person.setZip(12345);
-        person.setPhone("06 01 23 45 67");
         person.setEmail("Test@email.com");
-
         persons.add(person);
-        when(personRepository.findByCity("TestCity"))
+        when(personRepository.findByCity(person.getCity()))
                 .thenReturn(persons);
 
-        List<EmailAlertDTO> resultList =  service.getEmailDTO("TestCity");
+        List<EmailAlertDTO> resultList =  service.getEmailDTO(person.getCity());
         EmailAlertDTO result = resultList.get(0);
 
-        assertThat(result.getEmail()).isEqualTo("Test@email.com");
+        assertThat(result.getEmail()).isEqualTo(person.getEmail());
     }
 }

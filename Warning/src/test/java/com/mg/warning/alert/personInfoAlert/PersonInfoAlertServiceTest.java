@@ -11,6 +11,7 @@ import com.mg.warning.person.PersonRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+
+@SpringBootTest
 class PersonInfoAlertServiceTest {
 
     @Mock
@@ -43,32 +46,22 @@ class PersonInfoAlertServiceTest {
 
         person.setFirstName("Bobby");
         person.setLastName("Dupont");
-        person.setAddress("TestRoad");
-        person.setCity("TestCity");
-        person.setZip(12345);
-        person.setPhone("06 01 23 45 67");
-        person.setEmail("Test@email.com");
-
-        medicalRecord.setFirstName("Bobby");
-        medicalRecord.setLastName("Dupont");
-        medicalRecord.setBirthdate("03/06/1988");
-
         persons.add(person);
-        medicalRecords.add(medicalRecord);
-
         when(personRepository.findByFirstAndLastName(person.getFirstName(), person.getLastName()))
                 .thenReturn(persons);
 
+        medicalRecord.setFirstName("Bobby");
+        medicalRecord.setLastName("Dupont");
+        medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findByFirstAndLastName(medicalRecord.getFirstName(), medicalRecord.getLastName()))
                 .thenReturn(medicalRecords);
-
         when(alertService.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()))
                 .thenReturn(34);
 
         List<PersonInfoAlertDTO> resultList = service.getPersonInfoDTO(person.getFirstName(), person.getLastName());
         PersonInfoAlertDTO result = resultList.get(0);
 
-        assertThat(result.getLastName()).isEqualTo(person.getFirstName());
+        assertThat(result.getLastName()).isEqualTo(person.getLastName());
         assertThat(result.getAge()).isEqualTo(34);
     }
 }

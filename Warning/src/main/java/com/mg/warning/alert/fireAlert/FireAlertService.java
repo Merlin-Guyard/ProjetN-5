@@ -33,8 +33,8 @@ public class FireAlertService {
 
 
         List<Person> persons = new ArrayList<>(personRepository.findByAddress(address));
-        List<Firestation> firestations = new ArrayList<>(firestationRepository.findByAddress(address));
         List<MedicalRecord> medicalRecords = new ArrayList<>(medicalRecordRepository.findAll());
+        List<Firestation> firestations = new ArrayList<>(firestationRepository.findByAddress(address));
         List<FireAlertPersonDTO> dtoFirePersonList = new ArrayList<>();
         List<FireAlertStationDTO> dtoFireStationList = new ArrayList<>();
         FireAlertDTO dtoFire = new FireAlertDTO();

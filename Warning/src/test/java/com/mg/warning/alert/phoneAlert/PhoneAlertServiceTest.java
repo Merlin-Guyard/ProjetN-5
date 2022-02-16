@@ -11,6 +11,7 @@ import com.mg.warning.person.PersonRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+
+@SpringBootTest
 class PhoneAlertServiceTest {
 
     @Mock
@@ -38,30 +41,21 @@ class PhoneAlertServiceTest {
         List<Firestation> firestations = new ArrayList<>();
         Firestation firestation = new Firestation();
 
-        person.setFirstName("Bobby");
-        person.setLastName("Dupont");
-        person.setAddress("TestRoad");
-        person.setCity("TestCity");
-        person.setZip(12345);
-        person.setPhone("06 01 23 45 67");
-        person.setEmail("Test@email.com");
-
-        firestation.setAddress("TestCity");
+        firestation.setAddress("TestRoad");
         firestation.setStation(2);
-
-        persons.add(person);
         firestations.add(firestation);
-
-        when(firestationRepository.findByStationNumber(2))
+        when(firestationRepository.findByStationNumber(firestation.getStation()))
                 .thenReturn(firestations);
 
+        person.setAddress("TestRoad");
+        person.setPhone("06 01 23 45 67");
+        persons.add(person);
         when(personRepository.findByAddress(firestation.getAddress()))
                 .thenReturn(persons);
 
-
-        List<PhoneAlertDTO> resultList =  service.getPhoneDTO(2);
+        List<PhoneAlertDTO> resultList =  service.getPhoneDTO(firestation.getStation());
         PhoneAlertDTO result = resultList.get(0);
 
-        assertThat(result.getPhone()).isEqualTo("06 01 23 45 67");
+        assertThat(result.getPhone()).isEqualTo(person.getPhone());
     }
 }

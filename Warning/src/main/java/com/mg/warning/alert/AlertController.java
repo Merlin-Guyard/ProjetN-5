@@ -52,7 +52,6 @@ public class AlertController {
     @GetMapping(value = "/firestation")
     public FirestationAlertWithNbDTO getAllFirestation(@RequestParam("stationNumber") int stationNumber) {
         Logger.info("/firestation?stationNumber={} firestation alert called", stationNumber);
-
         return fireStationAlertService.getFirestationAlertDTOWithSum(stationNumber);
     }
 

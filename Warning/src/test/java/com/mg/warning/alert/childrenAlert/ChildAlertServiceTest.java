@@ -34,36 +34,33 @@ public class ChildAlertServiceTest {
 
     @Test
     void Test1() {
-
         List<MedicalRecord> medicalRecords = new ArrayList<>();
         MedicalRecord medicalRecord = new MedicalRecord();
         List<Person> persons = new ArrayList<>();
         Person person = new Person();
 
 
-        medicalRecord.setFirstName("Tom");
-        medicalRecord.setLastName("Sawyer");
+        medicalRecord.setFirstName("Bobby");
+        medicalRecord.setLastName("Dupont");
         medicalRecord.setBirthdate("03/06/2005");
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findAll())
                 .thenReturn(medicalRecords);
 
-        person.setFirstName("Tom");
-        person.setLastName("Sawyer");
-        person.setAddress("Auvers");
+        person.setFirstName("Bobby");
+        person.setLastName("Dupont");
+        person.setAddress("TestRoad");
         persons.add(person);
         when(personRepository.findAll())
                 .thenReturn(persons);
-
         when(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
                 .thenReturn(17);
 
-        ChildrenAlertWithFamilyDTO result = service.getChildrenWithFamilyDTO("Auvers");
+        ChildrenAlertWithFamilyDTO result = service.getChildrenWithFamilyDTO(person.getAddress());
         List<ChildrenAlertDTO> resultChildrenlist = result.getChildren();
         ChildrenAlertDTO resultChildren = resultChildrenlist.get(0);
 
-        assertThat(resultChildren.getFirstname()).isEqualTo("Tom");
+        assertThat(resultChildren.getFirstname()).isEqualTo(person.getFirstName());
         assertThat(resultChildren.getAge()).isEqualTo(17);
-
     }
 }
