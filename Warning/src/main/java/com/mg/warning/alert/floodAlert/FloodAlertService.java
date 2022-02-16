@@ -1,15 +1,17 @@
 package com.mg.warning.alert.floodAlert;
 
 import com.mg.warning.alert.AlertService;
+import com.mg.warning.alert.firestationAlert.FireStationAlertService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,8 @@ public class FloodAlertService {
 
     @Autowired
     private AlertService alertService;
+
+    Logger logger = LoggerFactory.getLogger(FloodAlertService.class);
 
     public List<FloodAlertDTO> getFloodDTO(int[] stationNumber) {
 
@@ -65,7 +69,7 @@ public class FloodAlertService {
             persons.clear();
         }
 
-        Logger.info("getFloodDTO executed successfully");
+        logger.info("getFloodDTO executed successfully");
         return dtoFloodList;
     }
 

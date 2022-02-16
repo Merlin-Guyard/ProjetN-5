@@ -2,9 +2,10 @@ package com.mg.warning.alert.emailAlert;
 
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
 
 @Component
 public class EmailAlertService {
+
+    Logger logger = LoggerFactory.getLogger(EmailAlertService.class);
 
     @Autowired
     private PersonRepository personRepository;
@@ -30,7 +33,7 @@ public class EmailAlertService {
             dtoEmailList.add(dtoEmail);
         }
 
-        Logger.info("getEmailDTO executed successfully");
+        logger.info("getEmailDTO executed successfully");
         return dtoEmailList;
     }
 }

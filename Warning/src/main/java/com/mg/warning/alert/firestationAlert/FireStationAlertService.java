@@ -7,9 +7,10 @@ import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,8 @@ public class FireStationAlertService {
 
     @Autowired
     private AlertService alertService;
+
+    Logger logger = LoggerFactory.getLogger(FireStationAlertService.class);
 
     public FirestationAlertWithNbDTO getFirestationAlertDTOWithSum(int stationNumber){
 
@@ -73,7 +76,7 @@ public class FireStationAlertService {
         dtoWithSum.setNbAdults(adult);
         dtoWithSum.setNbChildrens(children);
 
-        Logger.info("getFirestationAlertDTOWithSum executed successfully");
+        logger.info("getFirestationAlertDTOWithSum executed successfully");
         return dtoWithSum;
     }
 }

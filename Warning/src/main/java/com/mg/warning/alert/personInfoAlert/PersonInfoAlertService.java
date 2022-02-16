@@ -5,9 +5,10 @@ import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,8 @@ public class PersonInfoAlertService {
     @Autowired
     private AlertService alertService;
 
+    Logger logger = LoggerFactory.getLogger(PersonInfoAlertService.class);
+
     public List<PersonInfoAlertDTO> getPersonInfoDTO(String firstname, String lastname) {
         List<Person> persons = new ArrayList<>(personRepository.findByFirstAndLastName(firstname, lastname));
         List<MedicalRecord> medicalRecords = new ArrayList<>(medicalRecordRepository.findByFirstAndLastName(firstname, lastname));
@@ -36,8 +39,8 @@ public class PersonInfoAlertService {
             dtoPersonInfo.setLastName(person.getLastName());
             dtoPersonInfo.setAddress(person.getAddress());
             dtoPersonInfo.setEmail(person.getEmail());
-            for (MedicalRecord medicalRecord : medicalRecords){
-                if(medicalRecord.getFirstName().equals(person.getFirstName())&&medicalRecord.getLastName().equals(person.getLastName())){
+            for (MedicalRecord medicalRecord : medicalRecords) {
+                if (medicalRecord.getFirstName().equals(person.getFirstName()) && medicalRecord.getLastName().equals(person.getLastName())) {
                     dtoPersonInfo.setAge(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()));
                     dtoPersonInfo.setMedications(medicalRecord.getMedications());
                     dtoPersonInfo.setAllergies(medicalRecord.getAllergies());
@@ -46,7 +49,7 @@ public class PersonInfoAlertService {
             }
         }
 
-        Logger.info("getPersonInfoDTO executed successfully");
+        logger.info("getPersonInfoDTO executed successfully");
         return dtoPersonInfoList;
     }
 }

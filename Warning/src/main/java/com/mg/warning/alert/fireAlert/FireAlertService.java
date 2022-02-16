@@ -7,15 +7,18 @@ import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class FireAlertService {
+
+    Logger logger = LoggerFactory.getLogger(FireAlertService.class);
 
     @Autowired
     private PersonRepository personRepository;
@@ -63,7 +66,7 @@ public class FireAlertService {
         dtoFire.setFireAlertPersonsDTO(dtoFirePersonList);
         dtoFire.setFireAlertStationDTO(dtoFireStationList);
 
-        Logger.info("getFireDTO executed successfully");
+        logger.info("getFireDTO executed successfully");
         return dtoFire;
     }
 }
