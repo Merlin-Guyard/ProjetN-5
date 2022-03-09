@@ -1,6 +1,6 @@
 package com.mg.warning.alert.PhoneAlert;
 
-public class PhoneAlertDTO {
+public class PhoneDTO {
 
     private String phone;
 

@@ -1,8 +1,8 @@
 package com.mg.warning.alert;
 
 
-import com.mg.warning.alert.PhoneAlert.PhoneAlertDTO;
-import com.mg.warning.alert.PhoneAlert.PhoneAlertService;
+import com.mg.warning.alert.PhoneAlert.PhoneDTO;
+import com.mg.warning.alert.PhoneAlert.PhoneService;
 import com.mg.warning.alert.email.EmailDTO;
 import com.mg.warning.alert.email.EmailService;
 import com.mg.warning.alert.fire.FireDTO;
@@ -38,7 +38,7 @@ public class AlertController {
     private ChildAlertService childAlertService;
 
     @Autowired
-    private PhoneAlertService phoneAlertService;
+    private PhoneService phoneAlertService;
 
     @Autowired
     private FireService fireAlertService;
@@ -65,7 +65,7 @@ public class AlertController {
     }
 
     @GetMapping(value = "/phoneAlert")
-    public List<PhoneAlertDTO> getAllPhone(@RequestParam("firestation") int stationNumber) {
+    public List<PhoneDTO> getAllPhone(@RequestParam("firestation") int stationNumber) {
         logger.info("/phoneAlert?firestation={} phone alert called", stationNumber);
         return phoneAlertService.getPhoneDTO(stationNumber);
     }

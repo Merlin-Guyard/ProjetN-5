@@ -1,7 +1,7 @@
-package com.mg.warning.alert.phoneAlert;
+package com.mg.warning.alert.phone;
 
-import com.mg.warning.alert.PhoneAlert.PhoneAlertDTO;
-import com.mg.warning.alert.PhoneAlert.PhoneAlertService;
+import com.mg.warning.alert.PhoneAlert.PhoneDTO;
+import com.mg.warning.alert.PhoneAlert.PhoneService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.person.Person;
@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 
 
 @SpringBootTest
-class PhoneAlertServiceTest {
+class PhoneServiceTest {
 
     @Mock
     private PersonRepository personRepository = mock(PersonRepository.class);
@@ -29,10 +29,10 @@ class PhoneAlertServiceTest {
     private FirestationRepository firestationRepository = mock((FirestationRepository.class));
 
     @InjectMocks
-    private PhoneAlertService service = new PhoneAlertService();
+    private PhoneService service = new PhoneService();
 
     @Test
-    void test1() {
+    void testPhone() {
         List<Person> persons = new ArrayList<>();
         Person person = new Person();
         List<Firestation> firestations = new ArrayList<>();
@@ -50,8 +50,8 @@ class PhoneAlertServiceTest {
         when(personRepository.findByAddress(firestation.getAddress()))
                 .thenReturn(persons);
 
-        List<PhoneAlertDTO> resultList =  service.getPhoneDTO(firestation.getStation());
-        PhoneAlertDTO result = resultList.get(0);
+        List<PhoneDTO> resultList =  service.getPhoneDTO(firestation.getStation());
+        PhoneDTO result = resultList.get(0);
 
         assertThat(result.getPhone()).isEqualTo(person.getPhone());
     }

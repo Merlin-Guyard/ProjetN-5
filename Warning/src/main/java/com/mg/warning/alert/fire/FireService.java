@@ -35,8 +35,8 @@ public class FireService {
 
         //get data
         Logger.debug("getting data");
-        List<FirePersonDTO> dtoFirePersonList = getFireAlertPersonDTOS(address);
-        List<FireFireStationDTO> dtoFireStationList = getFireAlertStationDTOS(address);
+        List<FirePersonDTO> dtoFirePersonList = getFirePersonDTOS(address);
+        List<FireFireStationDTO> dtoFireStationList = getFireStationDTOS(address);
 
         //write data
         Logger.debug("writing data");
@@ -48,7 +48,7 @@ public class FireService {
         return dtoFire;
     }
 
-    private List<FirePersonDTO> getFireAlertPersonDTOS(String address) {
+    private List<FirePersonDTO> getFirePersonDTOS(String address) {
         Logger.debug("getting persons");
         List<FirePersonDTO> dtoFirePersonList = new ArrayList<>();
         List<Person> persons = new ArrayList<>(personRepository.findByAddress(address));
@@ -70,7 +70,7 @@ public class FireService {
         return dtoFirePersonList;
     }
 
-    private List<FireFireStationDTO> getFireAlertStationDTOS(String address) {
+    private List<FireFireStationDTO> getFireStationDTOS(String address) {
         Logger.debug("getting firestations");
         List<FireFireStationDTO> dtoFireStationList = new ArrayList<>();
         List<Firestation> firestations = new ArrayList<>(firestationRepository.findByAddress(address));

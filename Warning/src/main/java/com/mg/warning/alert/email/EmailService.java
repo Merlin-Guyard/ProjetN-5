@@ -19,17 +19,17 @@ public class EmailService {
     public List<EmailDTO> getEmailDTO(String city) {
 
         //Get and write data
-        List<EmailDTO> dtoEmailList = getEmailAlertDTOS(city);
+        List<EmailDTO> dtoEmailList = getEmailDTOS(city);
 
         Logger.info("getEmailDTO executed successfully");
         return dtoEmailList;
     }
 
-    private List<EmailDTO> getEmailAlertDTOS(String city) {
+    private List<EmailDTO> getEmailDTOS(String city) {
         Logger.debug("getting and writing emails");
         List<Person> persons = new ArrayList<>(personRepository.findByCity(city));
         List<EmailDTO> dtoEmailList = new ArrayList<>();
-        for (Person person : persons){
+        for (Person person : persons) {
             EmailDTO dtoEmail = new EmailDTO();
             dtoEmail.setEmail(person.getEmail());
             dtoEmailList.add(dtoEmail);
