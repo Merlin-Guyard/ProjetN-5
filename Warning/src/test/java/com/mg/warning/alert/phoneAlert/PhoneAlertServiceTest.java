@@ -2,8 +2,6 @@ package com.mg.warning.alert.phoneAlert;
 
 import com.mg.warning.alert.PhoneAlert.PhoneAlertDTO;
 import com.mg.warning.alert.PhoneAlert.PhoneAlertService;
-import com.mg.warning.alert.emailAlert.EmailAlertDTO;
-import com.mg.warning.alert.emailAlert.EmailAlertService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.person.Person;
@@ -17,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

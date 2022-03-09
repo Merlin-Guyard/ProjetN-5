@@ -1,9 +1,6 @@
-package com.mg.warning.alert.fireAlert;
+package com.mg.warning.alert.fire;
 
 import com.mg.warning.alert.AlertService;
-import com.mg.warning.alert.PhoneAlert.PhoneAlertDTO;
-import com.mg.warning.alert.PhoneAlert.PhoneAlertService;
-import com.mg.warning.alert.childrenAlert.ChildrenAlertDTO;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
@@ -23,7 +20,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-class FireAlertServiceTest {
+class FireServiceTest {
 
     @Mock
     private PersonRepository personRepository = mock(PersonRepository.class);
@@ -38,10 +35,10 @@ class FireAlertServiceTest {
     private AlertService alertService = mock(AlertService.class);
 
     @InjectMocks
-    private FireAlertService service = new FireAlertService();
+    private FireService service = new FireService();
 
     @Test
-    void test1() {
+    void testFire() {
         List<Person> persons = new ArrayList<>();
         Person person = new Person();
         List<MedicalRecord> medicalRecords = new ArrayList<>();
@@ -71,9 +68,9 @@ class FireAlertServiceTest {
         when(firestationRepository.findByStationNumber(firestation.getStation()))
                 .thenReturn(firestations);
 
-        FireAlertDTO result =  service.getFireDTO(firestation.getAddress());
-        List<FireAlertPersonDTO> resultPersonList = result.getFireAlertPersonsDTO();
-        FireAlertPersonDTO resultPerson = resultPersonList.get(0);
+        FireDTO result =  service.getFireDTO(firestation.getAddress());
+        List<FirePersonDTO> resultPersonList = result.getFireAlertPersonsDTO();
+        FirePersonDTO resultPerson = resultPersonList.get(0);
 
         assertThat(resultPerson.getLastName()).isEqualTo(person.getLastName());
     }

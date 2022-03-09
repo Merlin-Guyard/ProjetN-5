@@ -1,9 +1,6 @@
 package com.mg.warning.alert.floodAlert;
 
 import com.mg.warning.alert.AlertService;
-import com.mg.warning.alert.fireAlert.FireAlertDTO;
-import com.mg.warning.alert.fireAlert.FireAlertPersonDTO;
-import com.mg.warning.alert.fireAlert.FireAlertService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
@@ -19,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

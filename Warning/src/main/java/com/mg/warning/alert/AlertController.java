@@ -3,10 +3,10 @@ package com.mg.warning.alert;
 
 import com.mg.warning.alert.PhoneAlert.PhoneAlertDTO;
 import com.mg.warning.alert.PhoneAlert.PhoneAlertService;
-import com.mg.warning.alert.emailAlert.EmailAlertDTO;
-import com.mg.warning.alert.emailAlert.EmailAlertService;
-import com.mg.warning.alert.fireAlert.FireAlertDTO;
-import com.mg.warning.alert.fireAlert.FireAlertService;
+import com.mg.warning.alert.email.EmailDTO;
+import com.mg.warning.alert.email.EmailService;
+import com.mg.warning.alert.fire.FireDTO;
+import com.mg.warning.alert.fire.FireService;
 import com.mg.warning.alert.floodAlert.FloodAlertDTO;
 import com.mg.warning.alert.floodAlert.FloodAlertService;
 import com.mg.warning.alert.personInfoAlert.PersonInfoAlertDTO;
@@ -41,7 +41,7 @@ public class AlertController {
     private PhoneAlertService phoneAlertService;
 
     @Autowired
-    private FireAlertService fireAlertService;
+    private FireService fireAlertService;
 
     @Autowired
     private FloodAlertService floodAlertService;
@@ -50,7 +50,7 @@ public class AlertController {
     private PersonInfoAlertService personInfoAlertService;
 
     @Autowired
-    private EmailAlertService emailService;
+    private EmailService emailService;
 
     @GetMapping(value = "/firestation")
     public FirestationAlertWithNbDTO getAllFirestation(@RequestParam("stationNumber") int stationNumber) {
@@ -71,7 +71,7 @@ public class AlertController {
     }
 
     @GetMapping(value = "/fire")
-    public FireAlertDTO getAllFire(@RequestParam("address") String address) {
+    public FireDTO getAllFire(@RequestParam("address") String address) {
         logger.info("/fire?address={} fire alert called", address);
         return fireAlertService.getFireDTO(address);
     }
@@ -89,7 +89,7 @@ public class AlertController {
     }
 
     @GetMapping(value = "/communityEmail")
-    public List<EmailAlertDTO> getAllEmail(@RequestParam("city") String city) {
+    public List<EmailDTO> getAllEmail(@RequestParam("city") String city) {
         logger.info("/communityEmail?city={} child alert called", city);
         return emailService.getEmailDTO(city);
     }

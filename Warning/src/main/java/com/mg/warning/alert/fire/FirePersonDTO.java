@@ -1,6 +1,6 @@
-package com.mg.warning.alert.fireAlert;
+package com.mg.warning.alert.fire;
 
-public class FireAlertPersonDTO {
+public class FirePersonDTO {
 
     private String lastName;
     private String phone;

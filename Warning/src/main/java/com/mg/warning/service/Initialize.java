@@ -1,6 +1,6 @@
 package com.mg.warning.service;
 
-import com.mg.warning.alert.fireAlert.FireAlertService;
+import com.mg.warning.alert.fire.FireService;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.json.JsonModel;
 import com.mg.warning.json.ReadJSON;
@@ -18,7 +18,7 @@ import java.io.IOException;
 @Component
 public class Initialize {
 
-    Logger logger = LoggerFactory.getLogger(FireAlertService.class);
+    Logger logger = LoggerFactory.getLogger(FireService.class);
 
     @Autowired
     private ReadJSON readJSON;

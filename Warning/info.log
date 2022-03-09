@@ -4,9 +4,9 @@ INFO: JSON imported successfully
 INFO: Entities written successfully
 2022-02-16 07:04:53 [main] com.mg.warning.alert.childrenAlert.ChildAlertService.getChildrenWithFamilyDTO()
 INFO: getChildrenWithFamilyDTO executed successfully
-2022-02-16 07:04:53 [main] com.mg.warning.alert.emailAlert.EmailAlertService.getEmailDTO()
+2022-02-16 07:04:53 [main] com.mg.warning.alert.email.EmailService.getEmailDTO()
 INFO: getEmailDTO executed successfully
-2022-02-16 07:04:53 [main] com.mg.warning.alert.fireAlert.FireAlertService.getFireDTO()
+2022-02-16 07:04:53 [main] com.mg.warning.alert.fire.FireService.getFireDTO()
 INFO: getFireDTO executed successfully
 2022-02-16 07:04:53 [main] com.mg.warning.alert.firestationAlert.FireStationAlertService.getFirestationAlertDTOWithSum()
 INFO: getFirestationAlertDTOWithSum executed successfully

@@ -1,6 +1,6 @@
-package com.mg.warning.alert.emailAlert;
+package com.mg.warning.alert.email;
 
-public class EmailAlertDTO {
+public class EmailDTO {
 
     private String email;
 

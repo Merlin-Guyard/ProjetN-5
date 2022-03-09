@@ -1,4 +1,4 @@
-package com.mg.warning.alert.fireAlert;
+package com.mg.warning.alert.fire;
 
 import com.mg.warning.alert.AlertService;
 import com.mg.warning.firestation.Firestation;
@@ -7,18 +7,16 @@ import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class FireAlertService {
+public class FireService {
 
-    Logger logger = LoggerFactory.getLogger(FireAlertService.class);
 
     @Autowired
     private PersonRepository personRepository;
@@ -32,26 +30,32 @@ public class FireAlertService {
     @Autowired
     private AlertService alertService;
 
-    public FireAlertDTO getFireDTO(String address) {
-        FireAlertDTO dtoFire = new FireAlertDTO();
+    public FireDTO getFireDTO(String address) {
+        FireDTO dtoFire = new FireDTO();
 
-        List<FireAlertPersonDTO> dtoFirePersonList = getFireAlertPersonDTOS(address);
-        List<FireAlertStationDTO> dtoFireStationList = getFireAlertStationDTOS(address);
+        //get data
+        Logger.debug("getting data");
+        List<FirePersonDTO> dtoFirePersonList = getFireAlertPersonDTOS(address);
+        List<FireFireStationDTO> dtoFireStationList = getFireAlertStationDTOS(address);
 
+        //write data
+        Logger.debug("writing data");
         dtoFire.setFireAlertPersonsDTO(dtoFirePersonList);
         dtoFire.setFireAlertStationDTO(dtoFireStationList);
 
-        logger.info("getFireDTO executed successfully");
+
+        Logger.info("getFireDTO executed successfully");
         return dtoFire;
     }
 
-    private List<FireAlertPersonDTO> getFireAlertPersonDTOS(String address) {
-        List<FireAlertPersonDTO> dtoFirePersonList = new ArrayList<>();
+    private List<FirePersonDTO> getFireAlertPersonDTOS(String address) {
+        Logger.debug("getting persons");
+        List<FirePersonDTO> dtoFirePersonList = new ArrayList<>();
         List<Person> persons = new ArrayList<>(personRepository.findByAddress(address));
         List<MedicalRecord> medicalRecords = new ArrayList<>(medicalRecordRepository.findAll());
 
         for (Person person : persons) {
-            FireAlertPersonDTO dtoFirePerson = new FireAlertPersonDTO();
+            FirePersonDTO dtoFirePerson = new FirePersonDTO();
             dtoFirePerson.setLastName(person.getLastName());
             dtoFirePerson.setPhone(person.getPhone());
             for (MedicalRecord medicalRecord : medicalRecords) {
@@ -66,12 +70,13 @@ public class FireAlertService {
         return dtoFirePersonList;
     }
 
-    private List<FireAlertStationDTO> getFireAlertStationDTOS(String address) {
-        List<FireAlertStationDTO> dtoFireStationList = new ArrayList<>();
+    private List<FireFireStationDTO> getFireAlertStationDTOS(String address) {
+        Logger.debug("getting firestations");
+        List<FireFireStationDTO> dtoFireStationList = new ArrayList<>();
         List<Firestation> firestations = new ArrayList<>(firestationRepository.findByAddress(address));
 
         for (Firestation firestation : firestations) {
-            FireAlertStationDTO dtoFireStation = new FireAlertStationDTO();
+            FireFireStationDTO dtoFireStation = new FireFireStationDTO();
             dtoFireStation.setStation(firestation.getStation());
             dtoFireStationList.add(dtoFireStation);
         }

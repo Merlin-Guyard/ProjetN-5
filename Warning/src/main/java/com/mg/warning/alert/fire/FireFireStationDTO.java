@@ -1,6 +1,6 @@
-package com.mg.warning.alert.fireAlert;
+package com.mg.warning.alert.fire;
 
-public class FireAlertStationDTO {
+public class FireFireStationDTO {
 
     public int getStation() {
         return station;

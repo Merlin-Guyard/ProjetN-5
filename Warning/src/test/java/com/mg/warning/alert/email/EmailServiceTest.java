@@ -1,7 +1,5 @@
-package com.mg.warning.alert.emailAlert;
+package com.mg.warning.alert.email;
 
-import com.mg.warning.firestation.FirestationRepository;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
 import org.junit.jupiter.api.Test;
@@ -15,16 +13,16 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-class EmailAlertServiceTest {
+class EmailServiceTest {
 
     @Mock
     private PersonRepository personRepository = mock(PersonRepository.class);
 
     @InjectMocks
-    private EmailAlertService service = new EmailAlertService();
+    private EmailService service = new EmailService();
 
     @Test
-    void test1() {
+    void testEmail() {
         List<Person> persons = new ArrayList<>();
         Person person = new Person();
 
@@ -34,8 +32,8 @@ class EmailAlertServiceTest {
         when(personRepository.findByCity(person.getCity()))
                 .thenReturn(persons);
 
-        List<EmailAlertDTO> resultList =  service.getEmailDTO(person.getCity());
-        EmailAlertDTO result = resultList.get(0);
+        List<EmailDTO> resultList =  service.getEmailDTO(person.getCity());
+        EmailDTO result = resultList.get(0);
 
         assertThat(result.getEmail()).isEqualTo(person.getEmail());
     }
