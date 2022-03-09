@@ -37,7 +37,7 @@ public class FireStationAlertService {
         List<Firestation> fireStations = firestationRepository.findByStationNumber(stationNumber);
         List<Person> persons = new ArrayList<>();
 
-        List<FirestationAlertDTO> dtoFirestationList  = new ArrayList<>();
+
         FirestationAlertWithNbDTO dtoWithSum  = new FirestationAlertWithNbDTO();
         List<MedicalRecord> medicalRecords = new ArrayList<>();
         int adult = 0;
@@ -49,6 +49,7 @@ public class FireStationAlertService {
         }
 
         //Get only interested data
+        List<FirestationAlertDTO> dtoFirestationList  = new ArrayList<>();
         for (Person person : persons){
             FirestationAlertDTO dtoFirestation = new FirestationAlertDTO();
             dtoFirestation.setFirstname(person.getFirstName());
