@@ -20,8 +20,8 @@ public class AlertService {
 
         for (MedicalRecord medicalRecord : medicalRecordList) {
             if (medicalRecord.getFirstName().equals(firstname) && medicalRecord.getLastName().equals(lastname)) {
+                logger.debug("getting age for {}, {}", firstname, lastname);
                 int result = Period.between(LocalDate.parse(medicalRecord.getBirthdate(), DateTimeFormatter.ofPattern("MM/dd/yyyy")), LocalDate.now()).getYears();
-                logger.info("getAgeFromMedicalRecords for {}, {} executed successfully", firstname, lastname);
                 return result;
             }
         }

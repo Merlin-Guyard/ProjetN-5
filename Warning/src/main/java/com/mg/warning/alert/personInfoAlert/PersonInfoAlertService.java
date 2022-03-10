@@ -41,7 +41,7 @@ public class PersonInfoAlertService {
             dtoPersonInfo.setEmail(person.getEmail());
             for (MedicalRecord medicalRecord : medicalRecords) {
                 if (medicalRecord.getFirstName().equals(person.getFirstName()) && medicalRecord.getLastName().equals(person.getLastName())) {
-                    dtoPersonInfo.setAge(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()));
+                    dtoPersonInfo.setAge(medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()));
                     dtoPersonInfo.setMedications(medicalRecord.getMedications());
                     dtoPersonInfo.setAllergies(medicalRecord.getAllergies());
                 }

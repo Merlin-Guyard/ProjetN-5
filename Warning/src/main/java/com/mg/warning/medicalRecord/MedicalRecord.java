@@ -1,6 +1,12 @@
 package com.mg.warning.medicalRecord;
 
+import org.tinylog.Logger;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 
 public class MedicalRecord {
 
@@ -68,5 +74,18 @@ public class MedicalRecord {
                 ", medication=" + Arrays.toString(medications) +
                 ", allergies=" + Arrays.toString(allergies) +
                 '}';
+    }
+
+    public int getAgeFromMedicalRecords(List<MedicalRecord> medicalRecordList, String firstname, String lastname) {
+
+        for (MedicalRecord medicalRecord : medicalRecordList) {
+            if (medicalRecord.getFirstName().equals(firstname) && medicalRecord.getLastName().equals(lastname)) {
+                Logger.debug("getting age for {}, {}", firstname, lastname);
+                int result = Period.between(LocalDate.parse(medicalRecord.getBirthdate(), DateTimeFormatter.ofPattern("MM/dd/yyyy")), LocalDate.now()).getYears();
+                return result;
+            }
+        }
+        Logger.error("Can't get age from medicalRecords");
+        return -1;
     }
 }
