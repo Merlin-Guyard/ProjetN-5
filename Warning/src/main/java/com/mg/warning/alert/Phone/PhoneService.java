@@ -1,18 +1,18 @@
-package com.mg.warning.alert.PhoneAlert;
+package com.mg.warning.alert.Phone;
 
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-@Component
+@Service
 public class PhoneService {
 
     @Autowired

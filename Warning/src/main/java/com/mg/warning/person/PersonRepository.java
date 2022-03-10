@@ -42,16 +42,16 @@ public class PersonRepository {
         }
     }
 
-    //PUT V2
-    public void update2(Person person) {
-        personsList
-                .stream()
-                .filter(each -> each.equals(person))
-                .forEach(each -> {
-                    personsList.remove(each);
-                    personsList.add(person);
-                });
-    }
+//    //PUT V2
+//    public void update2(Person person) {
+//        personsList
+//                .stream()
+//                .filter(each -> each.equals(person))
+//                .forEach(each -> {
+//                    personsList.remove(each);
+//                    personsList.add(person);
+//                });
+//    }
 
     //POST
     public void save(Person persons) {

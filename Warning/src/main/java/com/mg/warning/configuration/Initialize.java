@@ -1,6 +1,5 @@
-package com.mg.warning.service;
+package com.mg.warning.configuration;
 
-import com.mg.warning.alert.fire.FireService;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.json.JsonModel;
 import com.mg.warning.json.ReadJSON;

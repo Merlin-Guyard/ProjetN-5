@@ -1,4 +1,4 @@
-package com.mg.warning.alert.childrenAlert;
+package com.mg.warning.alert.children;
 
 import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
@@ -49,8 +49,6 @@ public class ChildServiceTest {
         persons.add(person);
         when(personRepository.findAll())
                 .thenReturn(persons);
-        when(medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
-                .thenReturn(17);
 
         ChildrenWithFamilyDTO result = service.getChildrenWithFamilyDTO(person.getAddress());
         List<ChildrenDTO> resultChildrenlist = result.getChildren();

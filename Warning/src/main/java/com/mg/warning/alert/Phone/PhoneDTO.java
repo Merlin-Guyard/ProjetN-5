@@ -1,4 +1,4 @@
-package com.mg.warning.alert.PhoneAlert;
+package com.mg.warning.alert.Phone;
 
 public class PhoneDTO {
 

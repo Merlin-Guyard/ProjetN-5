@@ -30,7 +30,6 @@ class FireServiceTest {
     @Mock
     private FirestationRepository firestationRepository = mock((FirestationRepository.class));
 
-
     @InjectMocks
     private FireService service = new FireService();
 
@@ -56,8 +55,7 @@ class FireServiceTest {
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findAll())
                 .thenReturn(medicalRecords);
-        when(medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
-                .thenReturn(17);
+
 
         firestation.setAddress("TestRoad");
         firestation.setStation(2);

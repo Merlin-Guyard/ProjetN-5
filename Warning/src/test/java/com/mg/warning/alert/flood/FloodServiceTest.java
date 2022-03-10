@@ -1,4 +1,4 @@
-package com.mg.warning.alert.floodAlert;
+package com.mg.warning.alert.flood;
 
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
@@ -48,8 +48,6 @@ class FloodServiceTest {
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findAll())
                 .thenReturn(medicalRecords);
-        when(medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
-                .thenReturn(21);
 
         firestation.setAddress("TestRoad");
         firestation.setStation(2);

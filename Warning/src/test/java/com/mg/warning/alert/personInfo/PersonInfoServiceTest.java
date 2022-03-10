@@ -44,16 +44,15 @@ class PersonInfoServiceTest {
 
         medicalRecord.setFirstName("Bobby");
         medicalRecord.setLastName("Dupont");
+        medicalRecord.setBirthdate("03/06/2000");
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findByFirstAndLastName(medicalRecord.getFirstName(), medicalRecord.getLastName()))
                 .thenReturn(medicalRecords);
-        when(medicalRecord.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()))
-                .thenReturn(34);
 
         List<PersonInfoDTO> resultList = service.getPersonInfoDTO(person.getFirstName(), person.getLastName());
         PersonInfoDTO result = resultList.get(0);
 
         assertThat(result.getLastName()).isEqualTo(person.getLastName());
-        assertThat(result.getAge()).isEqualTo(34);
+        assertThat(result.getAge()).isEqualTo(22);
     }
 }

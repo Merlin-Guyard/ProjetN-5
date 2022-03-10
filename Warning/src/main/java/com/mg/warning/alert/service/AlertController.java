@@ -1,4 +1,4 @@
-package com.mg.warning.alert;
+package com.mg.warning.alert.service;
 
 
 import com.mg.warning.alert.Phone.PhoneDTO;

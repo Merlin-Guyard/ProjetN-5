@@ -1,6 +1,2 @@
-2022-03-10 10:25:18 [http-nio-8080-exec-1] com.mg.warning.alert.PhoneAlert.PhoneService.getPhoneDTO()
+2022-03-10 10:49:28 [main] com.mg.warning.alert.Phone.PhoneService.getPhoneDTO()
 INFO: getPhoneDTO executed successfully
-2022-03-10 10:26:33 [http-nio-8080-exec-5] com.mg.warning.alert.fire.FireService.getFireDTO()
-INFO: getFireDTO executed successfully
-2022-03-10 10:26:36 [http-nio-8080-exec-6] com.mg.warning.alert.fire.FireService.getFireDTO()
-INFO: getFireDTO executed successfully

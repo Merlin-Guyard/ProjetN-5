@@ -1,4 +1,4 @@
-package com.mg.warning.alert.childrenAlert;
+package com.mg.warning.alert.children;
 
 public class FamilyDTO {
 

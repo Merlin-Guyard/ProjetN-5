@@ -1,7 +1,7 @@
 package com.mg.warning.alert.phone;
 
-import com.mg.warning.alert.PhoneAlert.PhoneDTO;
-import com.mg.warning.alert.PhoneAlert.PhoneService;
+import com.mg.warning.alert.Phone.PhoneDTO;
+import com.mg.warning.alert.Phone.PhoneService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.person.Person;

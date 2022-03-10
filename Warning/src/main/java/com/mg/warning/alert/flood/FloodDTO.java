@@ -1,4 +1,4 @@
-package com.mg.warning.alert.floodAlert;
+package com.mg.warning.alert.flood;
 
 import java.util.List;
 

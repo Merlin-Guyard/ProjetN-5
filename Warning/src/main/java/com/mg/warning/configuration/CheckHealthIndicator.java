@@ -1,4 +1,4 @@
-package com.mg.warning.service;
+package com.mg.warning.configuration;
 
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;

@@ -1,4 +1,4 @@
-package com.mg.warning.service;
+package com.mg.warning.configuration;
 
 import org.springframework.boot.actuate.trace.http.HttpTraceRepository;
 import org.springframework.boot.actuate.trace.http.InMemoryHttpTraceRepository;
