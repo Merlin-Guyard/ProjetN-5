@@ -12,7 +12,7 @@ INFO: getFireDTO executed successfully
 INFO: getFirestationAlertDTOWithSum executed successfully
 2022-02-16 07:04:53 [main] com.mg.warning.alert.floodAlert.FloodAlertService.getFloodDTO()
 INFO: getFloodDTO executed successfully
-2022-02-16 07:04:53 [main] com.mg.warning.alert.personInfoAlert.PersonInfoAlertService.getPersonInfoDTO()
+2022-02-16 07:04:53 [main] com.mg.warning.alert.personInfo.PersonInfoService.getPersonInfoDTO()
 INFO: getPersonInfoDTO executed successfully
 2022-02-16 07:04:53 [main] com.mg.warning.alert.PhoneAlert.PhoneService.getPhoneDTO()
 INFO: getPersonInfoDTO executed successfully

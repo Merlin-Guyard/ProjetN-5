@@ -9,8 +9,8 @@ import com.mg.warning.alert.fire.FireDTO;
 import com.mg.warning.alert.fire.FireService;
 import com.mg.warning.alert.floodAlert.FloodAlertDTO;
 import com.mg.warning.alert.floodAlert.FloodAlertService;
-import com.mg.warning.alert.personInfoAlert.PersonInfoAlertDTO;
-import com.mg.warning.alert.personInfoAlert.PersonInfoAlertService;
+import com.mg.warning.alert.personInfo.PersonInfoDTO;
+import com.mg.warning.alert.personInfo.PersonInfoService;
 import com.mg.warning.alert.childrenAlert.ChildAlertService;
 import com.mg.warning.alert.childrenAlert.ChildrenAlertWithFamilyDTO;
 import com.mg.warning.alert.firestationAlert.FireStationAlertService;
@@ -47,7 +47,7 @@ public class AlertController {
     private FloodAlertService floodAlertService;
 
     @Autowired
-    private PersonInfoAlertService personInfoAlertService;
+    private PersonInfoService personInfoAlertService;
 
     @Autowired
     private EmailService emailService;
@@ -83,7 +83,7 @@ public class AlertController {
     }
 
     @GetMapping(value = "/personInfo")
-    public List<PersonInfoAlertDTO> getAllPersonInfo(@RequestParam("firstName") String firstname, @RequestParam("lastName") String lastname) {
+    public List<PersonInfoDTO> getAllPersonInfo(@RequestParam("firstName") String firstname, @RequestParam("lastName") String lastname) {
         logger.info("/personInfo?firstName={}&lastName={} person info alert called", firstname, lastname);
         return personInfoAlertService.getPersonInfoDTO(firstname, lastname);
     }

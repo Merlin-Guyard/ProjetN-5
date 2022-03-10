@@ -1,6 +1,6 @@
-package com.mg.warning.alert.personInfoAlert;
+package com.mg.warning.alert.personInfo;
 
-public class PersonInfoAlertDTO {
+public class PersonInfoDTO {
 
     private String lastName;
     private String address;

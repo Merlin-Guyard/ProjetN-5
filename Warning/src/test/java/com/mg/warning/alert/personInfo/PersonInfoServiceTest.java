@@ -1,4 +1,4 @@
-package com.mg.warning.alert.personInfoAlert;
+package com.mg.warning.alert.personInfo;
 
 import com.mg.warning.alert.AlertService;
 import com.mg.warning.medicalRecord.MedicalRecord;
@@ -19,7 +19,7 @@ import static org.mockito.Mockito.when;
 
 
 @SpringBootTest
-class PersonInfoAlertServiceTest {
+class PersonInfoServiceTest {
 
     @Mock
     private PersonRepository personRepository = mock(PersonRepository.class);
@@ -27,14 +27,11 @@ class PersonInfoAlertServiceTest {
     @Mock
     private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
 
-    @Mock
-    private AlertService alertService = mock(AlertService.class);
-
     @InjectMocks
-    private PersonInfoAlertService service = new PersonInfoAlertService();
+    private PersonInfoService service = new PersonInfoService();
 
     @Test
-    void test1() {
+    void testPersonInfo() {
         List<Person> persons = new ArrayList<>();
         Person person = new Person();
         List<MedicalRecord> medicalRecords = new ArrayList<>();
@@ -51,11 +48,11 @@ class PersonInfoAlertServiceTest {
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findByFirstAndLastName(medicalRecord.getFirstName(), medicalRecord.getLastName()))
                 .thenReturn(medicalRecords);
-        when(alertService.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()))
+        when(medicalRecord.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()))
                 .thenReturn(34);
 
-        List<PersonInfoAlertDTO> resultList = service.getPersonInfoDTO(person.getFirstName(), person.getLastName());
-        PersonInfoAlertDTO result = resultList.get(0);
+        List<PersonInfoDTO> resultList = service.getPersonInfoDTO(person.getFirstName(), person.getLastName());
+        PersonInfoDTO result = resultList.get(0);
 
         assertThat(result.getLastName()).isEqualTo(person.getLastName());
         assertThat(result.getAge()).isEqualTo(34);
