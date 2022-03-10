@@ -2,10 +2,10 @@ package com.mg.warning.alert.floodAlert;
 
 import java.util.List;
 
-public class FloodAlertDTO {
+public class FloodDTO {
 
     String address;
-    List<FloodAlertPersonsDTO> floodAlertPersonsDTO;
+    List<FloodPersonsDTO> floodAlertPersonsDTO;
 
     public String getAddress() {
         return address;
@@ -15,11 +15,11 @@ public class FloodAlertDTO {
         this.address = address;
     }
 
-    public List<FloodAlertPersonsDTO> getFloodAlertPersonsDTO() {
+    public List<FloodPersonsDTO> getFloodAlertPersonsDTO() {
         return floodAlertPersonsDTO;
     }
 
-    public void setFloodAlertPersonsDTO(List<FloodAlertPersonsDTO> floodAlertPersonsDTO) {
+    public void setFloodAlertPersonsDTO(List<FloodPersonsDTO> floodAlertPersonsDTO) {
         this.floodAlertPersonsDTO = floodAlertPersonsDTO;
     }
 }

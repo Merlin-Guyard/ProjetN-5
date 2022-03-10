@@ -1,23 +1,21 @@
 package com.mg.warning.alert.floodAlert;
 
-import com.mg.warning.alert.AlertService;
-import com.mg.warning.alert.firestationAlert.FireStationAlertService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class FloodAlertService {
+public class FloodService {
 
     @Autowired
     private PersonRepository personRepository;
@@ -28,34 +26,45 @@ public class FloodAlertService {
     @Autowired
     private MedicalRecordRepository medicalRecordRepository;
 
-    @Autowired
-    private AlertService alertService;
 
-    Logger logger = LoggerFactory.getLogger(FloodAlertService.class);
+    public List<FloodDTO> getFloodDTO(int[] stationNumber) {
 
-    public List<FloodAlertDTO> getFloodDTO(int[] stationNumber) {
+        //get firestation from station number
+        List<Firestation> fireStations = getFirestations(stationNumber);
 
+        //get and write persons and medicalrecords
+        List<FloodDTO> dtoFloodList = getFloodDTOS(fireStations);
+
+        Logger.info("getFloodDTO executed successfully");
+        return dtoFloodList;
+    }
+
+    private List<Firestation> getFirestations(int[] stationNumber) {
+        Logger.debug("find firestations");
         List<Firestation> fireStations = new ArrayList<>();
-        List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
-        List<Person> persons = new ArrayList<>();
-        List<FloodAlertDTO> dtoFloodList = new ArrayList<>();
-
         for (int i : stationNumber) {
             fireStations.addAll(firestationRepository.findByStationNumber(i));
         }
-        
+        return fireStations;
+    }
+
+    private List<FloodDTO> getFloodDTOS(List<Firestation> fireStations) {
+        List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
+        List<Person> persons = new ArrayList<>();
+        List<FloodDTO> dtoFloodList = new ArrayList<>();
+        Logger.debug("get and write persons and medicalrecords");
         for (Firestation firestation : fireStations) {
-            FloodAlertDTO dtoFlood = new FloodAlertDTO();
-            List<FloodAlertPersonsDTO> dtoFloodPersonList = new ArrayList<>();
+            FloodDTO dtoFlood = new FloodDTO();
+            List<FloodPersonsDTO> dtoFloodPersonList = new ArrayList<>();
             persons.addAll(personRepository.findByAddress(firestation.getAddress()));
 
             for (Person person : persons) {
-                FloodAlertPersonsDTO dtoFloodPerson = new FloodAlertPersonsDTO();
+                FloodPersonsDTO dtoFloodPerson = new FloodPersonsDTO();
                 dtoFloodPerson.setLastName(person.getLastName());
                 dtoFloodPerson.setPhone(person.getPhone());
                 for (MedicalRecord medicalRecord : medicalRecords) {
                     if (medicalRecord.getFirstName().equals(person.getFirstName()) && medicalRecord.getLastName().equals(person.getLastName())) {
-                        dtoFloodPerson.setAge(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()));
+                        dtoFloodPerson.setAge(medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()));
                         dtoFloodPerson.setMedications(medicalRecord.getMedications());
                         dtoFloodPerson.setAllergies(medicalRecord.getAllergies());
                         dtoFloodPersonList.add(dtoFloodPerson);
@@ -68,8 +77,6 @@ public class FloodAlertService {
             dtoFloodList.add(dtoFlood);
             persons.clear();
         }
-
-        logger.info("getFloodDTO executed successfully");
         return dtoFloodList;
     }
 

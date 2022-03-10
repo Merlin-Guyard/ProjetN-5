@@ -34,7 +34,7 @@ public class PhoneService {
     }
 
     private List<PhoneDTO> getPhoneDTOS(List<Person> persons) {
-        Logger.debug("getting persons");
+//        Logger.debug("getting persons");
         List<PhoneDTO> dtoPhoneList = new ArrayList<>();
         for (Person person : persons) {
             PhoneDTO dtoPhone = new PhoneDTO();
@@ -45,7 +45,7 @@ public class PhoneService {
     }
 
     private List<Person> getPersons(int stationNumber) {
-        Logger.debug("getting and writing numbers");
+//        Logger.debug("getting and writing numbers");
         List<Person> persons = new ArrayList<>();
         List<Firestation> fireStations = firestationRepository.findByStationNumber(stationNumber);
         for (Firestation firestation : fireStations) {

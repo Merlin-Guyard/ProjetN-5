@@ -1,0 +1,24 @@
+2022-03-10 10:25:18 [http-nio-8080-exec-1] com.mg.warning.alert.PhoneAlert.PhoneService.getPhoneDTO()
+INFO: getPhoneDTO executed successfully
+2022-03-10 10:26:33 [http-nio-8080-exec-5] com.mg.warning.alert.fire.FireService.getFireDTO()
+DEBUG: getting data
+2022-03-10 10:26:33 [http-nio-8080-exec-5] com.mg.warning.alert.fire.FireService.getFirePersonDTOS()
+DEBUG: getting persons
+2022-03-10 10:26:33 [http-nio-8080-exec-5] com.mg.warning.alert.fire.FireService.getFireStationDTOS()
+DEBUG: getting firestations
+2022-03-10 10:26:33 [http-nio-8080-exec-5] com.mg.warning.alert.fire.FireService.getFireDTO()
+DEBUG: writing data
+2022-03-10 10:26:33 [http-nio-8080-exec-5] com.mg.warning.alert.fire.FireService.getFireDTO()
+INFO: getFireDTO executed successfully
+2022-03-10 10:26:36 [http-nio-8080-exec-6] com.mg.warning.alert.fire.FireService.getFireDTO()
+DEBUG: getting data
+2022-03-10 10:26:36 [http-nio-8080-exec-6] com.mg.warning.alert.fire.FireService.getFirePersonDTOS()
+DEBUG: getting persons
+2022-03-10 10:26:36 [http-nio-8080-exec-6] com.mg.warning.medicalRecord.MedicalRecord.getAgeFromMedicalRecords()
+DEBUG: getting age for Tessa, Carman
+2022-03-10 10:26:36 [http-nio-8080-exec-6] com.mg.warning.alert.fire.FireService.getFireStationDTOS()
+DEBUG: getting firestations
+2022-03-10 10:26:36 [http-nio-8080-exec-6] com.mg.warning.alert.fire.FireService.getFireDTO()
+DEBUG: writing data
+2022-03-10 10:26:36 [http-nio-8080-exec-6] com.mg.warning.alert.fire.FireService.getFireDTO()
+INFO: getFireDTO executed successfully

@@ -1,6 +1,5 @@
 package com.mg.warning.alert.fire;
 
-import com.mg.warning.alert.AlertService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
@@ -27,8 +26,6 @@ public class FireService {
     @Autowired
     private FirestationRepository firestationRepository;
 
-    @Autowired
-    private AlertService alertService;
 
     public FireDTO getFireDTO(String address) {
         FireDTO dtoFire = new FireDTO();
@@ -60,7 +57,7 @@ public class FireService {
             dtoFirePerson.setPhone(person.getPhone());
             for (MedicalRecord medicalRecord : medicalRecords) {
                 if (medicalRecord.getFirstName().equals(person.getFirstName()) && medicalRecord.getLastName().equals(person.getLastName())) {
-                    dtoFirePerson.setAge(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()));
+                    dtoFirePerson.setAge(medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()));
                     dtoFirePerson.setMedications(medicalRecord.getMedications());
                     dtoFirePerson.setAllergies(medicalRecord.getAllergies());
                 }

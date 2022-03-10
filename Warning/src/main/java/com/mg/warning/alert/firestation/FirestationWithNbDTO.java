@@ -1,21 +1,21 @@
-package com.mg.warning.alert.firestationAlert;
+package com.mg.warning.alert.firestation;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FirestationAlertWithNbDTO {
+public class FirestationWithNbDTO {
 
 
 
-    private List<FirestationAlertDTO> firestationAlertDTOS = new ArrayList<>();
+    private List<FirestationDTO> firestationAlertDTOS = new ArrayList<>();
     private int nbAdults;
     private int nbChildrens;
 
-    public List<FirestationAlertDTO> getFirestationAlertDTOS() {
+    public List<FirestationDTO> getFirestationAlertDTOS() {
         return firestationAlertDTOS;
     }
 
-    public void setFirestationAlertDTOS(List<FirestationAlertDTO> firestationAlertDTOS) {
+    public void setFirestationAlertDTOS(List<FirestationDTO> firestationAlertDTOS) {
         this.firestationAlertDTOS = firestationAlertDTOS;
     }
 

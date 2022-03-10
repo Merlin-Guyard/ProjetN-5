@@ -1,6 +1,6 @@
 package com.mg.warning.alert.floodAlert;
 
-public class FloodAlertPersonsDTO {
+public class FloodPersonsDTO {
 
     String lastName;
     String phone;

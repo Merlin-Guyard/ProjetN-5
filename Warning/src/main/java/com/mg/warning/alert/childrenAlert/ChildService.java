@@ -1,24 +1,19 @@
 package com.mg.warning.alert.childrenAlert;
 
-
-import com.mg.warning.alert.AlertService;
 import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
 import com.mg.warning.person.PersonRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Component
-public class ChildAlertService {
-
-    Logger logger = LoggerFactory.getLogger(ChildAlertService.class);
+public class ChildService {
 
     @Autowired
     private PersonRepository personRepository;
@@ -26,31 +21,27 @@ public class ChildAlertService {
     @Autowired
     private MedicalRecordRepository medicalRecordRepository;
 
-    @Autowired
-    private AlertService alertService;
-
-    public ChildrenAlertWithFamilyDTO getChildrenWithFamilyDTO(String address) {
-
-        List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
-        List<Person> persons = personRepository.findAll();
-        ChildrenAlertWithFamilyDTO dtoChildrenAndFamily = new ChildrenAlertWithFamilyDTO();
-        List<ChildrenAlertDTO> dtoChildrenList = new ArrayList<>();
-
-        List<FamilyAlertDTO> dtoFamilyList = new ArrayList<>();
-        int personAge;
+    public ChildrenWithFamilyDTO getChildrenWithFamilyDTO(String address) {
 
         //Check by address then age
+        Logger.debug("sort by address and ages then get family and children");
+        List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
+        MedicalRecord medicalRecord = new MedicalRecord();
+        List<Person> persons = personRepository.findAll();
+        List<ChildrenDTO> dtoChildrenList = new ArrayList<>();
+        List<FamilyDTO> dtoFamilyList = new ArrayList<>();
+        int personAge;
         for (Person person : persons) {
             if (person.getAddress().equals(address)) {
-                    personAge = alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName());
+                    personAge = medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName());
 
                     if (personAge >= 18) {
-                        FamilyAlertDTO dtoFamily = new FamilyAlertDTO();
+                        FamilyDTO dtoFamily = new FamilyDTO();
                         dtoFamily.setFirstname(person.getFirstName());
                         dtoFamily.setLastname(person.getLastName());
                         dtoFamilyList.add(dtoFamily);
                     } else {
-                        ChildrenAlertDTO dtoChildren = new ChildrenAlertDTO();
+                        ChildrenDTO dtoChildren = new ChildrenDTO();
                         dtoChildren.setFirstname(person.getFirstName());
                         dtoChildren.setLastname(person.getLastName());
                         dtoChildren.setAge(personAge);
@@ -60,12 +51,19 @@ public class ChildAlertService {
         }
 
         //Check if a children were found otherwise return a blank list
+        ChildrenWithFamilyDTO dtoChildrenAndFamily = getChildrenWithFamilyDTO(dtoChildrenList, dtoFamilyList);
+
+        Logger.info("getChildrenWithFamilyDTO executed successfully");
+        return dtoChildrenAndFamily;
+    }
+
+    private ChildrenWithFamilyDTO getChildrenWithFamilyDTO(List<ChildrenDTO> dtoChildrenList, List<FamilyDTO> dtoFamilyList) {
+        Logger.debug("check if children found");
+        ChildrenWithFamilyDTO dtoChildrenAndFamily = new ChildrenWithFamilyDTO();
         if (dtoChildrenList.size() > 0) {
             dtoChildrenAndFamily.setFamily(dtoFamilyList);
             dtoChildrenAndFamily.setChildren(dtoChildrenList);
         }
-
-        logger.info("getChildrenWithFamilyDTO executed successfully");
         return dtoChildrenAndFamily;
     }
 }

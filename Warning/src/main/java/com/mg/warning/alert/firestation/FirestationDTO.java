@@ -1,6 +1,6 @@
-package com.mg.warning.alert.firestationAlert;
+package com.mg.warning.alert.firestation;
 
-public class FirestationAlertDTO {
+public class FirestationDTO {
 
     private String firstname;
     private String lastname;

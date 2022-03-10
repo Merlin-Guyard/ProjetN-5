@@ -2,6 +2,8 @@ package com.mg.warning.alert.fire;
 
 public class FireFireStationDTO {
 
+    private int station;
+
     public int getStation() {
         return station;
     }
@@ -10,5 +12,4 @@ public class FireFireStationDTO {
         this.station = station;
     }
 
-    private int station;
 }

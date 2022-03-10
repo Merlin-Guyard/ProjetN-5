@@ -1,6 +1,5 @@
 package com.mg.warning.alert.fire;
 
-import com.mg.warning.alert.AlertService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
@@ -31,8 +30,6 @@ class FireServiceTest {
     @Mock
     private FirestationRepository firestationRepository = mock((FirestationRepository.class));
 
-    @Mock
-    private AlertService alertService = mock(AlertService.class);
 
     @InjectMocks
     private FireService service = new FireService();
@@ -59,7 +56,7 @@ class FireServiceTest {
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findAll())
                 .thenReturn(medicalRecords);
-        when(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
+        when(medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
                 .thenReturn(17);
 
         firestation.setAddress("TestRoad");

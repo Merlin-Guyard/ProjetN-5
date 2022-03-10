@@ -1,6 +1,5 @@
 package com.mg.warning.alert.personInfo;
 
-import com.mg.warning.alert.AlertService;
 import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
@@ -21,10 +20,6 @@ public class PersonInfoService {
 
     @Autowired
     private MedicalRecordRepository medicalRecordRepository;
-
-    @Autowired
-    private AlertService alertService;
-
 
     public List<PersonInfoDTO> getPersonInfoDTO(String firstname, String lastname) {
 

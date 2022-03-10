@@ -1,6 +1,5 @@
 package com.mg.warning.alert.floodAlert;
 
-import com.mg.warning.alert.AlertService;
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecord;
@@ -20,7 +19,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-class FloodAlertServiceTest {
+class FloodServiceTest {
 
     @Mock
     private PersonRepository personRepository = mock(PersonRepository.class);
@@ -31,14 +30,11 @@ class FloodAlertServiceTest {
     @Mock
     private FirestationRepository firestationRepository = mock((FirestationRepository.class));
 
-    @Mock
-    private AlertService alertService = mock(AlertService.class);
-
     @InjectMocks
-    private FloodAlertService service = new FloodAlertService();
+    private FloodService service = new FloodService();
 
     @Test
-    void test1() {
+    void testFlood() {
         List<Person> persons = new ArrayList<>();
         Person person = new Person();
         List<MedicalRecord> medicalRecords = new ArrayList<>();
@@ -52,7 +48,7 @@ class FloodAlertServiceTest {
         medicalRecords.add(medicalRecord);
         when(medicalRecordRepository.findAll())
                 .thenReturn(medicalRecords);
-        when(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
+        when(medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
                 .thenReturn(21);
 
         firestation.setAddress("TestRoad");
@@ -70,8 +66,8 @@ class FloodAlertServiceTest {
         when(personRepository.findByAddress(person.getAddress()))
                 .thenReturn(persons);
 
-        List<FloodAlertDTO> resultList =  service.getFloodDTO(stationNumber);
-        FloodAlertDTO result = resultList.get(0);
+        List<FloodDTO> resultList =  service.getFloodDTO(stationNumber);
+        FloodDTO result = resultList.get(0);
 
         assertThat(result.getAddress()).isEqualTo(firestation.getAddress());
     }

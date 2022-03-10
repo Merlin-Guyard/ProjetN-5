@@ -1,6 +1,5 @@
 package com.mg.warning.alert.childrenAlert;
 
-import com.mg.warning.alert.AlertService;
 import com.mg.warning.medicalRecord.MedicalRecord;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.Person;
@@ -18,7 +17,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-public class ChildAlertServiceTest {
+public class ChildServiceTest {
 
         @Mock
         private PersonRepository personRepository = mock(PersonRepository.class);
@@ -26,14 +25,11 @@ public class ChildAlertServiceTest {
         @Mock
         private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
 
-        @Mock
-        private AlertService alertService = mock(AlertService.class);
-
         @InjectMocks
-        private ChildAlertService service = new ChildAlertService();
+        private ChildService service = new ChildService();
 
     @Test
-    void Test1() {
+    void TestChild() {
         List<MedicalRecord> medicalRecords = new ArrayList<>();
         MedicalRecord medicalRecord = new MedicalRecord();
         List<Person> persons = new ArrayList<>();
@@ -53,12 +49,12 @@ public class ChildAlertServiceTest {
         persons.add(person);
         when(personRepository.findAll())
                 .thenReturn(persons);
-        when(alertService.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
+        when(medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName()))
                 .thenReturn(17);
 
-        ChildrenAlertWithFamilyDTO result = service.getChildrenWithFamilyDTO(person.getAddress());
-        List<ChildrenAlertDTO> resultChildrenlist = result.getChildren();
-        ChildrenAlertDTO resultChildren = resultChildrenlist.get(0);
+        ChildrenWithFamilyDTO result = service.getChildrenWithFamilyDTO(person.getAddress());
+        List<ChildrenDTO> resultChildrenlist = result.getChildren();
+        ChildrenDTO resultChildren = resultChildrenlist.get(0);
 
         assertThat(resultChildren.getFirstname()).isEqualTo(person.getFirstName());
         assertThat(resultChildren.getAge()).isEqualTo(17);

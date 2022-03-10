@@ -3,18 +3,18 @@ package com.mg.warning.alert;
 
 import com.mg.warning.alert.PhoneAlert.PhoneDTO;
 import com.mg.warning.alert.PhoneAlert.PhoneService;
+import com.mg.warning.alert.childrenAlert.ChildService;
 import com.mg.warning.alert.email.EmailDTO;
 import com.mg.warning.alert.email.EmailService;
 import com.mg.warning.alert.fire.FireDTO;
 import com.mg.warning.alert.fire.FireService;
-import com.mg.warning.alert.floodAlert.FloodAlertDTO;
-import com.mg.warning.alert.floodAlert.FloodAlertService;
+import com.mg.warning.alert.firestation.FireStationService;
+import com.mg.warning.alert.floodAlert.FloodDTO;
+import com.mg.warning.alert.floodAlert.FloodService;
 import com.mg.warning.alert.personInfo.PersonInfoDTO;
 import com.mg.warning.alert.personInfo.PersonInfoService;
-import com.mg.warning.alert.childrenAlert.ChildAlertService;
-import com.mg.warning.alert.childrenAlert.ChildrenAlertWithFamilyDTO;
-import com.mg.warning.alert.firestationAlert.FireStationAlertService;
-import com.mg.warning.alert.firestationAlert.FirestationAlertWithNbDTO;
+import com.mg.warning.alert.childrenAlert.ChildrenWithFamilyDTO;
+import com.mg.warning.alert.firestation.FirestationWithNbDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +32,10 @@ public class AlertController {
     Logger logger = LoggerFactory.getLogger(AlertController.class);
 
     @Autowired
-    private FireStationAlertService fireStationAlertService;
+    private FireStationService fireStationAlertService;
 
     @Autowired
-    private ChildAlertService childAlertService;
+    private ChildService childAlertService;
 
     @Autowired
     private PhoneService phoneAlertService;
@@ -44,7 +44,7 @@ public class AlertController {
     private FireService fireAlertService;
 
     @Autowired
-    private FloodAlertService floodAlertService;
+    private FloodService floodAlertService;
 
     @Autowired
     private PersonInfoService personInfoAlertService;
@@ -53,13 +53,13 @@ public class AlertController {
     private EmailService emailService;
 
     @GetMapping(value = "/firestation")
-    public FirestationAlertWithNbDTO getAllFirestation(@RequestParam("stationNumber") int stationNumber) {
+    public FirestationWithNbDTO getAllFirestation(@RequestParam("stationNumber") int stationNumber) {
         logger.info("/firestation?stationNumber={} firestation alert called", stationNumber);
         return fireStationAlertService.getFirestationAlertDTOWithSum(stationNumber);
     }
 
     @GetMapping(value = "/childAlert")
-    public ChildrenAlertWithFamilyDTO getAllChildrenAndFamily(@RequestParam("address") String address) {
+    public ChildrenWithFamilyDTO getAllChildrenAndFamily(@RequestParam("address") String address) {
         logger.info("/childAlert?address={} child alert called", address);
         return childAlertService.getChildrenWithFamilyDTO(address);
     }
@@ -77,7 +77,7 @@ public class AlertController {
     }
 
     @GetMapping(value = "/flood/stations")
-    public List<FloodAlertDTO> getAllFlood(@RequestParam("stations") int[] stationNumber) {
+    public List<FloodDTO> getAllFlood(@RequestParam("stations") int[] stationNumber) {
         logger.info("/flood/stations?stations={} flood alert called", Arrays.toString(stationNumber));
         return floodAlertService.getFloodDTO(stationNumber);
     }
