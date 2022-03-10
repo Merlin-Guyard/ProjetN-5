@@ -1,8 +1,8 @@
 package com.mg.warning.alert.service;
 
 
-import com.mg.warning.alert.Phone.PhoneDTO;
-import com.mg.warning.alert.Phone.PhoneService;
+import com.mg.warning.alert.phone.PhoneDTO;
+import com.mg.warning.alert.phone.PhoneService;
 import com.mg.warning.alert.children.ChildService;
 import com.mg.warning.alert.email.EmailDTO;
 import com.mg.warning.alert.email.EmailService;

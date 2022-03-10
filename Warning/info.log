@@ -1,2 +1,24 @@
-2022-03-10 10:49:28 [main] com.mg.warning.alert.Phone.PhoneService.getPhoneDTO()
+2022-03-10 22:36:54 [main] com.mg.warning.json.ReadJSON.readEntities()
+INFO: JSON imported successfully
+2022-03-10 22:36:54 [main] com.mg.warning.configuration.Initialize.saveData()
+INFO: Entities written successfully
+2022-03-10 22:36:55 [main] com.mg.warning.alert.children.ChildService.getChildrenWithFamilyDTO()
+INFO: getChildrenWithFamilyDTO executed successfully
+2022-03-10 22:36:55 [main] com.mg.warning.alert.email.EmailService.getEmailDTO()
+INFO: getEmailDTO executed successfully
+2022-03-10 22:36:55 [main] com.mg.warning.alert.fire.FireService.getFireDTO()
+INFO: getFireDTO executed successfully
+2022-03-10 22:36:55 [main] com.mg.warning.alert.firestation.FireStationService.getFirestationAlertDTOWithSum()
+INFO: getFirestationAlertDTOWithSum executed successfully
+2022-03-10 22:36:55 [main] com.mg.warning.alert.flood.FloodService.getFloodDTO()
+INFO: getFloodDTO executed successfully
+2022-03-10 22:36:55 [main] com.mg.warning.alert.personInfo.PersonInfoService.getPersonInfoDTO()
+INFO: getPersonInfoDTO executed successfully
+2022-03-10 22:36:55 [main] com.mg.warning.alert.phone.PhoneService.getPhoneDTO()
 INFO: getPhoneDTO executed successfully
+2022-03-10 22:36:56 [main] com.mg.warning.person.PersonController.updateOnePerson()
+INFO: /person function update called for TestFirstName, TestLastName
+2022-03-10 22:36:56 [main] com.mg.warning.person.PersonController.postOnePerson()
+INFO: /person function post called for TestFirstName, TestLastName
+2022-03-10 22:36:56 [main] com.mg.warning.person.PersonController.getAllPersons()
+INFO: /person function get all called

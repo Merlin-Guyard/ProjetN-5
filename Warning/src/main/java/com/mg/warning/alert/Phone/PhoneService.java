@@ -1,4 +1,4 @@
-package com.mg.warning.alert.Phone;
+package com.mg.warning.alert.phone;
 
 import com.mg.warning.firestation.Firestation;
 import com.mg.warning.firestation.FirestationRepository;
