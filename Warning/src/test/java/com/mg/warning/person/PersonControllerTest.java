@@ -66,24 +66,17 @@ class PersonControllerTest {
     @Test
     public void testDeletePerson() throws Exception {
         {
-//            mvc.perform( MockMvcRequestBuilders
-//                    .post("/person")
-//                    .content(asJsonString(new Person("TestFirstName","TestLastName","TestAddressTOTO","",0,"","")))
-//                    .contentType(MediaType.APPLICATION_JSON)
-//                    .accept(MediaType.APPLICATION_JSON));
 
-//            mvc.perform(MockMvcRequestBuilders
-////                            .delete("/person?firstname={firstname}&lastname={lastname}","TestFirstName","TestLastName"))
-//                            .delete("/person?firstname=TestFirstName&lastname=testLastName"))
-////                    .contentType(MediaType.APPLICATION_JSON)
-////                    .accept(MediaType.APPLICATION_JSON))
-//                    .andExpect(status().isAccepted());
+            mvc.perform(MockMvcRequestBuilders
+//                            .delete("/person?firstname={firstname}&lastname={lastname}","TestFirstName","TestLastName"))
+                            .delete("/person?firstname=TestFirstName&lastname=testLastName"))
+                    .andExpect(status().isAccepted());
 
 //            mvc.perform(MockMvcRequestBuilders
 //                            .delete("/person")
-//                            .param("TestFirstName", "TestLastName")
+//                            .param("firstname", "TestFirstName")
+//                            .param("lastname", "TestLastName")
 //                            .contentType(MediaType.APPLICATION_JSON))
-////                    .accept(MediaType.APPLICATION_JSON))
 //            .andExpect(status().isOk());
 
         }

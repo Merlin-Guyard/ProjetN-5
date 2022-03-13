@@ -48,7 +48,7 @@ class PhoneServiceTest {
         when(personRepository.findByAddress(firestation.getAddress()))
                 .thenReturn(persons);
 
-        List<PhoneDTO> resultList =  service.getPhoneDTO(firestation.getStation());
+        List<PhoneDTO> resultList = service.getPhoneDTO(firestation.getStation());
         PhoneDTO result = resultList.get(0);
 
         assertThat(result.getPhone()).isEqualTo(person.getPhone());
