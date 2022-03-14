@@ -1,4 +1,4 @@
-2022-03-13 14:02:00 [main] com.mg.warning.json.ReadJSON.readEntities()
+2022-03-13 14:53:00 [main] com.mg.warning.json.ReadJSON.readEntities()
 INFO: JSON imported successfully
-2022-03-13 14:02:00 [main] com.mg.warning.configuration.Initialize.saveData()
+2022-03-13 14:53:00 [main] com.mg.warning.configuration.Initialize.saveData()
 INFO: Entities written successfully

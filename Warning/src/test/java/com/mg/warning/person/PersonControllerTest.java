@@ -67,17 +67,17 @@ class PersonControllerTest {
     public void testDeletePerson() throws Exception {
         {
 
-            mvc.perform(MockMvcRequestBuilders
-//                            .delete("/person?firstname={firstname}&lastname={lastname}","TestFirstName","TestLastName"))
-                            .delete("/person?firstname=TestFirstName&lastname=testLastName"))
-                    .andExpect(status().isAccepted());
-
 //            mvc.perform(MockMvcRequestBuilders
-//                            .delete("/person")
-//                            .param("firstname", "TestFirstName")
-//                            .param("lastname", "TestLastName")
-//                            .contentType(MediaType.APPLICATION_JSON))
-//            .andExpect(status().isOk());
+////                            .delete("/person?firstname={firstname}&lastname={lastname}","TestFirstName","TestLastName"))
+//                            .delete("/person?firstname=TestFirstName&lastname=TestLastName"))
+//                    .andExpect(status().isAccepted());
+
+            mvc.perform(MockMvcRequestBuilders
+                            .delete("/person")
+                            .param("firstname", "TestFirstName")
+                            .param("lastname", "TestLastName")
+                            .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk());
 
         }
     }
