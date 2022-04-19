@@ -1,6 +1,7 @@
 package com.mg.warning.firestation;
 
 import org.springframework.stereotype.Repository;
+import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +19,11 @@ public class FirestationRepository {
     //GET BY ID
     public List<Firestation> findByStationNumber(int stationNumber) {
         List<Firestation> result = new ArrayList<>();
-        for(Firestation firestation: firestationList)  {
-            if(firestation.getStation() == stationNumber) {
+        for (Firestation firestation : firestationList) {
+            Logger.debug("vérification de la caserne n°{} à {}", firestation.getAddress(), firestation.getAddress());
+            if (firestation.getStation() == stationNumber) {
                 result.add(firestation);
+                Logger.debug("firestation ajoutée");
             }
         }
         return result;
@@ -29,9 +32,11 @@ public class FirestationRepository {
     //GET BY ADDRESS
     public List<Firestation> findByAddress(String address) {
         List<Firestation> result = new ArrayList<>();
-        for(Firestation firestation: firestationList)  {
-            if(firestation.getAddress().equals(address)) {
+        for (Firestation firestation : firestationList) {
+            Logger.debug("vérification de la caserne n°{} à {}", firestation.getAddress(), firestation.getAddress());
+            if (firestation.getAddress().equals(address)) {
                 result.add(firestation);
+                Logger.debug("firestation ajoutée");
             }
         }
         return result;
@@ -42,9 +47,11 @@ public class FirestationRepository {
         int index = 0;
         List<Firestation> copy = new ArrayList<>(firestationList);
         for (Firestation firestationLoop : copy) {
-            if(firestationLoop.equals(firestation)) {
+            Logger.debug("vérification de la caserne n°{} à {}", firestationLoop.getAddress(), firestationLoop.getAddress());
+            if (firestationLoop.equals(firestation)) {
                 firestationList.remove(firestationLoop);
                 firestationList.add(firestation);
+                Logger.debug("firestation mise à jour");
             }
         }
     }
@@ -56,6 +63,7 @@ public class FirestationRepository {
 
     //DELETE
     public void delete(String address, int station) {
+        Logger.debug("suppression de la caserne n°{} à {}", station, address);
         firestationList.removeIf(firestation -> firestation.getAddress().equals(address) && firestation.getStation() == station);
     }
 

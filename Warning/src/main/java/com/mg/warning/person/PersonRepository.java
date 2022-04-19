@@ -2,6 +2,7 @@ package com.mg.warning.person;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,10 @@ public class PersonRepository {
     public List<Person> findByFirstAndLastName(String firstname, String lastname) {
         List<Person> result = new ArrayList<>();
         for (Person person : personsList) {
-            if(person.getFirstName().equals(firstname) && person.getLastName().equals(lastname)) {
+            Logger.debug("vérification de {}, {}", person.getFirstName(), person.getLastName());
+            if (person.getFirstName().equals(firstname) && person.getLastName().equals(lastname)) {
                 result.add(person);
+                Logger.debug("personne ajoutée");
             }
         }
         return result;
@@ -29,6 +32,7 @@ public class PersonRepository {
 
     //PUT
     public void update(Person person) {
+        Logger.debug("suppression de {}, {}", person.getFirstName(), person.getLastName());
         int index = 0;
         List<Person> copy = new ArrayList<>(personsList);
         for (Person personLoop : copy) {
@@ -36,9 +40,10 @@ public class PersonRepository {
                 personsList.set(index, person);
                 index++;
             }*/
-            if(personLoop.equals(person)) {
+            if (personLoop.equals(person)) {
                 personsList.remove(personLoop);
                 personsList.add(person);
+                Logger.debug("personne mise à jour");
             }
         }
     }
@@ -56,11 +61,13 @@ public class PersonRepository {
 
     //POST
     public void save(Person persons) {
+        Logger.debug("ajout des personnes");
         personsList.add(persons);
     }
 
     //DELETE
     public void delete(String firstname, String lastname) {
+        Logger.debug("suppression de {}, {}", firstname, lastname);
         personsList.removeIf(person -> person.getFirstName().equals(firstname) && person.getLastName().equals(lastname));
     }
 
@@ -68,8 +75,10 @@ public class PersonRepository {
     public List<Person> findByAddress(String address) {
         List<Person> result = new ArrayList<>();
         for (Person person : personsList) {
-            if(person.getAddress().equals(address)) {
+            Logger.debug("vérification de {}, {}", person.getFirstName(), person.getLastName());
+            if (person.getAddress().equals(address)) {
                 result.add(person);
+                Logger.debug("personne ajoutée");
             }
         }
         return result;
@@ -79,8 +88,10 @@ public class PersonRepository {
     public List<Person> findByCity(String city) {
         List<Person> result = new ArrayList<>();
         for (Person person : personsList) {
-            if(person.getCity().equals(city)) {
+            Logger.debug("vérification de {}, {}", person.getFirstName(), person.getLastName());
+            if (person.getCity().equals(city)) {
                 result.add(person);
+                Logger.debug("personne ajoutée");
             }
         }
         return result;

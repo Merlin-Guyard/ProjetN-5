@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
+import org.tinylog.Logger;
 
 import java.util.List;
 
@@ -32,7 +33,9 @@ public class CheckHealthIndicator implements HealthIndicator {
         List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
 
         Health.Builder status = Health.up();
+        Logger.debug("Vérification to status do token health");
         if (persons.isEmpty() || fireStations.isEmpty() || medicalRecords.isEmpty()) {
+            Logger.debug("Status down");
             status = Health.down();
         }
         return status.build();
