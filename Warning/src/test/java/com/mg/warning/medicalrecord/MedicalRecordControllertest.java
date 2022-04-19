@@ -1,8 +1,14 @@
-package com.mg.warning.person;
+package com.mg.warning.medicalrecord;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mg.warning.medicalRecord.MedicalRecord;
+import com.mg.warning.medicalRecord.MedicalRecordController;
+import com.mg.warning.medicalRecord.MedicalRecordRepository;
+import com.mg.warning.person.Person;
+import com.mg.warning.person.PersonController;
+import com.mg.warning.person.PersonRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +21,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = PersonController.class)
-class PersonControllerTest {
+@WebMvcTest(controllers = MedicalRecordController.class)
+class MedicalRecordControllerTest {
 
     @TestConfiguration
     static class AdditionalConfig {
         @Bean
-        public PersonRepository personRepository() {
-            return new PersonRepository();
+        public MedicalRecordRepository medicalRecordRepository() {
+            return new MedicalRecordRepository();
         }
     }
 
@@ -30,44 +36,44 @@ class PersonControllerTest {
     private MockMvc mvc;
 
     @Test
-    public void testGetPerson() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/person/GetAll"))
+    public void testGetMedicalRecord() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/medicalRecord/GetAll"))
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void testPostPerson() throws Exception {
+    public void testPostMedicalRecord() throws Exception {
         mvc.perform(MockMvcRequestBuilders
-                        .post("/person")
-                        .content(asJsonString(new Person("TestFirstName", "TestLastName", "TestAddressTOTO", "", 0, "", "")))
+                        .post("/medicalRecord")
+                        .content(asJsonString(new MedicalRecord("TestFirstName", "TestLastName", "01/01/2000", new String[]{""}, new String[]{""})))
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void testPutPerson() throws Exception {
+    public void testPutMedicalRecord() throws Exception {
         mvc.perform(MockMvcRequestBuilders
-                .post("/person")
-                .content(asJsonString(new Person("TestFirstName", "TestLastName", "TestAddressTOTO", "", 0, "", "")))
+                .post("/medicalRecord")
+                .content(asJsonString(new MedicalRecord("TestFirstName", "TestLastName", "01/01/2000", new String[]{""}, new String[]{""})))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON));
 
         mvc.perform(MockMvcRequestBuilders
-                        .put("/person")
-                        .content(asJsonString(new Person("TestFirstName", "TestLastName", "TestAddressDADA", "", 0, "", "")))
+                        .put("/medicalRecord")
+                        .content(asJsonString(new MedicalRecord("TestFirstName", "TestLastName", "01/01/2000", new String[]{""}, new String[]{""})))
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void testDeletePerson() throws Exception {
+    public void testDeleteMedicalRecord() throws Exception {
         {
             mvc.perform(MockMvcRequestBuilders
-                            .delete("/person/TestFirstName/TestLastName")
+                            .delete("/medicalRecord/TestFirstName/TestLastName")
                             .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isOk());
+                    .andExpect(status().isOk());
         }
     }
 

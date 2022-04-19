@@ -1,12 +1,14 @@
-package com.mg.warning.alert.service;
+package com.mg.warning.alert;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mg.warning.alert.children.ChildService;
 import com.mg.warning.alert.email.EmailService;
 import com.mg.warning.alert.fire.FireService;
-import com.mg.warning.alert.firestation.FireStationService;
+import com.mg.warning.alert.firestation.FirestationService;
 import com.mg.warning.alert.flood.FloodService;
 import com.mg.warning.alert.personInfo.PersonInfoService;
 import com.mg.warning.alert.phone.PhoneService;
+import com.mg.warning.alert.service.AlertController;
 import com.mg.warning.firestation.FirestationRepository;
 import com.mg.warning.medicalRecord.MedicalRecordRepository;
 import com.mg.warning.person.PersonRepository;
@@ -16,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -43,8 +46,8 @@ class AlertControllerTest {
         }
 
         @Bean
-        public FireStationService fireStationService() {
-            return new FireStationService();
+        public FirestationService fireStationService() {
+            return new FirestationService();
         }
 
         @Bean
@@ -82,8 +85,44 @@ class AlertControllerTest {
     private MockMvc mvc;
 
     @Test
-    public void testGetPerson() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/firestation"))
+    public void testGetFireStation() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/firestation?stationNumber=42"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testGetChildAlert() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/childAlert?address=TestAddress"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testGetPhone() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/phoneAlert?firestation=42"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testGetFire() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/fire?address=TestAddress"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testGetFlood() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/flood/stations?stations=42"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testGetPersonInfo() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/personInfo?firstName=TestFirstName&lastName=TestFirstName"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testGetCity() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/communityEmail?city=TestCity"))
                 .andExpect(status().isOk());
     }
 }

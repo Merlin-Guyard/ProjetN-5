@@ -40,7 +40,7 @@ public class MedicalRecordController {
         medicalRecordRepository.update(medicalRecord);
     }
 
-    @DeleteMapping(value = "")
+    @DeleteMapping(value = "/{firstname}/{lastname}")
     public void delOneMedicalRecord(@PathVariable("firstname") String firstname, @PathVariable("lastname") String lastname) {
         Logger.info("/medicalRecord function delete called for {}, {}", firstname, lastname);
         medicalRecordRepository.delete(firstname, lastname);

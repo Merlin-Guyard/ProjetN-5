@@ -38,7 +38,7 @@ public class PersonController {
         personRepository.update(person);
     }
 
-    @DeleteMapping(value= "")
+    @DeleteMapping(value= "/{firstname}/{lastname}")
     public void delOnePerson(@PathVariable("firstname") String firstname, @PathVariable("lastname") String lastname){
         Logger.info("/person function delete called for {}, {}", firstname, lastname);
         personRepository.delete(firstname, lastname);

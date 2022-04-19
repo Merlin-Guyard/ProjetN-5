@@ -28,7 +28,7 @@ public class FireStationServiceTest {
     private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
 
     @InjectMocks
-    private FireStationService service = new FireStationService();
+    private FirestationService service = new FirestationService();
 
     @Test
     public void testFirestation() {

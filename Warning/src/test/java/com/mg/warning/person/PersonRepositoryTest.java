@@ -11,25 +11,51 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class PersonRepositoryTest {
 
-//    @Mock
-//    private PersonRepository personRepository = mock(PersonRepository.class);
-
     @InjectMocks
     private PersonRepository personRepository = new PersonRepository();
 
 
     @Test
-    void testfindByFirstAndLastName() {
+    void testFindByFirstAndLastName() {
 
-        Person person = new Person();
-        person.setFirstName("Bobby");
-        person.setLastName("Dupont");
-        personRepository.save(person);
+        Person personToAdd = new Person();
+        personToAdd.setFirstName("Bobby");
+        personToAdd.setLastName("Dupont");
+        personToAdd.setZip(42);
+        personRepository.save(personToAdd);
 
         List<Person> persons = new ArrayList<>(personRepository.findByFirstAndLastName("Bobby", "Dupont"));
-        Person person2 = new Person();
-        person2 = persons.get(0);
-        assertThat(person2.getFirstName()).isEqualTo("Bobby");
+        Person personToCheck = new Person();
+        personToCheck = persons.get(0);
+        assertThat(personToCheck.getZip()).isEqualTo(personToAdd.getZip());
+    }
+
+    @Test
+    void testFindByAddress() {
+
+        Person personToAdd = new Person();
+        personToAdd.setAddress("Strawberry road");
+        personToAdd.setZip(42);
+        personRepository.save(personToAdd);
+
+        List<Person> persons = new ArrayList<>(personRepository.findByAddress("Strawberry road"));
+        Person personToCheck = new Person();
+        personToCheck = persons.get(0);
+        assertThat(personToCheck.getZip()).isEqualTo(personToAdd.getZip());
+    }
+
+    @Test
+    void testFindByCity() {
+
+        Person personToAdd = new Person();
+        personToAdd.setCity("Paris");
+        personToAdd.setZip(42);
+        personRepository.save(personToAdd);
+
+        List<Person> persons = new ArrayList<>(personRepository.findByCity("Paris"));
+        Person personToCheck = new Person();
+        personToCheck = persons.get(0);
+        assertThat(personToCheck.getZip()).isEqualTo(personToAdd.getZip());
     }
 
 }

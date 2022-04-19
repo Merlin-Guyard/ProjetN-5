@@ -8,7 +8,7 @@ import com.mg.warning.alert.email.EmailDTO;
 import com.mg.warning.alert.email.EmailService;
 import com.mg.warning.alert.fire.FireDTO;
 import com.mg.warning.alert.fire.FireService;
-import com.mg.warning.alert.firestation.FireStationService;
+import com.mg.warning.alert.firestation.FirestationService;
 import com.mg.warning.alert.flood.FloodDTO;
 import com.mg.warning.alert.flood.FloodService;
 import com.mg.warning.alert.personInfo.PersonInfoDTO;
@@ -29,7 +29,7 @@ import java.util.List;
 public class AlertController {
 
     @Autowired
-    private FireStationService fireStationService;
+    private FirestationService fireStationService;
 
     @Autowired
     private ChildService childService;

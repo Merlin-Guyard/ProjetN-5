@@ -1,8 +1,9 @@
-package com.mg.warning.person;
+package com.mg.warning.firestation;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mg.warning.person.Person;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +16,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = PersonController.class)
-class PersonControllerTest {
+@WebMvcTest(controllers = FireStationController.class)
+class FirestationControllerTest {
 
     @TestConfiguration
     static class AdditionalConfig {
         @Bean
-        public PersonRepository personRepository() {
-            return new PersonRepository();
+        public FirestationRepository firestationRepository() {
+            return new FirestationRepository();
         }
     }
 
@@ -30,44 +31,44 @@ class PersonControllerTest {
     private MockMvc mvc;
 
     @Test
-    public void testGetPerson() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/person/GetAll"))
+    public void testGetFirestation() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/firestation/GetAll"))
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void testPostPerson() throws Exception {
+    public void testPostFirestation() throws Exception {
         mvc.perform(MockMvcRequestBuilders
-                        .post("/person")
-                        .content(asJsonString(new Person("TestFirstName", "TestLastName", "TestAddressTOTO", "", 0, "", "")))
+                        .post("/firestation")
+                        .content(asJsonString(new Firestation("TestAddress", 42)))
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void testPutPerson() throws Exception {
+    public void testPutFirestation() throws Exception {
         mvc.perform(MockMvcRequestBuilders
-                .post("/person")
-                .content(asJsonString(new Person("TestFirstName", "TestLastName", "TestAddressTOTO", "", 0, "", "")))
+                .post("/firestation")
+                .content(asJsonString(new Firestation("TestAddress", 42)))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON));
 
         mvc.perform(MockMvcRequestBuilders
-                        .put("/person")
-                        .content(asJsonString(new Person("TestFirstName", "TestLastName", "TestAddressDADA", "", 0, "", "")))
+                        .put("/firestation")
+                        .content(asJsonString(new Firestation("TestAddress", 42)))
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void testDeletePerson() throws Exception {
+    public void testDeleteFirestation() throws Exception {
         {
             mvc.perform(MockMvcRequestBuilders
-                            .delete("/person/TestFirstName/TestLastName")
+                            .delete("/firestation/TestAddress/42")
                             .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isOk());
+                    .andExpect(status().isOk());
         }
     }
 

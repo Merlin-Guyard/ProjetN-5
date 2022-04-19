@@ -38,7 +38,7 @@ public class FireStationController {
         firestationRepository.update(firestation);
     }
 
-    @DeleteMapping(value = "")
+    @DeleteMapping(value = "/{address}/{station}")
     public void delOnePerson(@PathVariable("address") String address, @PathVariable("station") int station) {
         Logger.info("/person function update called for firestation number : {}", station);
         firestationRepository.delete(address, station);
