@@ -1,9 +1,12 @@
 package com.mg.warning.alert.children;
 
-import com.mg.warning.medicalRecord.MedicalRecord;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
-import com.mg.warning.person.Person;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.dto.ChildrenDTO;
+import com.mg.warning.dto.ChildrenWithFamilyDTO;
+import com.mg.warning.model.MedicalRecord;
+import com.mg.warning.repository.MedicalRecordRepository;
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.ChildService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -51,8 +54,8 @@ public class ChildServiceTest {
                 .thenReturn(persons);
 
         ChildrenWithFamilyDTO result = service.getChildrenWithFamilyDTO(person.getAddress());
-        List<ChildrenDTO> resultChildrenlist = result.getChildren();
-        ChildrenDTO resultChildren = resultChildrenlist.get(0);
+        List<ChildrenDTO> resultChildrenList = result.getChildren();
+        ChildrenDTO resultChildren = resultChildrenList.get(0);
 
         assertThat(resultChildren.getFirstname()).isEqualTo(person.getFirstName());
         assertThat(resultChildren.getAge()).isEqualTo(17);

@@ -3,12 +3,9 @@ package com.mg.warning.medicalrecord;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mg.warning.medicalRecord.MedicalRecord;
-import com.mg.warning.medicalRecord.MedicalRecordController;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
-import com.mg.warning.person.Person;
-import com.mg.warning.person.PersonController;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.model.MedicalRecord;
+import com.mg.warning.controller.MedicalRecordController;
+import com.mg.warning.repository.MedicalRecordRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

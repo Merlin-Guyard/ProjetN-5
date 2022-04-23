@@ -3,6 +3,9 @@ package com.mg.warning.person;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.controller.PersonController;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.mg.warning.firestation;
 
-import com.mg.warning.medicalRecord.MedicalRecord;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
+import com.mg.warning.model.Firestation;
+import com.mg.warning.repository.FirestationRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.springframework.boot.test.context.SpringBootTest;

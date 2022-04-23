@@ -1,11 +1,14 @@
 package com.mg.warning.alert.fire;
 
-import com.mg.warning.firestation.Firestation;
-import com.mg.warning.firestation.FirestationRepository;
-import com.mg.warning.medicalRecord.MedicalRecord;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
-import com.mg.warning.person.Person;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.dto.FireDTO;
+import com.mg.warning.dto.FirePersonDTO;
+import com.mg.warning.model.Firestation;
+import com.mg.warning.repository.FirestationRepository;
+import com.mg.warning.model.MedicalRecord;
+import com.mg.warning.repository.MedicalRecordRepository;
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.FireService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

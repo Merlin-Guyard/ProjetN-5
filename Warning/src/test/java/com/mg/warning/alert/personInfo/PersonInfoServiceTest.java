@@ -1,9 +1,11 @@
 package com.mg.warning.alert.personInfo;
 
-import com.mg.warning.medicalRecord.MedicalRecord;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
-import com.mg.warning.person.Person;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.dto.PersonInfoDTO;
+import com.mg.warning.model.MedicalRecord;
+import com.mg.warning.repository.MedicalRecordRepository;
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.PersonInfoService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

@@ -1,76 +1,68 @@
-2022-04-19 13:55:45 [main] com.mg.warning.alert.service.AlertController.getAllPersonInfo()
+2022-04-23 13:52:56 [main] com.mg.warning.controller.AlertController.getAllPersonInfo()
 INFO: /personInfo?firstName=TestFirstName&lastName=TestFirstName person info alert called
-2022-04-19 13:55:45 [main] com.mg.warning.alert.personInfo.PersonInfoService.getPersonInfoDTO()
+2022-04-23 13:52:56 [main] com.mg.warning.service.PersonInfoService.getPersonInfoDTO()
 INFO: getPersonInfoDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.alert.service.AlertController.getAllFlood()
+2022-04-23 13:52:56 [main] com.mg.warning.controller.AlertController.getAllFlood()
 INFO: /flood/stations?stations=[42] flood alert called
-2022-04-19 13:55:45 [main] com.mg.warning.alert.flood.FloodService.getFloodDTO()
+2022-04-23 13:52:56 [main] com.mg.warning.service.FloodService.getFloodDTO()
 INFO: getFloodDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.alert.service.AlertController.getAllPhone()
+2022-04-23 13:52:56 [main] com.mg.warning.controller.AlertController.getAllPhone()
 INFO: /phoneAlert?firestation=42 phone alert called
-2022-04-19 13:55:45 [main] com.mg.warning.alert.phone.PhoneService.getPhoneDTO()
+2022-04-23 13:52:56 [main] com.mg.warning.service.PhoneService.getPhoneDTO()
 INFO: getPhoneDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.alert.service.AlertController.getAllChildrenAndFamily()
+2022-04-23 13:52:56 [main] com.mg.warning.controller.AlertController.getAllChildrenAndFamily()
 INFO: /childAlert?address=TestAddress child alert called
-2022-04-19 13:55:45 [main] com.mg.warning.alert.children.ChildService.getChildrenWithFamilyDTO()
+2022-04-23 13:52:56 [main] com.mg.warning.service.ChildService.getChildrenWithFamilyDTO()
 INFO: getChildrenWithFamilyDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.alert.service.AlertController.getAllEmail()
+2022-04-23 13:52:56 [main] com.mg.warning.controller.AlertController.getAllEmail()
 INFO: /communityEmail?city=TestCity child alert called
-2022-04-19 13:55:45 [main] com.mg.warning.alert.email.EmailService.getEmailDTO()
+2022-04-23 13:52:56 [main] com.mg.warning.service.EmailService.getEmailDTO()
 INFO: getEmailDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.alert.service.AlertController.getAllFire()
+2022-04-23 13:52:56 [main] com.mg.warning.controller.AlertController.getAllFire()
 INFO: /fire?address=TestAddress fire alert called
-2022-04-19 13:55:45 [main] com.mg.warning.alert.fire.FireService.getFireDTO()
+2022-04-23 13:52:56 [main] com.mg.warning.service.FireService.getFireDTO()
 INFO: getFireDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.alert.service.AlertController.getAllFirestation()
+2022-04-23 13:52:56 [main] com.mg.warning.controller.AlertController.getAllFirestation()
 INFO: /firestation?stationNumber=42 firestation alert called
-2022-04-19 13:55:45 [main] com.mg.warning.alert.firestation.FirestationService.getFirestationAlertDTOWithSum()
+2022-04-23 13:52:56 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
 INFO: getFirestationAlertDTOWithSum executed successfully
-2022-04-19 13:55:47 [main] com.mg.warning.json.ReadJSON.readEntities()
+2022-04-23 13:52:59 [main] com.mg.warning.service.JsonService.readEntities()
 INFO: JSON imported successfully
-2022-04-19 13:55:47 [main] com.mg.warning.configuration.Initialize.saveData()
+2022-04-23 13:52:59 [main] com.mg.warning.configuration.Initialize.saveData()
 INFO: Entities written successfully
-2022-04-19 13:55:47 [main] com.mg.warning.alert.children.ChildService.getChildrenWithFamilyDTO()
+2022-04-23 13:52:59 [main] com.mg.warning.service.ChildService.getChildrenWithFamilyDTO()
 INFO: getChildrenWithFamilyDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.alert.email.EmailService.getEmailDTO()
+2022-04-23 13:52:59 [main] com.mg.warning.service.EmailService.getEmailDTO()
 INFO: getEmailDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.alert.fire.FireService.getFireDTO()
+2022-04-23 13:52:59 [main] com.mg.warning.service.FireService.getFireDTO()
 INFO: getFireDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.alert.firestation.FirestationService.getFirestationAlertDTOWithSum()
+2022-04-23 13:52:59 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
 INFO: getFirestationAlertDTOWithSum executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.alert.flood.FloodService.getFloodDTO()
+2022-04-23 13:52:59 [main] com.mg.warning.service.FloodService.getFloodDTO()
 INFO: getFloodDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.alert.personInfo.PersonInfoService.getPersonInfoDTO()
+2022-04-23 13:52:59 [main] com.mg.warning.service.PersonInfoService.getPersonInfoDTO()
 INFO: getPersonInfoDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.alert.phone.PhoneService.getPhoneDTO()
+2022-04-23 13:52:59 [main] com.mg.warning.service.PhoneService.getPhoneDTO()
 INFO: getPhoneDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.firestation.FireStationController.delOnePerson()
-INFO: /person function update called for firestation number : 42
-2022-04-19 13:55:48 [main] com.mg.warning.firestation.FireStationController.getAllFirestation()
-INFO: /person function get all called
-2022-04-19 13:55:48 [main] com.mg.warning.firestation.FireStationController.postOneFirestation()
-INFO: /person function post called for firestation : TestAddress, number : 42
-2022-04-19 13:55:48 [main] com.mg.warning.firestation.FireStationController.postOneFirestation()
-INFO: /person function post called for firestation : TestAddress, number : 42
-2022-04-19 13:55:48 [main] com.mg.warning.firestation.FireStationController.updateOnePerson()
-INFO: /person function update called for firestation : TestAddress, number : 42
-2022-04-19 13:55:49 [main] com.mg.warning.medicalRecord.MedicalRecordController.postOneMedicalRecord()
+2022-04-23 13:53:00 [main] com.mg.warning.controller.MedicalRecordController.postOneMedicalRecord()
 INFO: /medicalRecord function post called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.medicalRecord.MedicalRecordController.updateOneMedicalRecord()
+2022-04-23 13:53:00 [main] com.mg.warning.controller.MedicalRecordController.updateOneMedicalRecord()
 INFO: /medicalRecord function update called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.medicalRecord.MedicalRecordController.postOneMedicalRecord()
+2022-04-23 13:53:00 [main] com.mg.warning.controller.MedicalRecordController.postOneMedicalRecord()
 INFO: /medicalRecord function post called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.medicalRecord.MedicalRecordController.getAllMedicalRecords()
+2022-04-23 13:53:00 [main] com.mg.warning.controller.MedicalRecordController.getAllMedicalRecords()
 INFO: /medicalRecord/GetAll function get all called
-2022-04-19 13:55:49 [main] com.mg.warning.medicalRecord.MedicalRecordController.delOneMedicalRecord()
+2022-04-23 13:53:00 [main] com.mg.warning.controller.MedicalRecordController.delOneMedicalRecord()
 INFO: /medicalRecord function delete called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.person.PersonController.postOnePerson()
+2022-04-23 13:53:01 [main] com.mg.warning.controller.PersonController.postOnePerson()
 INFO: /person function post called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.person.PersonController.updateOnePerson()
+2022-04-23 13:53:01 [main] com.mg.warning.controller.PersonController.updateOnePerson()
 INFO: /person function update called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.person.PersonController.delOnePerson()
+2022-04-23 13:53:01 [main] com.mg.warning.controller.PersonController.delOnePerson()
 INFO: /person function delete called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.person.PersonController.postOnePerson()
+2022-04-23 13:53:01 [main] com.mg.warning.controller.PersonController.postOnePerson()
 INFO: /person function post called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.person.PersonController.getAllPersons()
+2022-04-23 13:53:01 [main] com.mg.warning.controller.PersonController.getAllPersons()
+INFO: /person function get all called
+2022-04-23 13:53:01 [main] com.mg.warning.controller.FirestationController.getAllFirestation()
 INFO: /person function get all called

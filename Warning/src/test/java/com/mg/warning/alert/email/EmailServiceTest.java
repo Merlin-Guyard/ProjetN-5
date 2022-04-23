@@ -1,7 +1,9 @@
 package com.mg.warning.alert.email;
 
-import com.mg.warning.person.Person;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.dto.EmailDTO;
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.EmailService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
