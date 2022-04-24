@@ -1,7 +1,8 @@
 package com.mg.warning.medicalrecord;
 
-import com.mg.warning.medicalRecord.MedicalRecord;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
+
+import com.mg.warning.model.MedicalRecord;
+import com.mg.warning.repository.MedicalRecordRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,76 +1,10 @@
-2022-04-19 13:55:45 [main] com.mg.warning.controller.AlertController.getAllPersonInfo()
-INFO: /personInfo?firstName=TestFirstName&lastName=TestFirstName person info alert called
-2022-04-19 13:55:45 [main] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTO()
-INFO: getPersonInfoDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.controller.AlertController.getAllFlood()
-INFO: /flood/stations?stations=[42] flood alert called
-2022-04-19 13:55:45 [main] com.mg.warning.service.FloodAlertService.getFloodDTO()
-INFO: getFloodDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.controller.AlertController.getAllPhone()
-INFO: /phoneAlert?firestation=42 phone alert called
-2022-04-19 13:55:45 [main] com.mg.warning.service.PhoneAlertService.getPhoneDTO()
-INFO: getPhoneDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.controller.AlertController.getAllChildrenAndFamily()
-INFO: /childAlert?address=TestAddress child alert called
-2022-04-19 13:55:45 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
-INFO: getChildrenWithFamilyDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.controller.AlertController.getAllEmail()
-INFO: /communityEmail?city=TestCity child alert called
-2022-04-19 13:55:45 [main] com.mg.warning.service.EmailAlertService.getEmailDTO()
-INFO: getEmailDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.controller.AlertController.getAllFire()
-INFO: /fire?address=TestAddress fire alert called
-2022-04-19 13:55:45 [main] com.mg.warning.service.FireAlertService.getFireDTO()
-INFO: getFireDTO executed successfully
-2022-04-19 13:55:45 [main] com.mg.warning.controller.AlertController.getAllFirestation()
-INFO: /firestation?stationNumber=42 firestation alert called
-2022-04-19 13:55:45 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
-INFO: getFirestationAlertDTOWithSum executed successfully
-2022-04-19 13:55:47 [main] com.mg.warning.configuration.ReadJSON.readEntities()
+2022-04-24 10:48:08 [main] com.mg.warning.configuration.ReadJSON.readEntities()
 INFO: JSON imported successfully
-2022-04-19 13:55:47 [main] com.mg.warning.configuration.Initialize.saveData()
+2022-04-24 10:48:08 [main] com.mg.warning.configuration.Initialize.saveData()
 INFO: Entities written successfully
-2022-04-19 13:55:47 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
-INFO: getChildrenWithFamilyDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.service.EmailAlertService.getEmailDTO()
-INFO: getEmailDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.service.FireAlertService.getFireDTO()
-INFO: getFireDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
-INFO: getFirestationAlertDTOWithSum executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.service.FloodAlertService.getFloodDTO()
-INFO: getFloodDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTO()
+2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.controller.AlertController.getAllPersonInfo()
+INFO: /personInfo?firstName=prénom&lastName=nom person info alert called
+2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTO()
 INFO: getPersonInfoDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.service.PhoneAlertService.getPhoneDTO()
-INFO: getPhoneDTO executed successfully
-2022-04-19 13:55:48 [main] com.mg.warning.controller.FireStationController.delOnePerson()
-INFO: /person function update called for firestation number : 42
-2022-04-19 13:55:48 [main] com.mg.warning.controller.FireStationController.getAllFirestation()
-INFO: /person function get all called
-2022-04-19 13:55:48 [main] com.mg.warning.controller.FireStationController.postOneFirestation()
-INFO: /person function post called for firestation : TestAddress, number : 42
-2022-04-19 13:55:48 [main] com.mg.warning.controller.FireStationController.postOneFirestation()
-INFO: /person function post called for firestation : TestAddress, number : 42
-2022-04-19 13:55:48 [main] com.mg.warning.controller.FireStationController.updateOnePerson()
-INFO: /person function update called for firestation : TestAddress, number : 42
-2022-04-19 13:55:49 [main] com.mg.warning.controller.MedicalRecordController.postOneMedicalRecord()
-INFO: /medicalRecord function post called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.controller.MedicalRecordController.updateOneMedicalRecord()
-INFO: /medicalRecord function update called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.controller.MedicalRecordController.postOneMedicalRecord()
-INFO: /medicalRecord function post called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.controller.MedicalRecordController.getAllMedicalRecords()
-INFO: /medicalRecord/GetAll function get all called
-2022-04-19 13:55:49 [main] com.mg.warning.controller.MedicalRecordController.delOneMedicalRecord()
-INFO: /medicalRecord function delete called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.controller.PersonController.postOnePerson()
-INFO: /person function post called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.controller.PersonController.updateOnePerson()
-INFO: /person function update called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.controller.PersonController.delOnePerson()
-INFO: /person function delete called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.controller.PersonController.postOnePerson()
-INFO: /person function post called for TestFirstName, TestLastName
-2022-04-19 13:55:49 [main] com.mg.warning.controller.PersonController.getAllPersons()
-INFO: /person function get all called
+2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.controller.AlertController.getAllPersonInfo()
+ERROR: prénom nom n'existe pas
