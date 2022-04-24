@@ -3,6 +3,7 @@ package com.mg.warning.controller;
 
 import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.MedicalRecord;
+import com.mg.warning.service.MedicalRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,31 +21,30 @@ import java.util.List;
 @RequestMapping("/medicalRecord")
 public class MedicalRecordController {
 
-
     @Autowired
-    private MedicalRecordRepository medicalRecordRepository;
+    private MedicalRecordService medicalRecordService;
 
     @GetMapping(value = "/GetAll")
     public List<MedicalRecord> getAllMedicalRecords() {
         Logger.info("/medicalRecord/GetAll function get all called");
-        return medicalRecordRepository.findAll();
+        return medicalRecordService.findAll();
     }
 
     @PostMapping(value = "")
     public void postOneMedicalRecord(@RequestBody MedicalRecord medicalRecord) {
         Logger.info("/medicalRecord function post called for {}, {}", medicalRecord.getFirstName(), medicalRecord.getLastName());
-        medicalRecordRepository.save(medicalRecord);
+        medicalRecordService.save(medicalRecord);
     }
 
     @PutMapping(value = "")
     public void updateOneMedicalRecord(@RequestBody MedicalRecord medicalRecord) {
         Logger.info("/medicalRecord function update called for {}, {}", medicalRecord.getFirstName(), medicalRecord.getLastName());
-        medicalRecordRepository.update(medicalRecord);
+        medicalRecordService.update(medicalRecord);
     }
 
     @DeleteMapping(value = "/{firstname}/{lastname}")
     public void delOneMedicalRecord(@PathVariable("firstname") String firstname, @PathVariable("lastname") String lastname) {
         Logger.info("/medicalRecord function delete called for {}, {}", firstname, lastname);
-        medicalRecordRepository.delete(firstname, lastname);
+        medicalRecordService.delete(firstname, lastname);
     }
 }

@@ -1,10 +1,6 @@
-2022-04-24 10:48:08 [main] com.mg.warning.configuration.ReadJSON.readEntities()
+2022-04-24 11:19:33 [main] com.mg.warning.configuration.ReadJSON.readEntities()
 INFO: JSON imported successfully
-2022-04-24 10:48:08 [main] com.mg.warning.configuration.Initialize.saveData()
+2022-04-24 11:19:33 [main] com.mg.warning.configuration.Initialize.saveData()
 INFO: Entities written successfully
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.controller.AlertController.getAllPersonInfo()
-INFO: /personInfo?firstName=prénom&lastName=nom person info alert called
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTO()
-INFO: getPersonInfoDTO executed successfully
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.controller.AlertController.getAllPersonInfo()
-ERROR: prénom nom n'existe pas
+2022-04-24 11:19:42 [http-nio-8080-exec-1] com.mg.warning.controller.PersonController.getAllPersons()
+INFO: /person function get all called

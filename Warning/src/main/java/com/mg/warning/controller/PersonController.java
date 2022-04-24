@@ -2,6 +2,7 @@ package com.mg.warning.controller;
 
 import com.mg.warning.model.Person;
 import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,29 +21,29 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonService personService;
 
     @GetMapping(value = "/GetAll")
     public List<Person> getAllPersons() {
         Logger.info("/person function get all called");
-        return personRepository.findAll();
+        return personService.findAll();
     }
 
     @PostMapping(value = "")
     public void postOnePerson(@RequestBody Person person) {
         Logger.info("/person function post called for {}, {}", person.getFirstName(), person.getLastName());
-        personRepository.save(person);
+        personService.save(person);
     }
 
     @PutMapping(value = "")
     public void updateOnePerson(@RequestBody Person person) {
         Logger.info("/person function update called for {}, {}", person.getFirstName(), person.getLastName());
-        personRepository.update(person);
+        personService.update(person);
     }
 
     @DeleteMapping(value = "/{firstname}/{lastname}")
     public void delOnePerson(@PathVariable("firstname") String firstname, @PathVariable("lastname") String lastname) {
         Logger.info("/person function delete called for {}, {}", firstname, lastname);
-        personRepository.delete(firstname, lastname);
+        personService.delete(firstname, lastname);
     }
 }

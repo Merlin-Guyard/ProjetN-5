@@ -1,150 +1,98 @@
-2022-04-24 10:48:08 [main] com.mg.warning.configuration.ReadJSON.readEntities()
+2022-04-24 11:19:33 [main] com.mg.warning.configuration.ReadJSON.readEntities()
 INFO: JSON imported successfully
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 11:19:33 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 10:48:08 [main] com.mg.warning.configuration.Initialize.saveData()
+2022-04-24 11:19:33 [main] com.mg.warning.configuration.Initialize.saveData()
 INFO: Entities written successfully
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.controller.AlertController.getAllPersonInfo()
-INFO: /personInfo?firstName=prénom&lastName=nom person info alert called
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de John, Boyd
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Jacob, Boyd
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Tenley, Boyd
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Roger, Boyd
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Felicia, Boyd
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Jonanathan, Marrack
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Tessa, Carman
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Peter, Duncan
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Foster, Shepard
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Tony, Cooper
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Lily, Cooper
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Sophia, Zemicks
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Warren, Zemicks
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Zach, Zemicks
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Reginold, Walker
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Jamie, Peters
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Ron, Peters
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Allison, Boyd
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Brian, Stelzer
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Shawna, Stelzer
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Kendrik, Stelzer
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Clive, Ferguson
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: vérification de Eric, Cadigan
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTOS()
-DEBUG: get persons infos
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTO()
-INFO: getPersonInfoDTO executed successfully
-2022-04-24 10:48:11 [http-nio-8080-exec-1] com.mg.warning.controller.AlertController.getAllPersonInfo()
-ERROR: prénom nom n'existe pas
+2022-04-24 11:19:42 [http-nio-8080-exec-1] com.mg.warning.controller.PersonController.getAllPersons()
+INFO: /person function get all called
