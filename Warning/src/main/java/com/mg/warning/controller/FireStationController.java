@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/firestation")
-public class FireStationController {
+public class FirestationController {
 
     @Autowired
     private FirestationService firestationService;
