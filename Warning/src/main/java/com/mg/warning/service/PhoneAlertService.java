@@ -2,9 +2,7 @@ package com.mg.warning.service;
 
 import com.mg.warning.dto.PhoneDTO;
 import com.mg.warning.model.Firestation;
-import com.mg.warning.repository.FirestationRepository;
 import com.mg.warning.model.Person;
-import com.mg.warning.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.tinylog.Logger;
@@ -17,10 +15,10 @@ import java.util.List;
 public class PhoneAlertService {
 
     @Autowired
-    private FirestationRepository firestationRepository;
+    private FirestationService firestationService;
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonService personService;
 
     public List<PhoneDTO> getPhoneDTO(int stationNumber) {
 
@@ -48,9 +46,9 @@ public class PhoneAlertService {
     private List<Person> getPersons(int stationNumber) {
 //        Logger.debug("getting and writing numbers");
         List<Person> persons = new ArrayList<>();
-        List<Firestation> fireStations = firestationRepository.findByStationNumber(stationNumber);
+        List<Firestation> fireStations = firestationService.findByStationNumber(stationNumber);
         for (Firestation firestation : fireStations) {
-            persons.addAll(personRepository.findByAddress(firestation.getAddress()));
+            persons.addAll(personService.findByAddress(firestation.getAddress()));
         }
         return persons;
     }

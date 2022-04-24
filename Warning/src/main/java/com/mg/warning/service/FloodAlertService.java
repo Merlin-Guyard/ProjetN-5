@@ -3,11 +3,8 @@ package com.mg.warning.service;
 import com.mg.warning.dto.FloodDTO;
 import com.mg.warning.dto.FloodPersonsDTO;
 import com.mg.warning.model.Firestation;
-import com.mg.warning.repository.FirestationRepository;
 import com.mg.warning.model.MedicalRecord;
-import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.Person;
-import com.mg.warning.repository.PersonRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,13 +17,13 @@ import java.util.List;
 public class FloodAlertService {
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonService personService;
 
     @Autowired
-    private FirestationRepository firestationRepository;
+    private FirestationService firestationService;
 
     @Autowired
-    private MedicalRecordRepository medicalRecordRepository;
+    private MedicalRecordService medicalRecordService;
 
 
     public List<FloodDTO> getFloodDTO(int[] stationNumber) {
@@ -45,20 +42,20 @@ public class FloodAlertService {
         Logger.debug("find firestations");
         List<Firestation> fireStations = new ArrayList<>();
         for (int i : stationNumber) {
-            fireStations.addAll(firestationRepository.findByStationNumber(i));
+            fireStations.addAll(firestationService.findByStationNumber(i));
         }
         return fireStations;
     }
 
     private List<FloodDTO> getFloodDTOS(List<Firestation> fireStations) {
-        List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
+        List<MedicalRecord> medicalRecords = medicalRecordService.findAll();
         List<Person> persons = new ArrayList<>();
         List<FloodDTO> dtoFloodList = new ArrayList<>();
         Logger.debug("get and write persons and medicalrecords");
         for (Firestation firestation : fireStations) {
             FloodDTO dtoFlood = new FloodDTO();
             List<FloodPersonsDTO> dtoFloodPersonList = new ArrayList<>();
-            persons.addAll(personRepository.findByAddress(firestation.getAddress()));
+            persons.addAll(personService.findByAddress(firestation.getAddress()));
 
             for (Person person : persons) {
                 FloodPersonsDTO dtoFloodPerson = new FloodPersonsDTO();

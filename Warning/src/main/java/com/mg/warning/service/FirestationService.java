@@ -11,7 +11,7 @@ import java.util.List;
 public class FirestationService {
 
     @Autowired
-    private FirestationRepository firestationRepository;
+    private FirestationService firestationRepository;
 
     public List<Firestation> findAll() {
         return firestationRepository.findAll();
@@ -27,5 +27,13 @@ public class FirestationService {
 
     public void delete(String address, int station) {
         firestationRepository.delete(address, station);
+    }
+
+    public List<Firestation> findByAddress(String address) {
+        return firestationRepository.findByAddress(address);
+    }
+
+    public List<Firestation> findByStationNumber(int stationNumber) {
+        return firestationRepository.findByStationNumber(stationNumber);
     }
 }

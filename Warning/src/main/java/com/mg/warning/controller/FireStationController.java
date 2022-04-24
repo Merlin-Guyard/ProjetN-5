@@ -1,6 +1,5 @@
 package com.mg.warning.controller;
 
-import com.mg.warning.repository.FirestationRepository;
 import com.mg.warning.model.Firestation;
 import com.mg.warning.service.FirestationService;
 import org.springframework.beans.factory.annotation.Autowired;

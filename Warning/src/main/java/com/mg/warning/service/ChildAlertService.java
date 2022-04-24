@@ -4,9 +4,7 @@ import com.mg.warning.dto.ChildrenDTO;
 import com.mg.warning.dto.ChildrenWithFamilyDTO;
 import com.mg.warning.dto.FamilyDTO;
 import com.mg.warning.model.MedicalRecord;
-import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.Person;
-import com.mg.warning.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.tinylog.Logger;
@@ -19,36 +17,36 @@ import java.util.List;
 public class ChildAlertService {
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonService personService;
 
     @Autowired
-    private MedicalRecordRepository medicalRecordRepository;
+    private MedicalRecordService medicalRecordService;
 
     public ChildrenWithFamilyDTO getChildrenWithFamilyDTO(String address) {
 
         //Check by address then age
         Logger.debug("sort by address and ages then get family and children");
-        List<MedicalRecord> medicalRecords = medicalRecordRepository.findAll();
+        List<MedicalRecord> medicalRecords = medicalRecordService.findAll();
         MedicalRecord medicalRecord = new MedicalRecord();
-        List<Person> persons = personRepository.findAll();
+        List<Person> persons = personService.findAll();
         List<ChildrenDTO> dtoChildrenList = new ArrayList<>();
         List<FamilyDTO> dtoFamilyList = new ArrayList<>();
         int personAge;
         for (Person person : persons) {
             if (person.getAddress().equals(address)) {
-                    personAge = medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName());
+                personAge = medicalRecord.getAgeFromMedicalRecords(medicalRecords, person.getFirstName(), person.getLastName());
 
-                    if (personAge >= 18) {
-                        FamilyDTO dtoFamily = new FamilyDTO();
-                        dtoFamily.setFirstname(person.getFirstName());
-                        dtoFamily.setLastname(person.getLastName());
-                        dtoFamilyList.add(dtoFamily);
-                    } else {
-                        ChildrenDTO dtoChildren = new ChildrenDTO();
-                        dtoChildren.setFirstname(person.getFirstName());
-                        dtoChildren.setLastname(person.getLastName());
-                        dtoChildren.setAge(personAge);
-                        dtoChildrenList.add(dtoChildren);
+                if (personAge >= 18) {
+                    FamilyDTO dtoFamily = new FamilyDTO();
+                    dtoFamily.setFirstname(person.getFirstName());
+                    dtoFamily.setLastname(person.getLastName());
+                    dtoFamilyList.add(dtoFamily);
+                } else {
+                    ChildrenDTO dtoChildren = new ChildrenDTO();
+                    dtoChildren.setFirstname(person.getFirstName());
+                    dtoChildren.setLastname(person.getLastName());
+                    dtoChildren.setAge(personAge);
+                    dtoChildrenList.add(dtoChildren);
                 }
             }
         }

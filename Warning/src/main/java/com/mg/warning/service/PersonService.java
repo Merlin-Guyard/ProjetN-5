@@ -28,4 +28,16 @@ public class PersonService {
     public void delete(String firstname, String lastname) {
         personRepository.delete(firstname, lastname);
     }
+
+    public List<Person> findByCity(String city) {
+        return personRepository.findByCity(city);
+    }
+
+    public List<Person> findByAddress(String address) {
+        return personRepository.findByAddress(address);
+    }
+
+    public List<Person> findByFirstAndLastName(String firstname, String lastname) {
+        return personRepository.findByFirstAndLastName(firstname, lastname);
+    }
 }

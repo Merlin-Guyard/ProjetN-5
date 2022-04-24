@@ -4,11 +4,8 @@ import com.mg.warning.dto.FireDTO;
 import com.mg.warning.dto.FireFireStationDTO;
 import com.mg.warning.dto.FirePersonDTO;
 import com.mg.warning.model.Firestation;
-import com.mg.warning.repository.FirestationRepository;
 import com.mg.warning.model.MedicalRecord;
-import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.Person;
-import com.mg.warning.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.tinylog.Logger;
@@ -21,13 +18,13 @@ public class FireAlertService {
 
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonService personService;
 
     @Autowired
-    private MedicalRecordRepository medicalRecordRepository;
+    private MedicalRecordService medicalRecordService;
 
     @Autowired
-    private FirestationRepository firestationRepository;
+    private FirestationService firestationService;
 
 
     public FireDTO getFireDTO(String address) {
@@ -51,8 +48,8 @@ public class FireAlertService {
     private List<FirePersonDTO> getFirePersonDTOS(String address) {
         Logger.debug("getting persons");
         List<FirePersonDTO> dtoFirePersonList = new ArrayList<>();
-        List<Person> persons = new ArrayList<>(personRepository.findByAddress(address));
-        List<MedicalRecord> medicalRecords = new ArrayList<>(medicalRecordRepository.findAll());
+        List<Person> persons = new ArrayList<>(personService.findByAddress(address));
+        List<MedicalRecord> medicalRecords = new ArrayList<>(medicalRecordService.findAll());
 
         for (Person person : persons) {
             FirePersonDTO dtoFirePerson = new FirePersonDTO();
@@ -73,7 +70,7 @@ public class FireAlertService {
     private List<FireFireStationDTO> getFireStationDTOS(String address) {
         Logger.debug("getting firestations");
         List<FireFireStationDTO> dtoFireStationList = new ArrayList<>();
-        List<Firestation> firestations = new ArrayList<>(firestationRepository.findByAddress(address));
+        List<Firestation> firestations = new ArrayList<>(firestationService.findByAddress(address));
 
         for (Firestation firestation : firestations) {
             FireFireStationDTO dtoFireStation = new FireFireStationDTO();

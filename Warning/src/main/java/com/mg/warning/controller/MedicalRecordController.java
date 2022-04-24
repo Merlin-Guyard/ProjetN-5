@@ -1,7 +1,5 @@
 package com.mg.warning.controller;
 
-
-import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.MedicalRecord;
 import com.mg.warning.service.MedicalRecordService;
 import org.springframework.beans.factory.annotation.Autowired;

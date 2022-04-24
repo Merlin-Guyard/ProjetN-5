@@ -3,11 +3,8 @@ package com.mg.warning.service;
 import com.mg.warning.dto.FirestationDTO;
 import com.mg.warning.dto.FirestationWithNbDTO;
 import com.mg.warning.model.Firestation;
-import com.mg.warning.repository.FirestationRepository;
 import com.mg.warning.model.MedicalRecord;
-import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.Person;
-import com.mg.warning.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.tinylog.Logger;
@@ -19,18 +16,18 @@ import java.util.List;
 public class FirestationAlertService {
 
     @Autowired
-    private FirestationRepository firestationRepository;
+    private FirestationService firestationService;
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonService personService;
 
     @Autowired
-    private MedicalRecordRepository medicalRecordRepository;
+    private MedicalRecordService medicalRecordService;
 
 
-    public FirestationWithNbDTO getFirestationAlertDTOWithSum(int stationNumber){
+    public FirestationWithNbDTO getFirestationAlertDTOWithSum(int stationNumber) {
 
-        FirestationWithNbDTO dtoWithSum  = new FirestationWithNbDTO();
+        FirestationWithNbDTO dtoWithSum = new FirestationWithNbDTO();
 
         //Get persons from firestation's address
         List<Person> persons = getPersons(stationNumber);
@@ -46,10 +43,10 @@ public class FirestationAlertService {
         Logger.debug("check age status");
         int adult = 0;
         int children = 0;
-        for(MedicalRecord medicalRecord: medicalRecords)  {
-            if (medicalRecord.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()) >=18){
+        for (MedicalRecord medicalRecord : medicalRecords) {
+            if (medicalRecord.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()) >= 18) {
                 adult++;
-            } else if (medicalRecord.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()) <18){
+            } else if (medicalRecord.getAgeFromMedicalRecords(medicalRecords, medicalRecord.getFirstName(), medicalRecord.getLastName()) < 18) {
                 children++;
             }
         }
@@ -65,16 +62,16 @@ public class FirestationAlertService {
     private List<MedicalRecord> getMedicalRecords(List<Person> persons) {
         Logger.debug("find medicalrecords from persons");
         List<MedicalRecord> medicalRecords = new ArrayList<>();
-        for(Person person: persons)  {
-            medicalRecords.add(medicalRecordRepository.findByName(person.getFirstName(), person.getLastName()));
+        for (Person person : persons) {
+            medicalRecords.add(medicalRecordService.findByName(person.getFirstName(), person.getLastName()));
         }
         return medicalRecords;
     }
 
     private List<FirestationDTO> getFirestationDTOS(List<Person> persons) {
         Logger.debug("get persons");
-        List<FirestationDTO> dtoFirestationList  = new ArrayList<>();
-        for (Person person : persons){
+        List<FirestationDTO> dtoFirestationList = new ArrayList<>();
+        for (Person person : persons) {
             FirestationDTO dtoFirestation = new FirestationDTO();
             dtoFirestation.setFirstname(person.getFirstName());
             dtoFirestation.setLastname(person.getLastName());
@@ -87,10 +84,10 @@ public class FirestationAlertService {
 
     private List<Person> getPersons(int stationNumber) {
         Logger.debug("find persons from firestation");
-        List<Firestation> fireStations = firestationRepository.findByStationNumber(stationNumber);
+        List<Firestation> fireStations = firestationService.findByStationNumber(stationNumber);
         List<Person> persons = new ArrayList<>();
-        for(Firestation firestation: fireStations)  {
-            persons.addAll(personRepository.findByAddress(firestation.getAddress()));
+        for (Firestation firestation : fireStations) {
+            persons.addAll(personService.findByAddress(firestation.getAddress()));
         }
         return persons;
     }

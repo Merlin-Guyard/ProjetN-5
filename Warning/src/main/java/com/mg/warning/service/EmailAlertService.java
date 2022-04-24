@@ -2,7 +2,6 @@ package com.mg.warning.service;
 
 import com.mg.warning.dto.EmailDTO;
 import com.mg.warning.model.Person;
-import com.mg.warning.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.tinylog.Logger;
@@ -15,7 +14,7 @@ import java.util.List;
 public class EmailAlertService {
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonService personService;
 
     public List<EmailDTO> getEmailDTO(String city) {
 
@@ -28,7 +27,7 @@ public class EmailAlertService {
 
     private List<EmailDTO> getEmailDTOS(String city) {
         Logger.debug("getting and writing emails");
-        List<Person> persons = new ArrayList<>(personRepository.findByCity(city));
+        List<Person> persons = new ArrayList<>(personService.findByCity(city));
         List<EmailDTO> dtoEmailList = new ArrayList<>();
         for (Person person : persons) {
             EmailDTO dtoEmail = new EmailDTO();

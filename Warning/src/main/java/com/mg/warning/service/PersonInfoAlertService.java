@@ -2,10 +2,7 @@ package com.mg.warning.service;
 
 import com.mg.warning.dto.PersonInfoDTO;
 import com.mg.warning.model.MedicalRecord;
-import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.Person;
-import com.mg.warning.repository.PersonRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.tinylog.Logger;
@@ -17,10 +14,10 @@ import java.util.List;
 public class PersonInfoAlertService {
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonService personService;
 
     @Autowired
-    private MedicalRecordRepository medicalRecordRepository;
+    private MedicalRecordService medicalRecordService;
 
     public List<PersonInfoDTO> getPersonInfoDTO(String firstname, String lastname) {
 
@@ -33,7 +30,7 @@ public class PersonInfoAlertService {
 
 
     private List<PersonInfoDTO> getPersonInfoDTOS(String firstname, String lastname) {
-        List<Person> persons = new ArrayList<>(personRepository.findByFirstAndLastName(firstname, lastname));
+        List<Person> persons = new ArrayList<>(personService.findByFirstAndLastName(firstname, lastname));
         List<PersonInfoDTO> dtoPersonInfoList = new ArrayList<>();
 
         //get persons infos
@@ -51,7 +48,7 @@ public class PersonInfoAlertService {
     }
 
     private void extracted(String firstname, String lastname, List<PersonInfoDTO> dtoPersonInfoList, Person person, PersonInfoDTO dtoPersonInfo) {
-        List<MedicalRecord> medicalRecords = new ArrayList<>(medicalRecordRepository.findByFirstAndLastName(firstname, lastname));
+        List<MedicalRecord> medicalRecords = new ArrayList<>(medicalRecordService.findByFirstAndLastName(firstname, lastname));
 
         Logger.debug("get medicalrecords infos");
         for (MedicalRecord medicalRecord : medicalRecords) {

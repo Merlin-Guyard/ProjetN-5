@@ -28,4 +28,12 @@ public class MedicalRecordService {
     public void delete(String firstname, String lastname) {
         medicalRecordRepository.delete(firstname, lastname);
     }
+
+    public MedicalRecord findByName(String firstName, String lastName) {
+        return medicalRecordRepository.findByName(firstName, lastName);
+    }
+
+    public List<MedicalRecord> findByFirstAndLastName(String firstname, String lastname) {
+        return medicalRecordRepository.findByFirstAndLastName(firstname, lastname);
+    }
 }
