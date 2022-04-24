@@ -6,15 +6,12 @@ import com.mg.warning.controller.FirestationController;
 import com.mg.warning.model.Firestation;
 import com.mg.warning.service.FirestationService;
 import org.junit.jupiter.api.BeforeEach;
-import org.mockito.ArgumentMatcher;
-import org.mockito.ArgumentMatchers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.junit.jupiter.api.Test;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.Collections;
 import java.util.List;
@@ -79,6 +76,25 @@ class FirestationControllerTest {
                         .content(asJsonString(new Firestation("TestAddress", 1)))
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testPutFirestation() throws Exception {
+
+        mockMvc.perform(put("/firestation")
+                        .content(asJsonString(new Firestation("TestAddress", 42)))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testDeleteFirestation() throws Exception {
+        {
+            mockMvc.perform(delete("/firestation/TestAddress/42")
+                            .contentType(MediaType.APPLICATION_JSON))
+                    .andExpect(status().isOk());
+        }
     }
 
     public static String asJsonString(final Object obj) {

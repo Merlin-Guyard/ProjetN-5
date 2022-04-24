@@ -5,7 +5,10 @@ import com.mg.warning.model.MedicalRecord;
 import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.Person;
 import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.FirestationService;
+import com.mg.warning.service.MedicalRecordService;
 import com.mg.warning.service.PersonInfoAlertService;
+import com.mg.warning.service.PersonService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -23,10 +26,10 @@ import static org.mockito.Mockito.when;
 class PersonInfoServiceTest {
 
     @Mock
-    private PersonRepository personRepository = mock(PersonRepository.class);
+    private PersonService personService = mock(PersonService.class);
 
     @Mock
-    private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
+    private MedicalRecordService medicalRecordService = mock(MedicalRecordService.class);
 
     @InjectMocks
     private PersonInfoAlertService service = new PersonInfoAlertService();
@@ -41,14 +44,14 @@ class PersonInfoServiceTest {
         person.setFirstName("Bobby");
         person.setLastName("Dupont");
         persons.add(person);
-        when(personRepository.findByFirstAndLastName(person.getFirstName(), person.getLastName()))
+        when(personService.findByFirstAndLastName(person.getFirstName(), person.getLastName()))
                 .thenReturn(persons);
 
         medicalRecord.setFirstName("Bobby");
         medicalRecord.setLastName("Dupont");
         medicalRecord.setBirthdate("03/06/2000");
         medicalRecords.add(medicalRecord);
-        when(medicalRecordRepository.findByFirstAndLastName(medicalRecord.getFirstName(), medicalRecord.getLastName()))
+        when(medicalRecordService.findByFirstAndLastName(medicalRecord.getFirstName(), medicalRecord.getLastName()))
                 .thenReturn(medicalRecords);
 
         List<PersonInfoDTO> resultList = service.getPersonInfoDTO(person.getFirstName(), person.getLastName());

@@ -6,6 +6,8 @@ import com.mg.warning.model.Firestation;
 import com.mg.warning.model.MedicalRecord;
 import com.mg.warning.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.tinylog.Logger;
 
@@ -34,7 +36,6 @@ public class FirestationAlertService {
 
         //Get only interested data
         List<FirestationDTO> dtoFirestationList = getFirestationDTOS(persons);
-
 
         //Get medicalrecords from persons
         List<MedicalRecord> medicalRecords = getMedicalRecords(persons);

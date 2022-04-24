@@ -11,7 +11,7 @@ import java.util.List;
 public class FirestationService {
 
     @Autowired
-    private FirestationService firestationRepository;
+    private FirestationRepository firestationRepository;
 
     public List<Firestation> findAll() {
         return firestationRepository.findAll();

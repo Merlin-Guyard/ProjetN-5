@@ -4,6 +4,7 @@ import com.mg.warning.dto.EmailDTO;
 import com.mg.warning.model.Person;
 import com.mg.warning.repository.PersonRepository;
 import com.mg.warning.service.EmailAlertService;
+import com.mg.warning.service.PersonService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -18,7 +19,7 @@ import static org.mockito.Mockito.when;
 class EmailServiceTest {
 
     @Mock
-    private PersonRepository personRepository = mock(PersonRepository.class);
+    private PersonService personService = mock(PersonService.class);
 
     @InjectMocks
     private EmailAlertService service = new EmailAlertService();
@@ -31,7 +32,7 @@ class EmailServiceTest {
         person.setCity("TestCity");
         person.setEmail("Test@email.com");
         persons.add(person);
-        when(personRepository.findByCity(person.getCity()))
+        when(personService.findByCity(person.getCity()))
                 .thenReturn(persons);
 
         List<EmailDTO> resultList =  service.getEmailDTO(person.getCity());

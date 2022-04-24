@@ -1,4 +1,4 @@
-package com.mg.warning.medicalrecord;
-
-public class MedicalRecordServiceTest {
-}
+//package com.mg.warning.medicalrecord;
+//
+//public class MedicalRecordServiceTest {
+//}

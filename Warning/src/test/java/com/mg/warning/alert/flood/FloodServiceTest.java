@@ -1,13 +1,17 @@
 package com.mg.warning.alert.flood;
 
 import com.mg.warning.dto.FloodDTO;
+import com.mg.warning.dto.FloodPersonsDTO;
 import com.mg.warning.model.Firestation;
 import com.mg.warning.repository.FirestationRepository;
 import com.mg.warning.model.MedicalRecord;
 import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.Person;
 import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.FirestationService;
 import com.mg.warning.service.FloodAlertService;
+import com.mg.warning.service.MedicalRecordService;
+import com.mg.warning.service.PersonService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -24,13 +28,13 @@ import static org.mockito.Mockito.when;
 class FloodServiceTest {
 
     @Mock
-    private PersonRepository personRepository = mock(PersonRepository.class);
+    private FirestationService firestationService = mock(FirestationService.class);
 
     @Mock
-    private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
+    private PersonService personService = mock(PersonService.class);
 
     @Mock
-    private FirestationRepository firestationRepository = mock((FirestationRepository.class));
+    private MedicalRecordService medicalRecordService = mock(MedicalRecordService.class);
 
     @InjectMocks
     private FloodAlertService service = new FloodAlertService();
@@ -48,27 +52,30 @@ class FloodServiceTest {
         medicalRecord.setLastName("Dupont");
         medicalRecord.setBirthdate("03/06/2005");
         medicalRecords.add(medicalRecord);
-        when(medicalRecordRepository.findAll())
+        when(medicalRecordService.findAll())
                 .thenReturn(medicalRecords);
 
         firestation.setAddress("TestRoad");
         firestation.setStation(2);
         firestations.add(firestation);
-        when(firestationRepository.findByStationNumber(firestation.getStation()))
+        when(firestationService.findByStationNumber(firestation.getStation()))
                 .thenReturn(firestations);
         int[] stationNumber = new int[1];
         stationNumber[0] = firestation.getStation();
 
         person.setFirstName("Bobby");
         person.setLastName("Dupont");
+        person.setAddress("TestRoad");
         person.setPhone("06 01 23 45 67");
         persons.add(person);
-        when(personRepository.findByAddress(person.getAddress()))
+        when(personService.findByAddress(firestation.getAddress()))
                 .thenReturn(persons);
 
         List<FloodDTO> resultList =  service.getFloodDTO(stationNumber);
         FloodDTO result = resultList.get(0);
+        FloodPersonsDTO floodPersonsDTO = result.getFloodAlertPersonsDTO().get(0);
 
-        assertThat(result.getAddress()).isEqualTo(firestation.getAddress());
+
+        assertThat(floodPersonsDTO.getAge()).isEqualTo(17);
     }
 }

@@ -5,6 +5,9 @@ import com.mg.warning.model.Firestation;
 import com.mg.warning.repository.FirestationRepository;
 import com.mg.warning.model.Person;
 import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.FirestationService;
+import com.mg.warning.service.MedicalRecordService;
+import com.mg.warning.service.PersonService;
 import com.mg.warning.service.PhoneAlertService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -23,10 +26,10 @@ import static org.mockito.Mockito.when;
 class PhoneServiceTest {
 
     @Mock
-    private PersonRepository personRepository = mock(PersonRepository.class);
+    private FirestationService firestationService = mock(FirestationService.class);
 
     @Mock
-    private FirestationRepository firestationRepository = mock((FirestationRepository.class));
+    private PersonService personService = mock(PersonService.class);
 
     @InjectMocks
     private PhoneAlertService service = new PhoneAlertService();
@@ -41,13 +44,13 @@ class PhoneServiceTest {
         firestation.setAddress("TestRoad");
         firestation.setStation(2);
         firestations.add(firestation);
-        when(firestationRepository.findByStationNumber(firestation.getStation()))
+        when(firestationService.findByStationNumber(firestation.getStation()))
                 .thenReturn(firestations);
 
         person.setAddress("TestRoad");
         person.setPhone("06 01 23 45 67");
         persons.add(person);
-        when(personRepository.findByAddress(firestation.getAddress()))
+        when(personService.findByAddress(firestation.getAddress()))
                 .thenReturn(persons);
 
         List<PhoneDTO> resultList = service.getPhoneDTO(firestation.getStation());

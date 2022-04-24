@@ -9,6 +9,9 @@ import com.mg.warning.repository.MedicalRecordRepository;
 import com.mg.warning.model.Person;
 import com.mg.warning.repository.PersonRepository;
 import com.mg.warning.service.FireAlertService;
+import com.mg.warning.service.FirestationService;
+import com.mg.warning.service.MedicalRecordService;
+import com.mg.warning.service.PersonService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -25,13 +28,13 @@ import static org.mockito.Mockito.when;
 class FireServiceTest {
 
     @Mock
-    private PersonRepository personRepository = mock(PersonRepository.class);
+    private PersonService personService = mock(PersonService.class);
 
     @Mock
-    private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
+    private MedicalRecordService medicalRecordService = mock(MedicalRecordService.class);
 
     @Mock
-    private FirestationRepository firestationRepository = mock((FirestationRepository.class));
+    private FirestationService firestationService = mock((FirestationService.class));
 
     @InjectMocks
     private FireAlertService service = new FireAlertService();
@@ -49,21 +52,21 @@ class FireServiceTest {
         person.setLastName("Dupont");
         person.setAddress("TestRoad");
         persons.add(person);
-        when(personRepository.findByAddress(person.getAddress()))
+        when(personService.findByAddress(person.getAddress()))
                 .thenReturn(persons);
 
         medicalRecord.setFirstName("Bobby");
         medicalRecord.setLastName("Dupont");
         medicalRecord.setBirthdate("03/06/2005");
         medicalRecords.add(medicalRecord);
-        when(medicalRecordRepository.findAll())
+        when(medicalRecordService.findAll())
                 .thenReturn(medicalRecords);
 
 
         firestation.setAddress("TestRoad");
         firestation.setStation(2);
         firestations.add(firestation);
-        when(firestationRepository.findByStationNumber(firestation.getStation()))
+        when(firestationService.findByAddress(firestation.getAddress()))
                 .thenReturn(firestations);
 
         FireDTO result =  service.getFireDTO(firestation.getAddress());
