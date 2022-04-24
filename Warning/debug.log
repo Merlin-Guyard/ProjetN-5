@@ -1,220 +1,300 @@
-2022-04-24 22:48:12 [main] com.mg.warning.configuration.ReadJSON.readEntities()
+2022-04-24 23:55:46 [main] com.mg.warning.configuration.ReadJSON.readEntities()
 INFO: JSON imported successfully
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:46 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:12 [main] com.mg.warning.configuration.Initialize.saveData()
+2022-04-24 23:55:46 [main] com.mg.warning.configuration.Initialize.saveData()
 INFO: Entities written successfully
-2022-04-24 22:48:12 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
 DEBUG: sort by address and ages then get family and children
-2022-04-24 22:48:12 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
 DEBUG: getting age for Bobby, Dupont
-2022-04-24 22:48:12 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
 DEBUG: getting age for Sarah, Dupont
-2022-04-24 22:48:12 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
 DEBUG: check if children found
-2022-04-24 22:48:12 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
 INFO: getChildrenWithFamilyDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
 DEBUG: sort by address and ages then get family and children
-2022-04-24 22:48:13 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
 DEBUG: check if children found
-2022-04-24 22:48:13 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
 INFO: getChildrenWithFamilyDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.EmailAlertService.getEmailDTOS()
+2022-04-24 23:55:46 [main] com.mg.warning.service.EmailAlertService.getEmailDTOS()
 DEBUG: getting and writing emails
-2022-04-24 22:48:13 [main] com.mg.warning.service.EmailAlertService.getEmailDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.EmailAlertService.getEmailDTO()
 INFO: getEmailDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.FireAlertService.getFireDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FireAlertService.getFireDTO()
 DEBUG: getting data
-2022-04-24 22:48:13 [main] com.mg.warning.service.FireAlertService.getFirePersonDTOS()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FireAlertService.getFirePersonDTOS()
 DEBUG: getting persons
-2022-04-24 22:48:13 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
 DEBUG: getting age for Bobby, Dupont
-2022-04-24 22:48:13 [main] com.mg.warning.service.FireAlertService.getFireStationDTOS()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FireAlertService.getFireStationDTOS()
 DEBUG: getting firestations
-2022-04-24 22:48:13 [main] com.mg.warning.service.FireAlertService.getFireDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FireAlertService.getFireDTO()
 DEBUG: writing data
-2022-04-24 22:48:13 [main] com.mg.warning.service.FireAlertService.getFireDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FireAlertService.getFireDTO()
 INFO: getFireDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getPersons()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getPersons()
 DEBUG: find persons from firestation
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getFirestationDTOS()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getFirestationDTOS()
 DEBUG: get persons
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getMedicalRecords()
 DEBUG: find medicalrecords from persons
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
 DEBUG: check age status
-2022-04-24 22:48:13 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
 DEBUG: getting age for Bobby, Dupont
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
 INFO: getFirestationAlertDTOWithSum executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getPersons()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getPersons()
 DEBUG: find persons from firestation
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getFirestationDTOS()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getFirestationDTOS()
 DEBUG: get persons
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getMedicalRecords()
 DEBUG: find medicalrecords from persons
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
 DEBUG: check age status
-2022-04-24 22:48:13 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
 DEBUG: getting age for Bobby, Dupont
-2022-04-24 22:48:13 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
 DEBUG: getting age for Bobby, Dupont
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
 INFO: getFirestationAlertDTOWithSum executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.FloodAlertService.getFirestations()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FloodAlertService.getFirestations()
 DEBUG: find firestations
-2022-04-24 22:48:13 [main] com.mg.warning.service.FloodAlertService.getFloodDTOS()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FloodAlertService.getFloodDTOS()
 DEBUG: get and write persons and medicalrecords
-2022-04-24 22:48:13 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
 DEBUG: getting age for Bobby, Dupont
-2022-04-24 22:48:13 [main] com.mg.warning.service.FloodAlertService.getFloodDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FloodAlertService.getFloodDTO()
 INFO: getFloodDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTOS()
+2022-04-24 23:55:46 [main] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTOS()
 DEBUG: get persons infos
-2022-04-24 22:48:13 [main] com.mg.warning.service.PersonInfoAlertService.extracted()
+2022-04-24 23:55:46 [main] com.mg.warning.service.PersonInfoAlertService.extracted()
 DEBUG: get medicalrecords infos
-2022-04-24 22:48:13 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
+2022-04-24 23:55:46 [main] com.mg.warning.model.MedicalRecord.getAgeFromMedicalRecords()
 DEBUG: getting age for Bobby, Dupont
-2022-04-24 22:48:13 [main] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTO()
 INFO: getPersonInfoDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.PhoneAlertService.getPhoneDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.PhoneAlertService.getPhoneDTO()
 INFO: getPhoneDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.controller.FirestationController.delOnePerson()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.delOnePerson()
 INFO: /person function update called for firestation number : 42
-2022-04-24 22:48:14 [main] com.mg.warning.controller.FirestationController.postOneFirestation()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.postOneFirestation()
 INFO: /person function post called for firestation : TestAddress, number : 1
-2022-04-24 22:48:14 [main] com.mg.warning.controller.FirestationController.getAllFirestation()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.getAllFirestation()
 INFO: /person function get all called
-2022-04-24 22:48:14 [main] com.mg.warning.controller.FirestationController.getAllFirestation()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.getAllFirestation()
 INFO: /person function get all called
-2022-04-24 22:48:14 [main] com.mg.warning.controller.FirestationController.updateOnePerson()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.updateOnePerson()
 INFO: /person function update called for firestation : TestAddress, number : 42
-2022-04-24 22:48:14 [main] com.mg.warning.repository.FirestationRepository.findByAddress()
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.update()
 DEBUG: vérification de la caserne n°TestAddress à TestAddress
-2022-04-24 22:48:14 [main] com.mg.warning.repository.FirestationRepository.findByAddress()
-DEBUG: firestation ajoutée
-2022-04-24 22:48:14 [main] com.mg.warning.repository.FirestationRepository.findByStationNumber()
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.update()
 DEBUG: vérification de la caserne n°TestAddress à TestAddress
-2022-04-24 22:48:14 [main] com.mg.warning.repository.FirestationRepository.findByStationNumber()
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.delete()
+DEBUG: suppression de la caserne n°42 à TestAddress2
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.findByStationNumber()
+DEBUG: vérification de la caserne n°TestAddress à TestAddress
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.findByStationNumber()
 DEBUG: firestation ajoutée
-2022-04-24 22:48:14 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.findByStationNumber()
+DEBUG: vérification de la caserne n°TestAddress à TestAddress
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.findByAddress()
+DEBUG: vérification de la caserne n°TestAddress à TestAddress
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.delete()
+DEBUG: suppression de la caserne n°42 à TestAddress
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.update()
+DEBUG: vérification de la caserne n°TestAddress à TestAddress
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.update()
+DEBUG: firestation mise à jour
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.update()
+DEBUG: vérification de la caserne n°TestAddress à TestAddress
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.update()
+DEBUG: firestation mise à jour
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.findByAddress()
+DEBUG: vérification de la caserne n°TestAddress à TestAddress
+2022-04-24 23:55:47 [main] com.mg.warning.repository.FirestationRepository.findByAddress()
+DEBUG: firestation ajoutée
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:14 [main] com.mg.warning.repository.MedicalRecordRepository.findByName()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.findByName()
 DEBUG: vérification de Bobby, Dupont
-2022-04-24 22:48:14 [main] com.mg.warning.repository.MedicalRecordRepository.findByName()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.findByName()
 DEBUG: medicalrecord ajouté
-2022-04-24 22:48:14 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.save()
 DEBUG: ajout des medicalrecords
-2022-04-24 22:48:14 [main] com.mg.warning.repository.MedicalRecordRepository.findByFirstAndLastName()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.update()
+DEBUG: vérification de Sarah, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+DEBUG: ajout des medicalrecords
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+DEBUG: ajout des medicalrecords
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.findByName()
 DEBUG: vérification de Bobby, Dupont
-2022-04-24 22:48:14 [main] com.mg.warning.repository.MedicalRecordRepository.findByFirstAndLastName()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+DEBUG: ajout des medicalrecords
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.delete()
+DEBUG: suppression de Sarah, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+DEBUG: ajout des medicalrecords
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.findByFirstAndLastName()
+DEBUG: vérification de Bobby, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.findByFirstAndLastName()
 DEBUG: medicalrecord ajouté
-2022-04-24 22:48:14 [main] com.mg.warning.repository.PersonRepository.save()
-DEBUG: ajout des personnes
-2022-04-24 22:48:14 [main] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+DEBUG: ajout des medicalrecords
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.delete()
+DEBUG: suppression de Bobby, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+DEBUG: ajout des medicalrecords
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.findByFirstAndLastName()
 DEBUG: vérification de Bobby, Dupont
-2022-04-24 22:48:14 [main] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
-DEBUG: personne ajoutée
-2022-04-24 22:48:14 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.save()
+DEBUG: ajout des medicalrecords
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.update()
+DEBUG: vérification de Bobby, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.MedicalRecordRepository.update()
+DEBUG: medicalrecord mis à jour
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:14 [main] com.mg.warning.repository.PersonRepository.findByCity()
-DEBUG: vérification de null, null
-2022-04-24 22:48:14 [main] com.mg.warning.repository.PersonRepository.findByCity()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
+DEBUG: vérification de Bobby, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
 DEBUG: personne ajoutée
-2022-04-24 22:48:14 [main] com.mg.warning.repository.PersonRepository.save()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
 DEBUG: ajout des personnes
-2022-04-24 22:48:14 [main] com.mg.warning.repository.PersonRepository.findByAddress()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.update()
+DEBUG: suppression de Sarah, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
+DEBUG: ajout des personnes
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
+DEBUG: ajout des personnes
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.findByCity()
 DEBUG: vérification de null, null
-2022-04-24 22:48:14 [main] com.mg.warning.repository.PersonRepository.findByAddress()
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.findByCity()
+DEBUG: personne ajoutée
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
+DEBUG: ajout des personnes
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.findByFirstAndLastName()
+DEBUG: vérification de Bobby, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
+DEBUG: ajout des personnes
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.delete()
+DEBUG: suppression de Sarah, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
+DEBUG: ajout des personnes
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.findByAddress()
+DEBUG: vérification de null, null
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
+DEBUG: ajout des personnes
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.delete()
+DEBUG: suppression de Bobby, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
+DEBUG: ajout des personnes
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.update()
+DEBUG: suppression de Bobby, Dupont
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.update()
+DEBUG: personne mise à jour
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
+DEBUG: ajout des personnes
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.findByCity()
+DEBUG: vérification de null, null
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.save()
+DEBUG: ajout des personnes
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.findByAddress()
+DEBUG: vérification de null, null
+2022-04-24 23:55:48 [main] com.mg.warning.repository.PersonRepository.findByAddress()
 DEBUG: personne ajoutée

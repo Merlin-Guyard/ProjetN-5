@@ -1,32 +1,32 @@
-2022-04-24 22:48:12 [main] com.mg.warning.configuration.ReadJSON.readEntities()
+2022-04-24 23:55:46 [main] com.mg.warning.configuration.ReadJSON.readEntities()
 INFO: JSON imported successfully
-2022-04-24 22:48:12 [main] com.mg.warning.configuration.Initialize.saveData()
+2022-04-24 23:55:46 [main] com.mg.warning.configuration.Initialize.saveData()
 INFO: Entities written successfully
-2022-04-24 22:48:12 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
 INFO: getChildrenWithFamilyDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.ChildAlertService.getChildrenWithFamilyDTO()
 INFO: getChildrenWithFamilyDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.EmailAlertService.getEmailDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.EmailAlertService.getEmailDTO()
 INFO: getEmailDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.FireAlertService.getFireDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FireAlertService.getFireDTO()
 INFO: getFireDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
 INFO: getFirestationAlertDTOWithSum executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FirestationAlertService.getFirestationAlertDTOWithSum()
 INFO: getFirestationAlertDTOWithSum executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.FloodAlertService.getFloodDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.FloodAlertService.getFloodDTO()
 INFO: getFloodDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.PersonInfoAlertService.getPersonInfoDTO()
 INFO: getPersonInfoDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.service.PhoneAlertService.getPhoneDTO()
+2022-04-24 23:55:46 [main] com.mg.warning.service.PhoneAlertService.getPhoneDTO()
 INFO: getPhoneDTO executed successfully
-2022-04-24 22:48:13 [main] com.mg.warning.controller.FirestationController.delOnePerson()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.delOnePerson()
 INFO: /person function update called for firestation number : 42
-2022-04-24 22:48:14 [main] com.mg.warning.controller.FirestationController.postOneFirestation()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.postOneFirestation()
 INFO: /person function post called for firestation : TestAddress, number : 1
-2022-04-24 22:48:14 [main] com.mg.warning.controller.FirestationController.getAllFirestation()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.getAllFirestation()
 INFO: /person function get all called
-2022-04-24 22:48:14 [main] com.mg.warning.controller.FirestationController.getAllFirestation()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.getAllFirestation()
 INFO: /person function get all called
-2022-04-24 22:48:14 [main] com.mg.warning.controller.FirestationController.updateOnePerson()
+2022-04-24 23:55:47 [main] com.mg.warning.controller.FirestationController.updateOnePerson()
 INFO: /person function update called for firestation : TestAddress, number : 42

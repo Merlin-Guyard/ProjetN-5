@@ -40,7 +40,7 @@ public class PersonRepository {
                 personsList.set(index, person);
                 index++;
             }*/
-            if (personLoop.equals(person)) {
+            if (personLoop.getFirstName().equals(person.getFirstName()) && personLoop.getLastName().equals(person.getLastName())) {
                 personsList.remove(personLoop);
                 personsList.add(person);
                 Logger.debug("personne mise à jour");

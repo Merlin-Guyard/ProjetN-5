@@ -49,7 +49,7 @@ public class FirestationRepository {
         List<Firestation> copy = new ArrayList<>(firestationList);
         for (Firestation firestationLoop : copy) {
             Logger.debug("vérification de la caserne n°{} à {}", firestationLoop.getAddress(), firestationLoop.getAddress());
-            if (firestationLoop.equals(firestation)) {
+            if (firestationLoop.getAddress().equals(firestation.getAddress())) {
                 firestationList.remove(firestationLoop);
                 firestationList.add(firestation);
                 Logger.debug("firestation mise à jour");
