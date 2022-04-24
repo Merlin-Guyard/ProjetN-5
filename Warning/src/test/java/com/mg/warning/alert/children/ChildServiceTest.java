@@ -1,9 +1,12 @@
 package com.mg.warning.alert.children;
 
-import com.mg.warning.medicalRecord.MedicalRecord;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
-import com.mg.warning.person.Person;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.dto.ChildrenDTO;
+import com.mg.warning.dto.ChildrenWithFamilyDTO;
+import com.mg.warning.model.MedicalRecord;
+import com.mg.warning.repository.MedicalRecordRepository;
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.ChildAlertService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -26,7 +29,7 @@ public class ChildServiceTest {
         private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
 
         @InjectMocks
-        private ChildService service = new ChildService();
+        private ChildAlertService service = new ChildAlertService();
 
     @Test
     void TestChild() {

@@ -1,7 +1,9 @@
 package com.mg.warning.alert.email;
 
-import com.mg.warning.person.Person;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.dto.EmailDTO;
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.EmailAlertService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -19,7 +21,7 @@ class EmailServiceTest {
     private PersonRepository personRepository = mock(PersonRepository.class);
 
     @InjectMocks
-    private EmailService service = new EmailService();
+    private EmailAlertService service = new EmailAlertService();
 
     @Test
     void testEmail() {

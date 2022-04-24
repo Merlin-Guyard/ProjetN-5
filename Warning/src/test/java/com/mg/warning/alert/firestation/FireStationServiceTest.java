@@ -1,8 +1,10 @@
 package com.mg.warning.alert.firestation;
 
-import com.mg.warning.firestation.FirestationRepository;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.dto.FirestationWithNbDTO;
+import com.mg.warning.repository.FirestationRepository;
+import com.mg.warning.repository.MedicalRecordRepository;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.FirestationAlertService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -28,7 +30,7 @@ public class FireStationServiceTest {
     private MedicalRecordRepository medicalRecordRepository = mock(MedicalRecordRepository.class);
 
     @InjectMocks
-    private FirestationService service = new FirestationService();
+    private FirestationAlertService service = new FirestationAlertService();
 
     @Test
     public void testFirestation() {

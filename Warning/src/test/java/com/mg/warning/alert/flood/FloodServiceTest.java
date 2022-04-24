@@ -1,11 +1,13 @@
 package com.mg.warning.alert.flood;
 
-import com.mg.warning.firestation.Firestation;
-import com.mg.warning.firestation.FirestationRepository;
-import com.mg.warning.medicalRecord.MedicalRecord;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
-import com.mg.warning.person.Person;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.dto.FloodDTO;
+import com.mg.warning.model.Firestation;
+import com.mg.warning.repository.FirestationRepository;
+import com.mg.warning.model.MedicalRecord;
+import com.mg.warning.repository.MedicalRecordRepository;
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.FloodAlertService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -31,7 +33,7 @@ class FloodServiceTest {
     private FirestationRepository firestationRepository = mock((FirestationRepository.class));
 
     @InjectMocks
-    private FloodService service = new FloodService();
+    private FloodAlertService service = new FloodAlertService();
 
     @Test
     void testFlood() {

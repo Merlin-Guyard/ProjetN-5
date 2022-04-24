@@ -1,5 +1,7 @@
 package com.mg.warning.person;
 
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.springframework.boot.test.context.SpringBootTest;

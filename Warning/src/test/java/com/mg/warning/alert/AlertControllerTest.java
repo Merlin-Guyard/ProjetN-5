@@ -1,24 +1,17 @@
 package com.mg.warning.alert;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mg.warning.alert.children.ChildService;
-import com.mg.warning.alert.email.EmailService;
-import com.mg.warning.alert.fire.FireService;
-import com.mg.warning.alert.firestation.FirestationService;
-import com.mg.warning.alert.flood.FloodService;
-import com.mg.warning.alert.personInfo.PersonInfoService;
-import com.mg.warning.alert.phone.PhoneService;
-import com.mg.warning.alert.service.AlertController;
-import com.mg.warning.firestation.FirestationRepository;
-import com.mg.warning.medicalRecord.MedicalRecordRepository;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.service.*;
+import com.mg.warning.service.ChildAlertService;
+import com.mg.warning.controller.AlertController;
+import com.mg.warning.repository.FirestationRepository;
+import com.mg.warning.repository.MedicalRecordRepository;
+import com.mg.warning.repository.PersonRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -46,38 +39,38 @@ class AlertControllerTest {
         }
 
         @Bean
-        public FirestationService fireStationService() {
-            return new FirestationService();
+        public FirestationAlertService fireStationService() {
+            return new FirestationAlertService();
         }
 
         @Bean
-        public ChildService childService() {
-            return new ChildService();
+        public ChildAlertService childService() {
+            return new ChildAlertService();
         }
 
         @Bean
-        public PhoneService phoneService() {
-            return new PhoneService();
+        public PhoneAlertService phoneService() {
+            return new PhoneAlertService();
         }
 
         @Bean
-        public FireService fireService() {
-            return new FireService();
+        public FireAlertService fireService() {
+            return new FireAlertService();
         }
 
         @Bean
-        public FloodService floodService() {
-            return new FloodService();
+        public FloodAlertService floodService() {
+            return new FloodAlertService();
         }
 
         @Bean
-        public PersonInfoService personInfoService() {
-            return new PersonInfoService();
+        public PersonInfoAlertService personInfoService() {
+            return new PersonInfoAlertService();
         }
 
         @Bean
-        public EmailService emailService() {
-            return new EmailService();
+        public EmailAlertService emailService() {
+            return new EmailAlertService();
         }
     }
 

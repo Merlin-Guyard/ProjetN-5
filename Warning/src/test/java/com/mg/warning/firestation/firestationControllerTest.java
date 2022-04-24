@@ -3,7 +3,9 @@ package com.mg.warning.firestation;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mg.warning.person.Person;
+import com.mg.warning.controller.FireStationController;
+import com.mg.warning.model.Firestation;
+import com.mg.warning.repository.FirestationRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

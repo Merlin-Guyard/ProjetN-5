@@ -1,9 +1,11 @@
 package com.mg.warning.alert.phone;
 
-import com.mg.warning.firestation.Firestation;
-import com.mg.warning.firestation.FirestationRepository;
-import com.mg.warning.person.Person;
-import com.mg.warning.person.PersonRepository;
+import com.mg.warning.dto.PhoneDTO;
+import com.mg.warning.model.Firestation;
+import com.mg.warning.repository.FirestationRepository;
+import com.mg.warning.model.Person;
+import com.mg.warning.repository.PersonRepository;
+import com.mg.warning.service.PhoneAlertService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -27,7 +29,7 @@ class PhoneServiceTest {
     private FirestationRepository firestationRepository = mock((FirestationRepository.class));
 
     @InjectMocks
-    private PhoneService service = new PhoneService();
+    private PhoneAlertService service = new PhoneAlertService();
 
     @Test
     void testPhone() {
